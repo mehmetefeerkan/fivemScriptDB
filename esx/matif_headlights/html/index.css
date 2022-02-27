@@ -1,0 +1,40 @@
+body {
+    background: none !important;
+}
+
+#container {
+    font-size: 20px;
+    padding: 25px;
+    color: white;
+    position: fixed;
+    top: 68%;
+    left: 9.8%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(44, 44, 44);
+    height: 150px;
+    width: 300px;
+    border-radius: 12%;
+    border: 2px solid rgb(44, 44, 44);
+}
+
+p.sansserif {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 550;
+    font-size: 21px
+}
+
+button {
+    border-radius: 50%;
+    border: 2px solid rgb(0, 0, 255);
+    background-color: rgb(0, 0, 255);
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+}
+
+input {
+    margin-bottom: 5px;
+    width: 100%;
+    font-size: 15px;
+    padding: 12px;
+}

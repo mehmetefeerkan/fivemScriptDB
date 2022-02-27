@@ -1,0 +1,146 @@
+body {
+    margin-top: 100px;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: Rockwell Extra Bold,Rockwell Bold,monospace; 
+    overflow: hidden;
+}
+
+.toast {
+    width: 100px;
+    float: right;
+}
+
+.wrapper {
+    width: 100px;
+    height: auto;
+    background-color: #1e1e1e;
+    float: right;
+}
+
+.main {
+    margin: 12px 16px 12px 56px;
+    position: relative;
+}
+
+.main::before {
+    font-size: 24px;
+    top: calc(50% - 12px);
+    left: -40px;
+    line-height: 24px;
+    position: absolute;
+}
+
+/* Success Notification*/
+
+.success-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f058";
+    color: #47cf73;
+}
+
+.success {
+    background-color: rgba(70, 40, 99, 0.75);
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(1,1,1,1);
+    padding: 2px 2px 2px 2px;
+}
+
+.success-border {
+    border-left: 4px solid #47cf7200;
+}
+
+/* Info Notification*/
+
+.info-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f05a";
+    color: #2f83ff;
+}
+
+.info {
+    background-color: rgba(70, 40, 99, 0.75);
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(1,1,1,1);
+    padding: 2px 2px 2px 2px;
+}
+
+.info-border {
+    border-left: 4px solid #2f82ff00;
+}
+
+/* Warning Notification */
+
+.warning-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f071";
+    color: #ffc107;
+}
+
+.warning {
+    background-color: rgba(70, 40, 99, 0.75);
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(1,1,1,1);
+    padding: 2px 2px 2px 2px;
+}
+
+.warning-border {
+    border-left: 4px solid #ffc10700;
+}
+
+/* Error Notification */
+
+
+.error-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f06a";
+    color: #dc3545;
+}
+
+.error {
+    background-color: rgba(70, 40, 99, 0.75);
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(1,1,1,1);
+    padding: 2px 2px 2px 2px;
+}
+
+.error-border {
+    border-left: 4px solid #dc354600;
+}
+
+/* SMS Notification */
+
+.phonemessage-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f7cd";
+    color: #f38847;
+}
+
+.phonemessage {
+    background-color: rgba(70, 40, 99, 0.75);
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(1,1,1,1);
+    padding: 2px 2px 2px 2px;
+}
+
+.phonemessage-border {
+    border-left: 4px solid #f3894700;
+}
+
+/* Long Text Notification */
+
+.neutral-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f11c";
+    color: #6c757d;
+}
+
+.neutral {
+    background-color: rgba(70, 40, 99, 0.75);
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(1,1,1,1);
+    padding: 2px 2px 2px 2px;
+}
+
+.neutral-border {
+    border-left: 4px solid #6c757d00;
+}

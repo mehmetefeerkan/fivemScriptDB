@@ -1,0 +1,362 @@
+<script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous">
+</script>
+
+<html>
+    <head>
+        <title>Esx police-cad</title>
+        <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet"> 
+    </head>
+
+    <body>
+        <div class="police-cad-main-wrapper" id="police-cad">
+           
+
+                <div class="police-cad-inner-main">
+                    <div class="police-cad-left-sidebar" id="mySidebar">
+                        <ul class="police-cad-menu">
+                            <button class="sol-menu-ac-kapa" onclick="closeNav()" >&#9776;</button>
+                            <li data-id="plate-checker" class="active"><span class="material-icons">keyboard_arrow_right</span>Araç Sorgula</li>
+                            <li data-id="search-civilian"><span class="material-icons">keyboard_arrow_right</span>Vatandaş Sorgula</li>
+                            <li data-id="bolos"><span class="material-icons">keyboard_arrow_right</span>Arananlar</li>
+                            <li data-id="ceza"><span class="material-icons">keyboard_arrow_right</span>Ceza Listesi</li>
+                        </ul>
+                    </div>
+
+                    <div class="page-wrapper">
+                        <button class="sol-menu-ac-kapa sol-menu-ac-kapa_kapa" id="openbtn" onclick="openNav()">&#9776;</button>
+                        <div id="plate-checker" class="page">
+                            <div class="igrenc-yontem"></div>
+                            <div class="top-bar">
+                                <table class="police-cad-listings">
+                                    <thead>
+                                        <tr>
+                                            <td>Plaka</td>
+                                            <td>Ad</td>
+                                            <td>Soyad</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td id="plate"></td>
+                                            <td id="firstname"></td>
+                                            <td id="lastname"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="ic">
+                                <div class="plate-input-box">
+                                    <input type="text" id="input-plate" class="input plate-input" name="plate-input" placeholder="Araç Plakası">
+                                    <button type="submit" id="search-for-plate" class="search-button">Plaka Sorgula</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="search-civilian" class="page" style="overflow-y: auto">
+                            <div class="resultinner">
+                            
+                                <div class="igrenc-yontem"></div>
+                                <div class="top-bar">
+                                    <table class="all-found-users">
+                                        <thead>
+                                            <tr>
+                                                <td>İsim</td>
+                                                <td>Soyisim</td>
+                                                <td>Cinsiyet</td>
+                                                <td>Doğum Tarihi</td>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+
+                                <div class="ic">
+                                    <div class="plate-input-box">
+                                        <input type="text" id="search" class="input plate-input" name="plate-input" placeholder="Ad Soyad">
+                                        <button type="submit" id="search-for-civilian" class="search-button">Vatandaş Ara</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="civilian-details">
+                                <button type="submit" class="karakter-geri-git">Geri</button>
+                                <div class="karakter-ilk-bilgi"> 
+                                    <div class="resim"><img src="assets/images/male.png"/></div>
+                                    <div class="karakter-isim-cinsiyet">
+                                        <div class="isimsoyisim"></div>
+                                        <div class="vatandasno"></div>
+                                    </div>   
+                                    <i class="material-icons karakter-ilk-bilgi-icon">supervisor_account</i>
+                                </div>
+
+                                <div class="karakter-ikinci-bilgi">
+                                    <div class="bilgi">
+                                        <div class="bilgi-baslik">DOĞUM TARİHİ</div>
+                                        <div class="bilgi-icerik dob"></div>
+                                    </div>
+
+                                    <div class="bilgi">
+                                        <div class="bilgi-baslik">BOY</div>
+                                        <div class="bilgi-icerik height">içerik</div>
+                                    </div>
+
+                                    <div class="bilgi">
+                                        <div class="bilgi-baslik">BANKA BAKİYESİ</div>
+                                        <div class="bilgi-icerik banka">ERISILEMIYOR</div>
+                                    </div>
+
+                                    <div class="bilgi">
+                                        <div class="bilgi-baslik">VATANDAŞ NUMARASI</div>
+                                        <div class="bilgi-icerik vatandasno"></div>
+                                    </div>
+
+                                    <div class="bilgi">
+                                        <div class="bilgi-baslik">CİNSİYET</div>
+                                        <div class="bilgi-icerik cinsiyet"></div>
+                                    </div>
+
+                                    <div class="bilgi">
+                                        <div class="bilgi-baslik">TELEFON NUMARASI</div>
+                                        <div class="bilgi-icerik numara"></div>
+                                    </div>
+                                </div>
+
+                                <div class="not-sabika-kaydi">
+                                    <div class="sabika">
+                                        <div class="sabika-baslik">SABIKA KAYDI</div>
+                                        <div class="sabika-icerik">
+                                            <span class="sabika-icerik-kutu">işlediği Suçlar</span>   
+                                            <span class="sabika-icerik-kutuceza">Ceza</span>   
+                                            <span class="sabika-icerik-kutux"></span> 
+                                        </div>
+                                        <div class="sabika-icerik-cezalar">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="not">
+                                        <div class="not-baslik">NOTLAR</div>
+                                        <div class="not-icerik">
+                                            <span class="not-icerik-kutu">Açıklama</span>   
+                                            <span class="not-icerik-kutux"></span> 
+                                        </div>
+                                        <div class="not-icerik-cezalar">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sabikaekle-notekle-lisanslar">
+                                    <div class="sabika-kaydi-ekle">
+                                        <div class="sabika-ekle-baslik">Sabıka Kaydı Ekle</div>
+                                        <div class="sabika-ekle-icerik">
+                                            <input type="hidden" id="cr-playerid" name="playerid" value="">
+                                            <input type="text" placeholder="İşlediği Suçlar" id="cr-reason" name="reason" class="sabika-ekle-kutu">
+                                            <input type="text" placeholder="Toplam Cezası" id="cr-fine" name="fine" class="sabika-ekle-kutu">
+                                            <input type="text" placeholder="Suçlunun Resmi" id="cr-resmi" name="resmi" class="sabika-ekle-kutu">
+                                            <div class="sabika-button">
+                                                <button class="sabika-kaydet" id="save-criminal-record" style="width: 50%; float:left">Kaydet</button>
+                                                 <button class="sabika-kaydet" id="foto-cek" style="width: 50%;">Foto. Çek</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="not-kaydi-ekle">
+                                        <div class="not-ekle-baslik">Not Ekle</div>
+                                        <div class="not-ekle-icerik">
+                                            <input type="text" placeholder="Not" id="note-title" name="offence" class="not-ekle-kutu">
+                                            <button class="not-kaydet" id="save-note" style="width: 100%;">Kaydet</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="lisanslar">
+                                        <div class="lisanslar-baslik">lisanslar</div>
+                                        <div class="lisans-baslik"></div>
+                                        <div class="lisanslar-kutu"></div>
+                                    </div>
+                                </div>   
+                            </div> 
+                            
+                        </div>
+
+                        <div id="bolos" class="page">
+                            <div class="igrenc-yontem"></div>
+                            <div class="police-cad-bolos-dis">
+                                <table class="police-cad-bolos">
+                                    <span class="bolo-message"></span>
+                                    <thead>
+                                        <tr>
+                                            <td style="width: 12%;">İsim</td style="width: 20%;">
+                                            <td style="width: 12%;">Soyisim</td>
+                                            <td style="width: 10%;">Cinsiyet</td>
+                                            <td style="width: 40%;">Neden</td>
+                                            <td style="width: 16%;">Oluşturma Tarihi</td>
+                                            <td style="width: 1%;">Kaldır</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="plate-input-box">
+                                <div class="plate-input-box-ic">
+                                    <button type="submit" class="add-bolo pull-right bolos-buton">Arama Kaydı Oluştur</button>
+                                    <div class="modal-add-bolos">
+                                        <span class="error-bolo"></span>
+                                        <input type="text" id="input-bolos-gender" class="input" name="name" placeholder="İsim">
+                                        <input type="text" id="input-bolos-height" class="input" name="lastname" placeholder="Soyisim">
+                                        <input type="text" id="input-bolos-age" class="input" name="cinsiyet" placeholder="Cinsiyet">
+                                        <input type="text" id="input-bolos-type-of-crime" class="input" name="sebeb" placeholder="Arananma Nedeni">
+                                        <div class="modal-add-bolos-button"><button class="button" id="save-bolos" style="width: 28.5%;">Kaydet</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="ceza" class="page" style="overflow-y: auto">
+                            <div class="ceza-top-bar"><div class="ceza-top-bar-ic">SAN ANDREAS KOLLUK KUVVETLERİ CEZA LİSTESİ</div></div>
+                            <div class="ceza-ic">
+                                <div class="ceza-tablo"><div class="ceza-adi-baslik" style="padding-right: 0;padding-left: 5px;">Ceza</div> <div class="caza-fiyati-basli">Para Cezası</div> <div class="caza-ayi-basli">Hapis Cezası</div> <div class="caza-kamu-basli">Kamu Cezası</div><div class="cezaaciklama2">Açıklama</div></div>
+                        
+                                <div class="cezaicerik-2">
+                                    <div class="ceza-tablo"><div class="ceza-adi-2"></div> <div class="caza-fiyati-2">Min</div><div class="caza-fiyati-2">max</div> <div class="caza-ayi-2">Min</div><div class="caza-ayi-2">max</div><div class="caza-kamu-2">Min</div><div class="caza-kamu-2">max</div><div class="cezaaciklama-2"></div></div>
+                                </div>
+                                <div class="cezabaslikicerik">
+                                    Mülke Hasar İçeren Suçlar
+                                </div>
+                                <div class="cezaicerik">
+                                    <div class="ceza-tablo"><div class="ceza-adi">Taksirle İzinsiz Giriş</div> <div class="caza-fiyati">187</div><div class="caza-fiyati">375</div> <div class="caza-ayi">2</div><div class="caza-ayi">5</div><div class="caza-kamu">5</div><div class="caza-kamu">5</div><div class="cezaaciklama">Bir mülkiyete kişiye ait olduğunu bilmiyerek girmek.</div></div>
+                                    
+                                    <div class="ceza-tablo"><div class="ceza-adi">İzinsiz Giriş</div> <div class="caza-fiyati">450</div><div class="caza-fiyati">900</div> <div class="caza-ayi">6</div><div class="caza-ayi">12</div><div class="caza-kamu">12</div><div class="caza-kamu">12</div><div class="cezaaciklama">Bir kişinin mülkiyetine izinsiz girmek.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Ev Soygunu</div> <div class="caza-fiyati">450</div><div class="caza-fiyati">900</div> <div class="caza-ayi">6</div><div class="caza-ayi">12</div><div class="caza-kamu">12</div><div class="caza-kamu">12</div><div class="cezaaciklama">Bir kişinin mülkiyetine ev soygunu için tecavüz etmek.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Ev Soygununa Yardım ve Yataklık</div> <div class="caza-fiyati">450</div><div class="caza-fiyati">900</div> <div class="caza-ayi">6</div><div class="caza-ayi">12</div><div class="caza-kamu">18</div><div class="caza-kamu">18</div><div class="cezaaciklama">Bir kişinin mülkiyetine tecavüz etmeye yardım ve yataklık.</div></div>
+                                </div>
+
+                                <div class="cezabaslikicerik">
+                                    Kamu Mülkiyetine Karşı İşlenen Suçlar
+                                </div>
+                                <div class="cezaicerik">
+                                    <div class="ceza-tablo"><div class="ceza-adi">Komplo Kurmak</div> <div class="caza-fiyati">262</div><div class="caza-fiyati">525</div> <div class="caza-ayi">3</div><div class="caza-ayi">7</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Bir kişinin itibarı veya kendisini zedelemek amacıyla sahte kanıt sunmak yada şahitlikte bulunmak.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">İhbar Sistemini Gereksiz Kullanma</div> <div class="caza-fiyati">262</div><div class="caza-fiyati">525</div> <div class="caza-ayi">3</div><div class="caza-ayi">7</div><div class="caza-kamu">7</div><div class="caza-kamu">7</div><div class="cezaaciklama">Devletin ihbar sistemini gereksiz kullanmak.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Rüşvet Verme</div> <div class="caza-fiyati">450</div><div class="caza-fiyati">900</div> <div class="caza-ayi">6</div><div class="caza-ayi">12</div><div class="caza-kamu">12</div><div class="caza-kamu">12</div><div class="cezaaciklama">Bir devlet çalışanını maddi kazanç kullanarak görevinden alıkoymaya çalışmak.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Yolsuzluk</div> <div class="caza-fiyati">262</div><div class="caza-fiyati">525</div> <div class="caza-ayi">10</div><div class="caza-ayi">20</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Bir devlet çalışanının kamu görevini maddi kazanç sağlayarak eksik veya hatalı yerine getirmesi.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Gözaltından Kaçma</div> <div class="caza-fiyati">750</div><div class="caza-fiyati">1050</div> <div class="caza-ayi">7</div><div class="caza-ayi">14</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Polis gözetimi altından kaçış.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Yalancı Şahitlik</div> <div class="caza-fiyati">787</div><div class="caza-fiyati">1575</div> <div class="caza-ayi">10</div><div class="caza-ayi">20</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Resmi bir işlem için önemli konulara ilişkin hatalı veya eksik bilgi vermek.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Gözaltından Kaçmaya Yardım</div> <div class="caza-fiyati">525</div><div class="caza-fiyati">1050</div> <div class="caza-ayi">7</div><div class="caza-ayi">14</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Polis gözetimi altından kaçınmaya yardım ve yataklık.</div></div>
+                                </div>       
+                                  
+                                <div class="cezabaslikicerik">
+                                    Halk Sağlığı ve Ahlakına İşlenen Suçlar
+                                </div>
+                                <div class="cezaicerik">
+                                    <div class="ceza-tablo"><div class="ceza-adi">Yasadışı Sebze Bulundurma</div> <div class="caza-fiyati">262</div><div class="caza-fiyati">525</div> <div class="caza-ayi">2</div><div class="caza-ayi">5</div><div class="caza-kamu">5</div><div class="caza-kamu">5</div><div class="cezaaciklama">Yasadışı sebzeyi kişisel kullanım amacıyla satın alan herhangi bir surette uyuşturucu maddeyi kabul eden ve kullanma amacıyla bulunduran kişi uyuşturucu madde bulundurma ve kullanma suçunu işlemiş olur.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Toplum İçinde Sarhoş Olma</div> <div class="caza-fiyati">75</div><div class="caza-fiyati">100</div> <div class="caza-ayi"></div><div class="caza-ayi"></div><div class="caza-kamu">4</div><div class="caza-kamu">4</div><div class="cezaaciklama">Toplum içinde sarhoş olarak toplum huzurunu bozmak.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Yasadışı Sebze Satışı</div> <div class="caza-fiyati">937</div><div class="caza-fiyati">1870</div> <div class="caza-ayi">12</div><div class="caza-ayi">25</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Yasadışı sebzeyi bir bedel karşılığında başkasına teslim etmek.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Yasadışı Sebze İşlemek / Yetiştirmek</div> <div class="caza-fiyati">937</div><div class="caza-fiyati">1870</div> <div class="caza-ayi">12</div><div class="caza-ayi">25</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Yasadışı sebzeyi üretmek yetiştirmek.</div></div>
+                                </div>
+
+                                <div class="cezabaslikicerik">
+                                    Kamu Düzenine Karşı İşlenen Suçlar
+                                </div>
+                                <div class="cezaicerik">
+                                    <div class="ceza-tablo"><div class="ceza-adi">Polis Memurunun Emrine Uymama</div> <div class="caza-fiyati">262</div><div class="caza-fiyati">525</div> <div class="caza-ayi">4</div><div class="caza-ayi">7</div><div class="caza-kamu">7</div><div class="caza-kamu">7</div><div class="cezaaciklama">Polis memurnun verdiği yönergelere uymamak.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Kamu Düzenini Bozmak</div> <div class="caza-fiyati">187</div><div class="caza-fiyati">375</div> <div class="caza-ayi">3</div><div class="caza-ayi">5</div><div class="caza-kamu">5</div><div class="caza-kamu">5</div><div class="cezaaciklama">Kamuya ait alanlarda huzuru bozmaya yönelik davranışlarda bulunmak</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Huzuru Bozmak</div> <div class="caza-fiyati">187</div><div class="caza-fiyati">375</div> <div class="caza-ayi">3</div><div class="caza-ayi">5</div><div class="caza-kamu">5</div><div class="caza-kamu">5</div><div class="cezaaciklama">Israrla gürültü yapmak, ısrarla hukuka aykırı başka bir davranışta bulunulması, ısrarla telefon edilmesi.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Taciz</div> <div class="caza-fiyati">262</div><div class="caza-fiyati">525</div> <div class="caza-ayi">4</div><div class="caza-ayi">7</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Fail ile mağdur arasında bedensel temas olmadan cinsel davranışlarla işlenen fiillerde bulunmak.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Israrlı Takip</div> <div class="caza-fiyati">125</div><div class="caza-fiyati">250</div> <div class="caza-ayi"></div><div class="caza-ayi"></div><div class="caza-kamu">4</div><div class="caza-kamu">4</div><div class="cezaaciklama">Mağdurun rızası olmadan fark ettirerek ya da ettirmeden elektronik veya fiziksel olarak takipte bulunmak.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Vandalizm</div> <div class="caza-fiyati">125</div><div class="caza-fiyati">250</div> <div class="caza-ayi"></div><div class="caza-ayi"></div><div class="caza-kamu">4</div><div class="caza-kamu">4</div><div class="cezaaciklama">Bilerek ve isteyerek, kişiye ait bir mala, aradca ya da ürüne zarar vermek.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Devlet Malına Zarar Vermek</div> <div class="caza-fiyati">197</div><div class="caza-fiyati">375</div> <div class="caza-ayi">3</div><div class="caza-ayi">5</div><div class="caza-kamu">5</div><div class="caza-kamu">5</div><div class="cezaaciklama">Bilerek ve isteyerek, kamuya ait bir mala, araca ya da ürüne zarar vermek.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Adaleti Önlemek</div> <div class="caza-fiyati">450</div><div class="caza-fiyati">900</div> <div class="caza-ayi">6</div><div class="caza-ayi">12</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Görülmekte olan bir davada veya yapılmakta olan bir soruşturmada, hukuka aykın bir karar vermesi veya bir işlem tesis etmesi ya da gerçeğe aykırı beyanda bulunması için, yargı görevi yapanı, bilirkişiyi veya tanığı hukuka aykırı olarak etkilemek amacıyla alenen sözlü veya yazılı beyanda bulunmak.</div></div>
+                                </div>
+
+                                <div class="cezabaslikicerik">
+                                   Halk Güvenliğine Karşı İşlenen Suçlar
+                                </div>
+                                <div class="cezaicerik">
+                                    <div class="ceza-tablo"><div class="ceza-adi">1.Sınıf Ateşli Silah Bulundurma</div> <div class="caza-fiyati">262</div><div class="caza-fiyati">525</div> <div class="caza-ayi">3</div><div class="caza-ayi">7</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Tabanca sınıfındaki silahları kanunlarla belirlenmiş ruhsatlara sahip olmadan bulundurmak</div></div> <div class="ceza-tablo"><div class="ceza-adi">Devlet Çalışanına Zorluk Çıkartmak</div> <div class="caza-fiyati">167</div><div class="caza-fiyati">370</div> <div class="caza-ayi">2</div><div class="caza-ayi">5</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Kamu görevlisine karşı görevini yapmasını engellemek amacıyla tehtid kullanması ile meydana gelir</div></div>  
+                                    <div class="ceza-tablo"><div class="ceza-adi">2.Sınıf Ateşli Silah Bulundurma</div> <div class="caza-fiyati">1050</div><div class="caza-fiyati">2100</div> <div class="caza-ayi">14</div><div class="caza-ayi">20</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Hafif makinalı silah sınıfındaki kanunlarla belirlenmiş ruhsatlara sahip olmadan bulundurmak</div></div>  
+                                    <div class="ceza-tablo"><div class="ceza-adi">Devlete Ait Taser Bulundurma</div> <div class="caza-fiyati">787</div><div class="caza-fiyati">1575</div> <div class="caza-ayi">10</div><div class="caza-ayi">21</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Kamu görevlilerinin kamu görevlerini yerine getirirken kullanmaları için devlet tarafından tahsil edilmiş  elektirikli şok silahını sivil bir vatandaşın üzerinde bulundurmasıdır</div></div>       
+                                    <div class="ceza-tablo"><div class="ceza-adi">Devlete Ait Jop Bulundurma</div> <div class="caza-fiyati">262</div><div class="caza-fiyati">525</div> <div class="caza-ayi">3</div><div class="caza-ayi">7</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Kamu görevlilerinin kamu görevlerini yerine getirirken kullanmaları için devlet tarafından tahsil edilmiş  jobun sivil bir vatandaşın üzerinde bulundurmasıdır</div></div>                            
+                                    <div class="ceza-tablo"><div class="ceza-adi">Patlayıcı Madde Bulundurma</div> <div class="caza-fiyati">1312</div><div class="caza-fiyati">2625</div> <div class="caza-ayi">17</div><div class="caza-ayi">35</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Patlayarak etrafa şaraplen yayan kuvvetli patlayıcı bulundurma.</div></div>                            
+                                    <div class="ceza-tablo"><div class="ceza-adi">3.Sınıf Ateşli Silah Bulundurma</div> <div class="caza-fiyati">1312</div><div class="caza-fiyati">2625</div> <div class="caza-ayi">17</div><div class="caza-ayi">35</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Makinalı silah sınıfındaki kanunlarla belirlenmiş ruhsatlara sahip olmadan bulundurmak</div></div>                            
+                                    <div class="ceza-tablo"><div class="ceza-adi">Devlete Ait Silah Bulundurma</div> <div class="caza-fiyati">11250</div><div class="caza-fiyati">22500</div> <div class="caza-ayi">105</div><div class="caza-ayi">210</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Kamu görevlilerinin kamu görevlerini yerine getirirken kullanmaları için devlet tarafından tahsil edilmiş ateşli silahların sivil bir vatandaşın üzerinde bulundurmasıdır</div></div> 
+                                    <div class="ceza-tablo"><div class="ceza-adi">Kontrolsüz Silah Ateşleme</div> <div class="caza-fiyati">262</div><div class="caza-fiyati">525</div> <div class="caza-ayi">3</div><div class="caza-ayi">7</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Kamuya açık alanda kontrolsüz silah ateşlemek</div></div>            
+                                    <div class="ceza-tablo"><div class="ceza-adi">Yaralama</div> <div class="caza-fiyati">400</div><div class="caza-fiyati">750</div> <div class="caza-ayi">7</div><div class="caza-ayi">15</div><div class="caza-kamu">15</div><div class="caza-kamu">15</div><div class="cezaaciklama">Delici ,Kesici Alet ile Kişi yada Kişilere zarar vermek</div></div>
+                                </div>
+
+                                <div class="cezabaslikicerik">
+                                    Kişiye Karşı İşlenen Suçlar
+                                </div>
+                                <div class="cezaicerik">
+                                    <div class="ceza-tablo"><div class="ceza-adi">Cinayet Girişimi</div> <div class="caza-fiyati">1312</div><div class="caza-fiyati">2625</div> <div class="caza-ayi">17</div><div class="caza-ayi">35</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Adam öldürmeye teşbbüs/ağır yaralamak</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Cinayete Girişimine Yardım ve Yataklık</div> <div class="caza-fiyati">1312</div><div class="caza-fiyati">2625</div> <div class="caza-ayi">17</div><div class="caza-ayi">35</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Cinayet girişiminde bulunan kişiye yardım ve yataklık</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Devlet Çalışanına Cinayet Girişimi</div> <div class="caza-fiyati">1687</div><div class="caza-fiyati">3375</div> <div class="caza-ayi">22</div><div class="caza-ayi">45</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Bir devlet çalışanına kamu görevini yerine getirirken cinayet girişiminde bulunmak</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Adam Kaçırmak</div> <div class="caza-fiyati">525</div><div class="caza-fiyati">1050</div> <div class="caza-ayi">7</div><div class="caza-ayi">14</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Bir kişiyi özgür iradesi olmadan cebir ve hile yoluyla kaçırmak</div></div>      
+                                    <div class="ceza-tablo"><div class="ceza-adi">Ölümcül Bir Silah ile Saldırı</div> <div class="caza-fiyati">787</div><div class="caza-fiyati">1575</div> <div class="caza-ayi">10</div><div class="caza-ayi">21</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Bir kişiye ölümcül bir silah ile saldırmak</div></div>        
+                                    <div class="ceza-tablo"><div class="ceza-adi">Darp</div> <div class="caza-fiyati">412</div><div class="caza-fiyati">825</div> <div class="caza-ayi">5</div><div class="caza-ayi">11</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Bir kişiyi darp etmek</div></div>  
+                                    <div class="ceza-tablo"><div class="ceza-adi">Tehtid</div> <div class="caza-fiyati">525</div><div class="caza-fiyati">1050</div> <div class="caza-ayi">7</div><div class="caza-ayi">14</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Bir kişiyi tehtid etmek</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Yalan Haber</div> <div class="caza-fiyati">525</div><div class="caza-fiyati">1050</div> <div class="caza-ayi">7</div><div class="caza-ayi">14</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Bir kişinin hakkında gerçeklik payı olmayan haberi yayınlamak</div></div>                                                                                                                       
+                                </div>
+
+                                <div class="cezabaslikicerik">
+                                   Dolandırıcılık İçeren Suçlar
+                                </div>
+                                <div class="cezaicerik">
+                                    <div class="ceza-tablo"><div class="ceza-adi">Nitelikli Dolandırıcılık</div> <div class="caza-fiyati">500</div><div class="caza-fiyati">1050</div> <div class="caza-ayi">7</div><div class="caza-ayi">14</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Sosyal, mesleki, teknolojik araçların veya kamu kurumlarını araç olarak kullanılarak işlenen dolandırıcılık suçu</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Devlet çalışanını taklit etme</div> <div class="caza-fiyati">975</div><div class="caza-fiyati">1575</div> <div class="caza-ayi">11</div><div class="caza-ayi">21</div><div class="caza-kamu">24</div><div class="caza-kamu">24</div><div class="cezaaciklama">Kamu görevini yerine getiren devlet çalışanını taklit etmek.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Gasp</div> <div class="caza-fiyati">750</div><div class="caza-fiyati">1050</div> <div class="caza-ayi">7	</div><div class="caza-ayi">14</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Bir malı sahibinden zor kullanarak almak.</div></div>
+                                </div>
+
+                                <div class="cezabaslikicerik">
+                                   Trafik Suçları
+                                </div>
+                                <div class="cezaicerik">
+                                    <div class="ceza-tablo"><div class="ceza-adi">Ters Şeritten Gitme</div> <div class="caza-fiyati">100</div><div class="caza-fiyati">250</div> <div class="caza-ayi"></div><div class="caza-ayi"></div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Kanunlarla belirlenmiş şeridi takip etmemek.Ters yönden aracı ilerletmek. 20 puan</div></div>                                              
+                                    <div class="ceza-tablo"><div class="ceza-adi">Hatalı Dönüş</div> <div class="caza-fiyati">100</div><div class="caza-fiyati">250</div> <div class="caza-ayi"></div><div class="caza-ayi"></div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Sağa-sola dönüş kurallarına uymamak: 20 puan</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Yasadışı Cam Filmi</div> <div class="caza-fiyati">100</div><div class="caza-fiyati">250</div> <div class="caza-ayi"></div><div class="caza-ayi"></div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Kanunlarla belirlenmiş cam filmden daha koyu cam filmi kullanmak</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">1. Derece Hız İhlali</div> <div class="caza-fiyati">500</div><div class="caza-fiyati">750</div> <div class="caza-ayi"></div><div class="caza-ayi"></div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Hız sınırını %30 dan fazla açmak.(10 Puan)</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">2. Derece Hız İhlali</div> <div class="caza-fiyati">250</div><div class="caza-fiyati">500</div> <div class="caza-ayi"></div><div class="caza-ayi"></div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Hız sınırını %20 den fazla açmak.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">3. Derece Hız İhlali</div> <div class="caza-fiyati">100</div><div class="caza-fiyati">250</div> <div class="caza-ayi"></div><div class="caza-ayi"></div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Hız sınırını %10 dan fazla açmak.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Hatalı Park</div> <div class="caza-fiyati">100</div><div class="caza-fiyati">250</div> <div class="caza-ayi"></div><div class="caza-ayi"></div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Kanunlarla belirlenmiş alanın dışında trafiği tıkayacak/tehlikeye sokacak şekilde park etmek.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Ehliyetsiz Araç Kullanımı</div> <div class="caza-fiyati">100</div><div class="caza-fiyati">250</div> <div class="caza-ayi"></div><div class="caza-ayi"></div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Kanunlarla belirlenmiş belgeye sahip olmadan motorlu taşıt kullanmak</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Ehliyetine El Konulduğu Halde Araç Kullanımı</div> <div class="caza-fiyati">750</div><div class="caza-fiyati">1050</div> <div class="caza-ayi">7</div><div class="caza-ayi">14</div><div class="caza-kamu">24</div><div class="caza-kamu">24</div><div class="cezaaciklama">Ehliyetine el konulduğu halde kurallara uymayıp ehliyetsiz araç kullanmak</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Etki Altında Sürüş</div> <div class="caza-fiyati">100</div><div class="caza-fiyati">250</div> <div class="caza-ayi">3</div><div class="caza-ayi">5</div><div class="caza-kamu">10</div><div class="caza-kamu">10</div><div class="cezaaciklama">Belirtilen limitin üzerinde alkollü araç kullanmak (20 puan)</div></div>	
+                                    <div class="ceza-tablo"><div class="ceza-adi">Dur İhtarına Uymamak</div> <div class="caza-fiyati">250</div><div class="caza-fiyati">500</div> <div class="caza-ayi">4</div><div class="caza-ayi">7</div><div class="caza-kamu">14</div><div class="caza-kamu">14</div><div class="cezaaciklama">Polisin ihtarlarına uymamak.(Tek suçu trafik cezası ise yazılacak)</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Vur-Kaç</div> <div class="caza-fiyati">100</div><div class="caza-fiyati">250</div> <div class="caza-ayi">3</div><div class="caza-ayi">5</div><div class="caza-kamu">10</div><div class="caza-kamu">10</div><div class="cezaaciklama">Maddi hasar verip kaçmak</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Kontrolsüz Araç Sürüşü</div> <div class="caza-fiyati">400</div><div class="caza-fiyati">900</div> <div class="caza-ayi">5</div><div class="caza-ayi">12</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Kontrolsüz biçimde araç sürmek, sürekli şerit değiştirmek, çevreye zarar vermek vb.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Işık İhlali</div> <div class="caza-fiyati">40</div><div class="caza-fiyati">100</div> <div class="caza-ayi"></div><div class="caza-ayi"></div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Trafik ışıklarına uymamak. 20 puan</div></div>	
+                                    <div class="ceza-tablo"><div class="ceza-adi">Polis Aracına Çarpmak</div> <div class="caza-fiyati">250</div><div class="caza-fiyati">500</div> <div class="caza-ayi"></div><div class="caza-ayi"></div><div class="caza-kamu">14</div><div class="caza-kamu">14</div><div class="cezaaciklama">Polis aracına kasten bilerek görevini engellemesi amacı ile çarpmak.</div></div>
+                                </div>
+
+                                <div class="cezabaslikicerik">
+                                   Hırsızlık İçeren Suçlar
+                                </div>
+                                <div class="cezaicerik">
+                                    <div class="ceza-tablo"><div class="ceza-adi">Nitelikli Hırsızlık</div> <div class="caza-fiyati">100</div><div class="caza-fiyati">375</div> <div class="caza-ayi">3</div><div class="caza-ayi">5</div><div class="caza-kamu">10</div><div class="caza-kamu">10</div><div class="cezaaciklama">Birşey çalmak</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Basit Hırsızlık</div> <div class="caza-fiyati">100</div><div class="caza-fiyati">250</div> <div class="caza-ayi"></div><div class="caza-ayi"></div><div class="caza-kamu">8</div><div class="caza-kamu">8</div><div class="cezaaciklama">Açıkta bırakılmış veya özel alandışındaki eşyaları çalmak</div></div>	
+                                    <div class="ceza-tablo"><div class="ceza-adi">Araç Hırsızlığı Girişimi</div> <div class="caza-fiyati">250</div><div class="caza-fiyati">525</div> <div class="caza-ayi">4</div><div class="caza-ayi">7</div><div class="caza-kamu">14</div><div class="caza-kamu">14</div><div class="cezaaciklama">Araç içinden birşey çalmak</div></div>	
+                                    <div class="ceza-tablo"><div class="ceza-adi">Soygun</div> <div class="caza-fiyati">750</div><div class="caza-fiyati">1050</div> <div class="caza-ayi">12</div><div class="caza-ayi">28</div><div class="caza-kamu">14</div><div class="caza-kamu">14</div><div class="cezaaciklama">Cebir veya tehtid yoluyla birşey çalmak</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Ödeme Yapmadan Uzaklaşma</div> <div class="caza-fiyati">400</div><div class="caza-fiyati">900</div> <div class="caza-ayi">14</div><div class="caza-ayi">24</div><div class="caza-kamu">14</div><div class="caza-kamu">14</div><div class="cezaaciklama">Ödenmesi zorunlu olan faturaları ödemeye direnerek ortamdan uzaklaşmak.</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Büyük Soygun</div> <div class="caza-fiyati">1000</div><div class="caza-fiyati">1800</div> <div class="caza-ayi">14</div><div class="caza-ayi">24</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Ateşli silah ile cebir veya tehtid yoluyla 4000$ değerinin üzerinde bir şey çalmak</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Araç Parçalama</div> <div class="caza-fiyati">300</div><div class="caza-fiyati">600</div> <div class="caza-ayi">7</div><div class="caza-ayi">14</div><div class="caza-kamu"></div><div class="caza-kamu"></div><div class="cezaaciklama">Motorlu taşıtı maddi kazanç sağlamak amacıyla parçalamak</div></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            
+        </div>
+        <script src="js/app.js"></script>
+        <script src="js/notify.js"></script>
+    </body>
+</html>

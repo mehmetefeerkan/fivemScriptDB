@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Termite</title>
+    <meta charset="utf-8">
+    <style>
+      body {
+        background-color: transparent;
+        margin:0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .info {
+        position: absolute;
+        left: 50%;
+        top: 30px;
+        text-align: center;
+        transform: translateX(-50%);
+        font-size: 20pt;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0px 0px 2px black;
+      }
+
+
+      .background {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(36, 36, 36);
+        background-image: url("https://www.elsetge.cat/myimg/f/29-298953_gta-san-andreas-iphone-5-wallpaper-grand-theft.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      
+      .off {
+        visibility: hidden !important;
+        opacity: 0 !important;
+        position: absolute !important;
+      }
+
+      .container {
+        position: absolute;
+        perspective: 500px;
+        right: 70px;
+        bottom: 70px;
+        width: 200px;
+        height: 500px;
+      }
+
+      .content {
+        transform-style: preserve-3d;
+        transform: rotateX(0deg);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.5s;
+      }
+
+      
+      .laydown {
+        transform: rotateX(45deg);
+        transition: transform 0.5s;
+      }
+
+      .countdowncontainer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: left top;
+        transform: translateX(-50%) translateY(-50%);
+        width: 60%;
+        padding-bottom: 60%;
+        height: 0;
+        background-color: white;
+        border-radius: 50%;        
+        z-index: 30;
+      }
+
+      .countdown {
+        z-index: 35;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        font-size: 30pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+      }
+
+      .countdowncontainer {
+        top: 45%;
+      }
+
+      .headertext {
+        text-align: center;
+        color:white;
+        font-weight: bold;
+        font-size: 16pt;
+        text-transform: uppercase;
+        position: absolute;
+        width: 100%;
+        height: 32px;
+        text-shadow: 0px 0px 2px #000,0px 0px 2px #000,0px 0px 2px #000,0px 0px 2px #000;
+      }
+
+      .lanescontainer {
+        border-radius: 10px;
+        border-top: 10px solid #d0d0d0;
+        border-bottom: 10px solid #d0d0d0;
+        position: absolute;
+        top: 32px;
+        width: 100%;
+        height: calc( 100% - 32px );
+        display: flex;
+        flex-direction: row;
+      }
+
+      .lanecontainer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient( to right,#919191,#0b0b0bbd 5%,#242424c4 95%,black);
+        /*background: linear-gradient( to right,#575757,#2b2b2b 5%,#373737 95%,black);*/
+      }
+
+      .lanetrim {
+        padding-top: 50%;
+        padding-bottom: 50%;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      .lane {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      .item {
+        width: 80%;        
+        padding-bottom: 80%;
+        height: 0;
+        margin: 0;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: 15;
+        border-radius: 50%;
+        background-color: rgba(0,0,0,0)
+      }
+
+      .icon {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+
+      .open {        
+        background-color: gray;
+        transition: background-color 0.2s;
+      }
+
+      .miss {
+        opacity: 0.2;
+      }
+
+      .hit {
+
+      }
+
+      .kA {
+        background-image: url("kA2.png");
+      }
+      .kD {
+        background-image: url("kD2.png");
+      }
+      .kE {
+        background-image: url("kE2.png");
+      }
+      .kQ {
+        background-image: url("kQ2.png");
+      }
+      .kS {
+        background-image: url("kS2.png");
+      }
+      .kW {
+        background-image: url("kW2.png");
+      }
+
+      .goal {
+        width: 80%;
+        padding-bottom: 80%;
+        height: 0;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: 10;
+        background-image: url("goal.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        opacity: 1;
+        transition: opacity 0.5s ease-in;
+      }
+
+      .progress {
+        position: absolute;
+        left: -36px;
+        top: 32px;
+        width: 32px;
+        height: calc( 100% - 8px);
+      }
+
+      .progressbarcontainer {
+        position: absolute;
+        height: calc( 100% - 32px);
+        bottom:16px;
+        width: 48%;
+        background-color: black;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .progressbarsucces {
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        bottom: 50%;
+        left:50%;
+        transform: translateX(-50%);
+        background-color:black;
+        background-image:url("bar2.png");
+        background-position: center bottom;
+        background-size: 46px;
+        background-repeat: repeat-y;
+      }
+
+      .progressbarfail {
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        top: 50%;
+        left:50%;
+        transform: translateX(-50%);
+        background-color:black;
+        background-image:url("bar.png");
+        background-position: center top;
+        background-size: 46px;
+        background-repeat: repeat-y;
+      }
+
+      .progresstop {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+        background-image:url("succes.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80%;
+        z-index: 10;
+        background-color:black;
+        border-radius: 50%;
+      }
+
+      .progressbottom {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;     
+        background-image:url("fail.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80%;
+        z-index: 10;
+        background-color:black;
+        border-radius: 50%;
+      }
+
+      @keyframes shake {
+        10%, 90% {
+          transform: translate3d(-1px, 0, 0);
+        }
+        
+        20%, 80% {
+          transform: translate3d(2px, 0, 0);
+        }
+
+        30%, 50%, 70% {
+          transform: translate3d(-4px, 0, 0);
+        }
+
+        40%, 60% {
+          transform: translate3d(4px, 0, 0);
+        }
+      }
+
+      .shake {
+        animation: shake 0.25s cubic-bezier(.36,.07,.19,.97) both;
+      }
+
+      @keyframes ping {
+        0% {
+          box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+          transform: scale(1) translateX(-50%) translateY(-50%);
+        }
+        50% {
+          box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+          transform: scale(1.2) translateX(-50%) translateY(-50%);
+        }
+        100% {
+          box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+          transform: scale(1) translateX(-50%) translateY(-50%);
+        }
+      }
+
+      .ping {
+        animation: ping 0.25s both;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background off"></div>
+    <div class="info off">Refresh for random difficulty<br>[Enter] to try again</div>
+    <div class="container off">
+      <div class="content">
+        <div class="headertext">set difficulty</div>
+        <div class="countdowncontainer off">
+          <div class="countdown">3</div>
+        </div>
+        <div class="lanescontainer">
+          <div class="lanecontainer">
+            <div class="lanetrim">
+              <div class="lane">
+                <div class="goal"></div>
+              </div>
+            </div>
+          </div>
+          <div class="lanecontainer">
+            <div class="lanetrim">
+              <div class="lane">
+                <div class="goal"></div>
+              </div>
+            </div>
+          </div>
+          <div class="lanecontainer">
+            <div class="lanetrim">
+              <div class="lane">
+                <div class="goal"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="progress">
+          <div class="progressbarcontainer">
+            <div class="progressbarsucces"></div>
+            <div class="progressbarfail"></div>
+          </div>
+          <div class="progresstop"></div>
+          <div class="progressbottom"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      //////////////////////////////////////////////////////
+      /* installation */
+      //////////////////////////////////////////////////////
+      /*
+
+        first set "var debug = true" to false
+
+        properties you can change ( set them trough the Init func  ) 
+        difficulty  = 0 - 1  
+        keepgoing = false   
+        speedScale = 1
+
+        //callbacks u may hookup ( set them trough the Init func  ) 
+        onStart         
+        onStop          
+        onStartCountdown
+        onCount         
+        onHit           
+        onMiss          
+        onFail          
+        onSucces        
+        
+        //functions u can call
+        Init(config)
+        Start()
+        Stop()
+        <technically u can call any func below but ^these are the ones expected to be called>
+
+      */
+      //////////////////////////////////////////////////////
+      //////////////////////////////////////////////////////
+      /*logic*/
+      //////////////////////////////////////////////////////
+      var items = []
+      var indexToKey = {
+        0:"a",
+        1:"s",
+        2:"d",
+        3:"q",
+        4:"w",
+        5:"e",
+      }
+      var keyToClassName = {
+        "a":"kA",
+        "d":"kD",
+        "e":"kE",
+        "q":"kQ",
+        "s":"kS",
+        "w":"kW",
+      }
+      var difficultyToName = ["piece of cake","hah easy","i got this","bring it on","focus","hope for best","please god","get rekt","impossible","watch me die"]
+      var lanes = []
+      var goals = []
+      var progressbarsucces;
+      var progressbarfail;
+      var container
+      var content
+      var countdowncontainer
+      var countdown
+
+      var fps = 60.0
+      var deltaTime = 1
+      var dropSpeed = 0.7
+      var speedScale = 1.2
+      var time = 0
+      var starting = false
+      var running = false      
+      var keepgoing = false
+      var spawnCombo = 0
+      var maxRandomKey = 6
+      var spawnsPerSecond = 1
+      var lastSpawnTime = 0
+      var difficulty = 0
+      var score = 0
+      var maxScore = 5
+      var scoreInc = 0.5
+      var onStart
+      var onStop
+      var onStartCountdown
+      var onCount 
+      var onHit
+      var onMiss
+      var onFail
+      var onSucces
+
+      function Init() {
+        setInterval(Update,(1000.0/fps))
+        lanes = document.getElementsByClassName("lane")
+        goals = document.getElementsByClassName("goal")
+        progressbarsucces = document.getElementsByClassName("progressbarsucces")[0]
+        progressbarfail = document.getElementsByClassName("progressbarfail")[0]
+        container = document.getElementsByClassName("container")[0]
+        content = document.getElementsByClassName("content")[0]
+        countdowncontainer = document.getElementsByClassName("countdowncontainer")[0]
+        countdown = document.getElementsByClassName("countdown")[0]
+
+        container.classList.toggle("off",false)
+        SetAlpha(0)        
+
+        if(debug) {
+          document.getElementsByClassName("info")[0].classList.toggle("off",false)
+          document.getElementsByClassName("background")[0].classList.toggle("off",false)
+        }
+
+        HideGoals(true)
+        SetupKeyEvents()
+        score = 0
+        UpdateScore()
+        running = false
+      }
+      function Start() {
+        
+        if( running ) {
+          Stop()          
+        }    
+        if( starting ) {
+          return
+        }
+
+        starting = true 
+        score = 0        
+        UpdateScore()
+        Post(onStartCountdown)
+        countdowncontainer.classList.toggle("off",false)
+        countdown.innerHTML = "3"
+        PlaySound("hb-voice-3.wav")
+        Ping(countdowncontainer)
+
+        setTimeout(function() {
+          //2
+          countdown.innerHTML = "2"
+          Ping(countdowncontainer)
+          PlaySound("hb-voice-2.wav")
+          Post(onCount)
+          setTimeout(function() {
+            //1
+            countdown.innerHTML = "1"
+            PlaySound("hb-voice-1.wav")
+            Ping(countdowncontainer)
+            Post(onCount)
+            setTimeout(function() {
+              //go              
+              countdown.innerHTML = "go"
+              PlaySound("hb-voice-go.wav")
+              Ping(countdowncontainer)
+              Post(onCount)
+              setTimeout(function() {
+                //start                
+                Post(onStart)
+                HideGoals(false)
+                countdowncontainer.classList.toggle("off",true)
+                starting = false
+                running = true                  
+                content.classList.toggle("laydown",true)
+              },1000)
+            },1000)
+          },1000)
+        },1000)        
+      }
+      function Stop() {
+        running = false 
+        content.classList.toggle("laydown",false)
+        Clear()
+        ResetGoals()
+        HideGoals(true)
+        Post(onStop)
+      }
+      function Update() {
+        //time
+        deltaTime = (1.0/fps)*speedScale
+        time += deltaTime
+
+        if( running ) {
+          
+          //spawn
+          if( time > lastSpawnTime + (1.0/spawnsPerSecond)) {
+            lastSpawnTime = time
+            Spawn()
+          } 
+
+          //drop
+          Drop()
+          
+          ResetGoals()
+
+          OpenGoals()
+          
+          Clean()
+        }
+      }
+      function Drop() {
+        for( var i = 0; i < items.length; i++ ) {
+          var o = items[i]
+          o.drop += dropSpeed * deltaTime
+          o.Update()
+          o.Open(o.drop > 0.65 && o.drop < 0.95)
+          if( o.drop > 0.95 ) { o.Miss(); }
+          if( o.drop > 1.2 ) { o.Destroy() }
+        }
+      }
+      function ApplyConfig(args) {
+        
+        onStart          = args && args.onStart || onStart || "-"
+        onStop           = args && args.onStop || onStop || "-"
+        onStartCountdown = args && args.onStartCountdown || onStartCountdown || "-"
+        onCount          = args && args.onCount || onCount || "-"
+        onHit            = args && args.onHit || onHit || "-"
+        onMiss           = args && args.onMiss || onMiss || "-"
+        onFail           = args && args.onFail || onFail || "-"
+        onSucces         = args && args.onSucces || onSucces || "-"        
+        difficulty       = args && args.difficulty || difficulty || 0.5
+        keepgoing        = args && args.keepgoing || keepgoing || false
+        speedScale       = args && args.speedScale || speedScale || 1
+        scoreInc         = args && args.scoreInc || scoreInc || 1
+        if( args.difficulty == 0 ) {
+          difficulty = 0
+        }
+        SetDifficulty(difficulty)
+
+      }
+      function SetDifficulty(d) {
+        d = Math.min(1,Math.max(0,d))        
+        console.log("set difficulty",d)
+        var i = Math.floor(d * 9)
+        Setheader(difficultyToName[i])
+        dropSpeed = 0.3 + ( d * 1.2)
+        maxRandomKey = 3
+        if( i >= 3 ) { maxRandomKey = 6 }
+        spawnCombo = 0
+        if( i >= 6 ) {
+          spawnCombo = 1
+          dropSpeed -= 0.2
+        } 
+      }
+      function OpenGoals() {
+        for( var i = 0; i < items.length; i++ ) {
+          var o = items[i]
+          if( o.open ) {
+            goals[o.laneIndex].classList.toggle("open",true)
+          }
+        }
+      }
+      function ResetGoals() {
+        for( var i = 0; i < goals.length; i++ ) {
+          var o = goals[i]
+          o.classList.toggle("open",false)
+        }
+      }
+      function HideGoals(v){
+        for( var i = 0; i < goals.length; i++ ) {
+          var o = goals[i]
+          o.classList.toggle("off",v)
+        }
+      }
+      function Spawn() {
+        if( spawnCombo > 0 && RandomInt(0,3) == 0) {
+          var key1 = "a"
+          var key2 = "d"
+          var rnd = RandomInt(0,3)
+          if( rnd == 0 ) {
+            key1 = "w"
+            key2 = "s"
+          } else if(rnd == 1) {
+            key1 = "q"
+            key2 = "e"
+          }
+          console.log(rnd)
+          var laneIndex1 = RandomInt(0,lanes.length)
+          var laneIndex2 = laneIndex1
+          while( laneIndex2 == laneIndex1 ) {
+            laneIndex2 = RandomInt(0,lanes.length)
+          }
+          CreateItem(key1,laneIndex1)
+          CreateItem(key2,laneIndex2)
+        } else {
+          var key = RandomKey()
+          var laneIndex = RandomInt(0,lanes.length)
+          CreateItem(key,laneIndex)
+        }
+      }
+      function CreateItem(key,laneIndex) {
+        var _item = document.createElement("DIV")
+        _item.classList = "item"
+        var _icon = document.createElement("DIV")
+        _icon.classList = "icon " + KeyToClassName(key)
+        var _lane = lanes[laneIndex]
+        _item.appendChild(_icon)
+        _lane.appendChild(_item)
+        var item = {
+          target: _item,
+          drop: -0.4,
+          highlighted:false,
+          miss:false,
+          hit:false,
+          remove:false,
+          laneIndex:laneIndex,
+          key:key,
+          Update:function() {
+            this.target.style.top = (Math.max(0,Math.min(1,this.drop)) * 100 ) + "%"
+          },
+          Destroy:function() {
+            this.remove = true
+          },
+          Open:function(v) {
+            if( this.open != v ) {
+              this.open = v
+            }
+          },
+          Hit:function() {    
+            if( !this.hit ) {
+              this.hit = true
+              this.target.classList.toggle("miss",false)
+              this.target.classList.toggle("hit",true)
+              Hit()
+            }        
+          },
+          Miss:function() {
+            if( !this.miss) {
+              this.miss = true
+              this.target.classList.toggle("hit",false)
+              this.target.classList.toggle("miss",true)
+              Miss() 
+            }
+          },
+        }
+        items.push(item)
+      }
+      function Clean() {
+        for( var i = items.length-1; i >= 0; i-- ) {
+          var o = items[i]
+          if( o.remove) {            
+            DestroyElement(o.target)
+            items.splice(i,1)
+          }
+        }
+      }
+      function Clear() {
+        for( var i = items.length-1; i >= 0; i-- ) {
+          var o = items[i]
+          DestroyElement(o.target)
+          items.splice(i,1)
+        }
+      }
+      function Miss() {
+        score-= scoreInc;
+        UpdateScore()
+        Shake(container)
+        Post(onMiss)
+        PlaySound("deny-electric-1.wav")
+      }
+      function Hit() {
+        score+= scoreInc;
+        UpdateScore()
+        Post(onHit)
+        PlaySound("alert-triangle.wav")
+      }
+      function Fail() {
+        Stop()
+        countdowncontainer.classList.toggle("off",false)
+        countdown.innerHTML = "fail"
+        PlaySound("hb-voice-error.wav",1)
+        Post(onFail)
+      }
+      function Succeed() {
+        Stop()
+        countdowncontainer.classList.toggle("off",false)
+        countdown.innerHTML = "win"
+        PlaySound("hb-voice-confirm.wav",1)
+        Post(onSucces)
+      }
+      function SetupKeyEvents() {
+        document.addEventListener("keypress", function(event) {
+          Presskey(event.key)
+        })       
+      }
+      function Presskey(k) {
+        if( debug && k == "Enter") {
+          Start()
+        }
+        var openKeys = {}
+        var openCount = 0
+        for( var i = 0; i < items.length; i++ ) {
+          var o = items[i]
+          if( o.open ) {
+            openKeys[o.key] = true      
+            openCount ++       
+          }
+        }
+        
+        if( openKeys[k] ) {
+          for( var i = 0; i < items.length; i++ ) {
+            var o = items[i]
+            if( o.open && o.key == k ) {
+              o.Hit()
+              o.Destroy()
+            }
+          }
+        } else if( openCount > 0) {         
+          for( var i = 0; i < items.length; i++ ) {
+            var o = items[i]
+            if( o.open) {
+              o.Miss()
+              o.Destroy()
+            }
+          }
+        } else {
+          if( k == "a" ||
+              k == "s" ||
+              k == "d" ||
+              k == "q" ||
+              k == "w" ||
+              k == "e" ) {
+                Miss()
+              }
+        }
+      }
+      function Setheader(text) {
+        var headertext = document.getElementsByClassName("headertext")[0]
+        headertext.innerHTML = text
+      }
+      function Shake(el) {        
+        el.classList.toggle("shake",true)
+        setTimeout(function() {
+          el.classList.toggle("shake",false)
+        },250)
+      }
+      function Ping(el) {        
+        el.classList.toggle("ping",true)
+        setTimeout(function() {
+          el.classList.toggle("ping",false)
+        },250)
+      }
+      function UpdateScore() {
+        score = Math.min(5,Math.max(-5,score))        
+        progressbarsucces.style.height = (Math.max(0,score) / maxScore) * 50 + "%"
+        progressbarfail.style.height = (Math.max(0,-score) / maxScore) * 50 + "%"
+        if( !keepgoing ) {
+          if( score >= 5) {
+            Succeed()
+          }
+          if( score <= -5) {
+            Fail()
+          }
+        }
+      }
+      function DestroyElement(element) {
+        element.parentNode.removeChild(element);
+      }
+      function RandomKey() {
+        return indexToKey[RandomInt(0,Math.min(6,maxRandomKey))]
+      }
+      function KeyToClassName(k) {
+        return keyToClassName[k.toLowerCase()]
+      }
+      function RandomInt(min,max) {
+        
+        var mmin = Math.min(min,max)
+        var mmax = Math.max(min,max)
+
+        min = Math.floor(mmin)
+        max = Math.floor(mmax)
+        
+        return min+Math.floor(Math.random() * (max-min));
+      }
+      function SetAlpha(a) {
+        container.style.opacity = a
+      }
+      //////////////////////////////////////////////////////
+      //////////////////////////////////////////////////////
+      /*utils*/
+      //////////////////////////////////////////////////////
+      var debug = false
+      var audioPlayer
+      //receiver hook
+      window.addEventListener('message', function(event) {
+        console.log("receive UI mssg",event)
+        if( event.data.function != null ) {
+          window[event.data.function](event.data.arguments)
+        } else if( event.data.var != null ) {
+          window[event.data.var](event.data.value)
+        }
+      })
+      function Post(o,v) {
+        if( debug ) { return }
+        if( v == null ) { v = {} }
+        console.log("send UI mssg",o,v)
+        $.post(o,JSON.stringify(v))
+      }
+      function PlaySound(path,volume) {
+        console.log("play sound",path)
+        volume = volume || 1
+        if( debug) {
+          var a = new Audio(path);
+          a.volume = volume;   
+          a.play();
+        } else {
+          if (audioPlayer != null) {
+            audioPlayer.pause();
+          }
+
+          audioPlayer = new Howl({src: [path]});
+          audioPlayer.volume(1);
+          audioPlayer.play();
+        }
+      }
+      function FormatString() {
+        var a = null;
+        for (var k in arguments) {
+          if( a == null) {
+            a = arguments[k]
+          } else {
+            if( arguments[k] == null ) {arguments[k] = ""}
+            a = a.replace("{" + (k-1) + "}", arguments[k].toString())
+          }
+        }
+        return a
+      }
+      function DebugInit() {
+        if( !debug ) { return }
+        Init()
+        ApplyConfig({
+          difficulty:Math.random(),
+          speedScale:1.5,
+          scoreInc:0.5,
+        })
+        SetAlpha(1)
+        Start()
+      } 
+      DebugInit()
+      //////////////////////////////////////////////////////
+    </script>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js" type="text/javascript"></script>
+  </body>
+</html>

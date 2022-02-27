@@ -1,0 +1,4 @@
+
+Örnek;
+
+exports["np_taskbar"]:taskBar(1500,"Kart takılıyor..")

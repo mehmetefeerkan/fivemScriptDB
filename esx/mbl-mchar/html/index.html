@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="reset.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="includes/jquery-1.4.2.min.js"></script>
+    <title>CashoutMulticharacter</title>
+</head>
+    <body>
+
+        <div class="container">
+            <div class="bars">
+                <div class="topbar">
+                </div>
+
+                <div class="bottombar">
+                </div>
+            </div>
+            <div id='flashMe'></div>
+            <div id='andereflash'></div>
+            <div class="main-screen">
+                <div class="welcomescreen">
+                    <p><span id="welcome-titel">SideRP SEASON 1</span></p>
+
+                    <div class="start-btn continue-btn"><p>Oyna</p></div>
+                    <div class="start-btn disconnect-btn"><p>Çıkış</p></div>
+                </div>
+
+                <div class="characters-list">
+                    <div class="character" id="char-1" data-cid="">
+                        <span id="slot-name">Karakter Slotu<span id="cid"></span></span>
+                    </div>
+                    <div class="character-btn" id="play"><p id="play-text">Seç</p></div>
+                    <div class="character-btn" id="delete"><p id="delete-text">Seç</p></div>
+                </div>
+
+
+
+
+                <div class="character-register">
+                    <div class="characters-register-block-header">
+                           <p>Karakter Kayıt</p>
+                        <i class="material-icons" id="close-reg">close</i>
+                    </div>
+                    <div class="char-register-inputs">
+                        <input type="text" id="first_name" placeholder="İsim" class="char-reg-input">
+                        <input type="text" id="last_name" placeholder="Soyisim" class="char-reg-input">
+                        <input type="text" id="nationality" placeholder="Uyruk" class="char-reg-input">
+                        <input type="date" id="birthdate" placeholder="Doğum Tarihi" min="1950-01-01" max="2010-12-31" class="char-reg-input">
+                        <select id="gender" name="gender">
+                            <option value="man" selected>Erkek</option>
+                            <option value="vrouw">Kadın</option>
+                        </select>
+                    </div>
+                    <div class="character-reg-btn" id="create"><p id="create-text">ONAYLA</p></div>
+                </div>
+
+                <div class="character-delete">
+                    <div class="characters-delete-block-header">
+                        <p>Karakteri sil</p>
+                        <i class="material-icons" id="close-del">close</i>
+                    </div>
+
+                    <p>Karakteri silmek istediğine emin misin?</p>
+                    <br>
+                    <p id="yeet">Tüm verileriniz silinecek.</p>
+
+                    <div class="character-acceptdel-btn" id="accept-delete"><p id="accept-text">Sil</p></div>
+                    <div class="character-canceldel-btn" id="cancel-delete"><p id="cancel-text">Geri</p></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</html>

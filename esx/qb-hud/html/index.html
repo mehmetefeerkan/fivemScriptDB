@@ -1,0 +1,262 @@
+<html>
+    <head>
+        <title>qb HUD</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="css/vstyle.css" rel="stylesheet" type="text/css"/>
+
+        <link rel="stylesheet" href="fontawesome/css/all.css">
+    </head>
+
+    <!-- <body style="display: none1; background: url(https://i.pinimg.com/originals/c2/24/50/c2245051be2e36408757aa1a4ff1dcf1.jpg);">  -->
+    <body style="display: none; background: none;"> 
+
+        <div class="siyah-bar">
+            <div class="siyah-bar-ic"></div>
+            <div class="siyah-bar-ic"></div>
+        </div>
+
+        <div class="ayar-menu-ana">
+            <div class="ayar-menu ayar-menu shadow rounded">
+
+                <div class="close-ayar-menu">x</div>
+
+                <div class="baslik">Gösterge Ayarları</div>
+                <div class="baslik-alt">
+                    <div class="satir-baslik">Açlık Göstergesi: </div> 
+                    <div class="satir-ayar">
+                        <label class="switch">
+                            <input id="yemek-on" type="checkbox" checked>
+                            <div class="slider"></div>
+                        </label>
+                    </div> 
+                </div>
+
+                <div class="baslik-alt">
+                    <div class="satir-baslik">Susuzluk Göstergesi: </div> 
+                    <div class="satir-ayar">
+                        <label class="switch">
+                            <input id="su-on" type="checkbox" checked>
+                            <div class="slider"></div>
+                        </label>
+                    </div> 
+                </div>
+
+                <div class="baslik-alt">
+                    <div class="satir-baslik">Stamina Göstergesi: </div>
+                    <div class="satir-ayar">
+                        <label class="switch">
+                            <input id="stamina-on" type="checkbox" checked>
+                            <div class="slider"></div>
+                        </label>
+                    </div> 
+                </div>
+
+                <div class="baslik-alt">
+                    <div class="satir-baslik">Oksijen Göstergesi: </div>
+                    <div class="satir-ayar">
+                        <label class="switch">
+                            <input id="stress-on" type="checkbox" checked>
+                            <div class="slider"></div>
+                        </label>
+                    </div> 
+                </div>
+
+                <div class="baslik-alt">
+                    <div class="satir-baslik">Saat Göstergesi: </div>
+                    <div class="satir-ayar">
+                        <label class="switch">
+                            <input id="saat-on" type="checkbox" checked>
+                            <div class="slider"></div>
+                        </label>
+                    </div> 
+                </div>
+
+                <div class="baslik-alt">
+                    <div class="satir-baslik">Pusula: </div>
+                    <div class="satir-ayar">
+                        <label class="switch">
+                            <input id="pusula-on" type="checkbox" checked>
+                            <div class="slider"></div>
+                        </label>
+                    </div> 
+                </div>
+
+                <!-- <div class="baslik-alt">
+                    <div class="satir-baslik">Emote Chat: </div>
+                    <div class="satir-ayar">
+                        <label class="switch">
+                            <input id="emote-on" type="checkbox">
+                            <div class="slider"></div>
+                        </label>
+                    </div> 
+                </div> -->
+
+                <div class="baslik-alt">
+                    <div class="satir-baslik">Siyah Bar: </div>
+                    <div class="satir-ayar">
+                        <label class="switch">
+                            <input id="siyahbar-on" type="checkbox">
+                            <div class="slider"></div>
+                        </label>
+                    </div> 
+                </div>
+
+                <div class="baslik-alt">
+                    <div class="satir-baslik">Gelişmiş Hız Göstergesi: </div>
+                    <div class="satir-ayar">
+                        <label class="switch">
+                            <input id="ghizg-on" type="checkbox">
+                            <div class="slider"></div>
+                        </label>
+                    </div> 
+                </div>
+
+                <div class="baslik-alt">
+                    <div class="satir-baslik">Pusula Konumu: </div>
+                    <div class="satir-ayar">
+                        <input name="chkBox_pusula" type="checkbox" id="1" value="Value1" onclick="pusulaKonum(this.id)" checked /> Aşağı
+                        <input name="chkBox_pusula" type="checkbox" id="2" value="Value1" onclick="pusulaKonum(this.id)" /> Yukarı
+                    </div> 
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="money-container">
+            <div class="money-content">
+                <div class="money-cash">
+                    <p class="munnie">&dollar;&nbsp;<span id="cash">0</span></p>
+                </div>
+                <div class="money-bank">
+                    <p class="munnie">&dollar;&nbsp;<span id="bank">0</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tepe-hud">
+            <div class="tirnak"></div>
+            <div class="street-sol">Los Santos</div>
+            <div class="direction-tip2"><div class="image-2"></div></div>
+            <div class="street-sag">Wicket St | Hawick</div>
+        </div>
+
+        <div class="hud">
+           <!--  <div class="ses-dugmesi"><i class="fas fa-microphone"></i></div> -->
+            <div class="sol-hud">
+                <div class="can">
+                    <i class="fas fa-heart"></i>
+                    <div id="can-ic"></div>
+                </div>
+
+                <div class="zirh">
+                    <i class="fas fa-shield-alt"></i>
+                    <div id="zirh-ic"></div>
+                </div>
+
+                <div class="yemek">
+                    <i class="fas fa-hamburger"></i>
+                    <div id="yemek-ic"></div>
+                </div>
+
+                <div class="su">
+                    <i class="fas fa-tint"></i>
+                    <div id="su-ic"></div>
+                </div>
+
+                <div class="stamina">
+                    <i class="fas fa-running"></i>
+                    <div id="stamina-ic"></div>
+                </div>
+
+                <div class="stres">
+                    <i class="fas fa-lungs"></i>
+                    <div id="stres-ic"></div>
+                </div>
+               
+            </div>
+
+
+            <div class="orta-hud">
+                <div class="orta-hud-collum">
+                    <div class="orta-hud-dot" id="dot-2"></div>
+                    <div class="orta-hud-dot" id="dot-1"></div>
+                    <div class="orta-hud-dot" id="dot-0"></div>
+                </div>
+                <div class="orta-hud-sag"></div>
+            </div>
+
+            <div class="sag-hud">
+                <div class="sag-hud-collum">
+                    <div class="vehicle-tip1"> 
+                        <div class="vehicle-tip1-collum">
+                            <div class="saat">
+                                <div class="vehicle-text">
+                                    <div class="time">12:00</div>
+                                </div>
+                            </div>
+
+                            <div class="carStats">
+                                <div class="counter" id="idCounter">
+                                    <div class="counter2" id="idCounter2">
+                                        <div class="speedometer">
+                                            <svg class="circle" width="50" height="50">
+                                                <circle class="outer" stroke="#000000" stroke-width="0.9" style="stroke-opacity: 0.5;" fill="transparent" r="18" cx="25" cy="25" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                                                <circle class="backgroundCircle" stroke="#e8eef0" stroke-width="2.5" fill="transparent" r="18" cx="25" cy="25" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                                                <circle class="progress progress-speed" stroke="#f9eb06" stroke-width="2.8" style="stroke-opacity: 1.0;" fill="transparent" r="18" cx="25" cy="25" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                                            </svg>
+                                            <div class="text">
+                                                <span class="speed">0</span>
+                                                <div class="mph">KMH</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- GAUGES -->
+                                <div class="gauges">
+                                    <!-- FUEL -->
+                                    <div class="dials">
+                                        <i class="fas fa-gas-pump"></i>
+                                        <svg class="circle" width="40" height="40">
+                                            <circle class="backgroundCircle" stroke="#e8eef0" stroke-width="3.3" fill="transparent" r="18" cx="20" cy="20" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                                            <circle class="progress progress-fuel" id="fuel" stroke="#e8eef0" stroke-width="3.5" style="stroke-opacity: 1.0;" fill="transparent" r="18" cx="20" cy="20" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                                        </svg>
+                                    </div>
+                                    
+                                    <!-- SEATBELT -->
+                                    <div class="dials">
+                                        <i class="fas fa-link"></i>
+                                        <svg class="circle" width="40" height="40">
+                                            <circle class="backgroundCircle" stroke="#e8eef0" stroke-width="3.3" fill="transparent" r="18" cx="20" cy="20" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                                            <circle class="backgroundCircle" id="seatbelt" stroke="#e8eef0" stroke-width="3.5" style="stroke-opacity: 1.0;" fill="transparent" r="18" cx="20" cy="20" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                                        </svg>
+                                    </div>
+                    
+                    
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                    <div class="street-tip1">
+                        <div class="direction"><div class="image"></div></div>
+                        <div class="street-txt-tip1">Los Santos | Wicket St | Hawick</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="js/debounce.min.js" type="text/javascript"></script>
+    <link href="css/fontcss.css" rel="stylesheet">
+    <link href='css/fontcss2.css' rel='stylesheet' type='text/css'>
+    <link href='css/fontcss3.css' rel='stylesheet' type='text/css'>
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</html>

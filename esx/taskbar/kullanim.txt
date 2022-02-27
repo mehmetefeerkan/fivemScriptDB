@@ -1,0 +1,4 @@
+
+Örnek;
+
+exports["taskbar"]:taskBar(1500,"Kart takılıyor..")

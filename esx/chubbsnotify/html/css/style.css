@@ -1,0 +1,69 @@
+body {
+    background-color: transparent !important;
+}
+
+.template, .notification {
+    display: none;
+}
+
+.notif-container {
+    width: 20%;
+    position: absolute;
+    right: 15%;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.notification {
+    padding: 11px;
+    padding-left: 11.5px;
+    padding-right: 11.5px;
+    width: fit-content;
+    border-radius: 9px 9px 0.5px 0.5px;
+    margin: 5px;
+    font: caption;
+    font-size: 12px;
+    font-weight: bold;
+    background-size:100% 1.5px;
+    background-position:bottom 0 left 0,bottom 1.5px left 0;
+    background-repeat:no-repeat;
+}
+
+.success {
+    background-color: rgba(8, 8, 8, 0.514) !important;
+    color: #ffffff !important;
+    background: linear-gradient( 109.6deg,  rgba(102,203,149,1) 11.2%, rgba(39,210,175,1) 98.7% ), linear-gradient( 109.6deg,  rgba(102,203,149,1) 11.2%, rgba(39,210,175,1) 98.7% );
+    background-size:100% 1.5px;
+    background-position:bottom 0 left 0,bottom 1.5px left 0;
+    background-repeat:no-repeat;
+}
+
+.black {
+    background: rgb(0, 0, 0);
+    color: #fff;
+}
+
+.white {
+    background: rgb(255, 255, 255);
+    color: #fffff;
+}
+
+.inform {
+    background-color: rgba(8, 8, 8, 0.514) !important;
+    color: #ffffff !important;
+    background: linear-gradient(90deg, #0093E9 0%, #80D0C7 100%), linear-gradient(90deg, #0093E9 0%, #80D0C7 100%);
+    background-size:100% 1.5px;
+    background-position:bottom 0 left 0,bottom 1.5px left 0;
+    background-repeat:no-repeat;
+}
+
+.error {
+    background-color: rgba(8, 8, 8, 0.514) !important;
+    color: #ffffff !important;
+    background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(226,37,37,1) 0%, rgba(211,49,49,1) 82.8% ), radial-gradient( circle farthest-corner at 10% 20%,  rgba(226,37,37,1) 0%, rgba(211,49,49,1) 82.8% );
+    background-size:100% 1.5px;
+    background-position:bottom 0 left 0,bottom 1.5px left 0;
+    background-repeat:no-repeat;
+}
+

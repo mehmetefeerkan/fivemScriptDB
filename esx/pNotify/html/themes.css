@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+.noty_theme__gta.noty_bar {
+    margin: 4px 0;
+    overflow: hidden;
+    border-radius: 1px;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    height: auto;
+    word-wrap: break-word;
+}
+
+.noty_theme__gta.noty_bar .noty_body {
+    padding: 10px;
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+.noty_theme__gta.noty_bar .noty_buttons {
+    padding: 0px; 
+}
+
+.noty_theme__gta.noty_bar .noty_progressbar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1.5px;
+    width: 100%;
+    background-image: repeating-linear-gradient(to right, #05ac73, #28bfdb); 
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}
+
+.noty_theme__gta.noty_type__alert,
+.noty_theme__gta.noty_type__notification {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 12px 12px 12px 12px;
+    color: #fff;
+}
+
+.noty_theme__gta.noty_type__warning {
+    background-color: rgba(0, 0, 0, 0);
+     border-radius: 12px 12px 12px 12px;
+    color: #fff;
+}
+
+.noty_theme__gta.noty_type__error {
+    background-color: rgba(0, 0, 0, 0.3);
+     border-radius: 4px 4px 4px 4px;
+    color: rgb(255, 255, 255);
+}
+
+.noty_theme__gta.noty_type__info,
+.noty_theme__gta.noty_type__information {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px 8px 8px 8px;
+    color: #fff;
+}
+
+.noty_theme__gta.noty_type__success {
+    background-color: rgba(0, 0, 0, 0.3);
+     border-radius: 2px 2px 2px 2px;
+    color: rgb(255, 255, 255);
+}
+
+.gta_effects_open {
+    opacity: 0;
+    -webkit-transform: translate(50%);
+    -ms-transform: translate(50%);
+    transform: translate(50%);
+    -webkit-animation: noty_anim_in 0.5s cubic-bezier(0.0, 0.0, 0.0, 0.0);
+    animation: noty_anim_in 0.5s cubic-bezier(0.0, 0.0, 0.0, 0.0);
+    -webkit-animation-fill-mode: backwards;
+    animation-fill-mode: backwards;
+}
+
+.gta_effects_close {
+    -webkit-animation: noty_anim_out 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation: noty_anim_out 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; 
+}
+
+@-webkit-keyframes noty_anim_out_bottom {
+  100% {
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+    opacity: 0; } }
+
+@keyframes noty_anim_out_bottom {
+  100% {
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+    opacity: 0; } }
+
+.gta_effects_open_bottom {
+    opacity: 0.9;
+    -webkit-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    transform: translate(-50%);
+    -webkit-animation: noty_anim_in 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation: noty_anim_in 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.gta_effects_close_bottom {
+	opacity: 0.9;
+    -webkit-animation: noty_anim_out_bottom 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation: noty_anim_out_bottom 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-animation-fill-mode: backwards;
+    animation-fill-mode: backwards; 
+}
+
+@-webkit-keyframes noty_anim_fade_in {
+  100% { bottom: 1%; } }
+
+@keyframes noty_anim_fade_in {
+  100% { bottom: 1%; } }
+
+@-webkit-keyframes noty_anim_fade_out {
+  100% { bottom: -1%; } }
+
+@keyframes noty_anim_fade_out {
+  100% { bottom: -1%; } }
+
+.gta_effects_fade_in {
+    opacity: 0;
+    animation: noty_anim_fade_in 0.5s;
+}
+
+.gta_effects_fade_out {
+    opacity: 0.9;
+    animation: noty_anim_fade_out 0.5s;
+}

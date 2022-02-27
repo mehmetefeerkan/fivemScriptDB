@@ -1,0 +1,32 @@
+<!--   
+Code by Scott Plunkett aka. plunkettscott, everything related to alarm is happeing because of his code.
+Original code: https://github.com/plunkettscott/interact-sound
+His Github: https://github.com/plunkettscott
+Thanks to him.
+-->
+<html>
+    <head>
+        <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js" type="text/javascript"></script>
+        <script>
+            var sound1 = null;
+            var sound2 = null;
+            sound1 = new Howl({src: ["./0x0A83C2F9.ogg"]});
+            sound2 = new Howl({src: ["./0x02B30C41.ogg"]});
+            window.addEventListener('message', function(event) {
+                if (event.data.transactionType == "sound1") {
+                    sound1.volume(0.03);
+                    sound1.play();
+                }
+                if (event.data.transactionType == "sound2") {
+                    sound2.volume(0.1);
+                    sound2.play();
+                }
+                if (event.data.transactionType == "stopSound") {
+                    sound1.stop();
+                    sound2.stop();
+                }
+            });
+        </script>
+    </head> 
+</html>

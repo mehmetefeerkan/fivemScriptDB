@@ -1,0 +1,172 @@
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="jquery-3.4.1.min.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/78879dfdec.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <link rel="stylesheet" href="input.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@500&display=swap" rel="stylesheet">
+
+
+
+
+
+</head>
+
+<body style="background-color: rgba(0,0,0,0); font-size: 16px;">
+    <div class="main center" id="main-contanier">
+        <!-- Side navigation -->
+
+
+
+        <div class="menu-cek-yatir-bg center" id="withdraw-menu-2">
+            <div class="cek-yatir center">
+                <div class="container">
+                    <p style="text-align: center; margin: 2%; color: white; font-size: 20px;">Para Çek</p>
+                    <div class="wrapper">
+                        <div class="input-data">
+                            <input type="number" id="amount" required>
+                            <div class="underline">
+                            </div>
+                            <label>Miktar</label>
+                        </div>
+                    </div>
+                    <div class="wrapper">
+                        <div class="input-data">
+                            <input type="text" id="desc" required>
+                            <div class="underline">
+                            </div>
+                            <label>Açıklama</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="cancel-withdraw" style="width: 40%; float: left; margin: 10%;">İptal</div>
+                        </div>
+                        <div class="col">
+                            <div class="withdraw-menu" style="width: 40%; float: right; margin: 10%;">Para Çek</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="menu-cek-yatir-bg center" id="deposit-menu-2">
+            <div class="cek-yatir center">
+                <div class="container">
+                    <p style="text-align: center; margin: 2%; color: white; font-size: 20px;">Para Yatır</p>
+                    <div class="wrapper">
+                        <div class="input-data">
+                            <input type="number" id="amount-deposit" required>
+                            <div class="underline">
+                            </div>
+                            <label>Amount</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="cancel-deposit" style="width: 40%; float: left; margin: 10%;">İptal</div>
+                        </div>
+                        <div class="col">
+                            <div class="deposit-menu" style="width: 40%; float: right; margin: 10%;">Para Yatır</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-cek-yatir-bg center" id="transfer-menu-2" style="display: none;">
+            <div class="cek-yatir center">
+                <div class="container">
+                    <p style="text-align: center; margin: 2%; color: white; font-size: 20px;">Transfer</p>
+                    <div class="wrapper">
+                        <div class="input-data">
+                            <input type="number" id="amount-transfer" required>
+                            <div class="underline">
+                            </div>
+                            <label>Miktar</label>
+                        </div>
+                    </div>
+                    <div class="wrapper">
+                        <div class="input-data">
+                            <input type="text" id="toplayer-transfer" required>
+                            <div class="underline">
+                            </div>
+                            <label>Iban</label>
+                        </div>
+                    </div>
+                    <div class="wrapper">
+                        <div class="input-data">
+                            <input type="text" id="desc-transfer" required>
+                            <div class="underline">
+                            </div>
+                            <label>Açıklama</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="cancel-transfer" style="width: 40%; float: left; margin: 10%;">İptal</div>
+                        </div>
+                        <div class="col">
+                            <div class="transfer-menu" style="width: 40%; float: right; margin: 10%;">Transfer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="sidenav">
+            <div class="container">
+                <p style="color: white; margin-left: 4.5%; font-size: 25px; font-family: acumin-pro, sans-serif;">Hesap</p>
+            </div>
+            <div class="accounts selected">
+                <div class="container-lg">
+                    <div class="row align-items-start details" style="color: white;">
+                        <div class="row" style="  white-space: nowrap;" id="bank-name">Kişisel Hesap | Yldrm</div>
+                        <div class="row" style="font-size: 15px; float: right;" id="bank-money">$2.500.00</div>
+                    </div>
+                    <br>
+                    <div class="row" style="color: black; position: relative; display: flex; flex-direction: row;">
+                        <div class="col">
+                            <div class="deposit">Para Yatır</div>
+                        </div>
+                        <div class="col ">
+                            <div class="transfer">Transfer</div>
+                        </div>
+                        <div class="col ">
+                            <div class="withdraw">Para Çek</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-side">
+            <div class="container">
+                <p style="color: white; font-size: 25px; font-family: acumin-pro, sans-serif; margin-top: 1.5%; ">Transaction History</p>
+            </div>
+            <div id="hh"></div>
+
+        </div>
+
+
+
+
+    </div>
+
+    <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js " integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy " crossorigin="anonymous "></script>
+
+</body>

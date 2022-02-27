@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Seatbelt</title>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="app.js"></script>
+  	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="container">
+		<header>
+			<img src="./img/seatbelt.png" class="blink-image" alt="header">
+		</header>
+	</div>
+</body>
+
+<head>
+	<!-- Need to include jQuery! -->
+	<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+	<script>
+		var audioPlayer = null;
+		// Listen for NUI Messages.
+		window.addEventListener('message', function(event) {
+			// Check for playSound transaction
+			if (event.data.transactionType == "playSound") {
+			
+			  if (audioPlayer != null) {
+				audioPlayer.pause();
+			  }
+
+			  audioPlayer = new Audio("./sounds/" + event.data.transactionFile + ".ogg");
+			  audioPlayer.volume = event.data.transactionVolume;
+			  audioPlayer.play();
+
+			}
+		});
+	</script>
+</head>
+
+</html>
+

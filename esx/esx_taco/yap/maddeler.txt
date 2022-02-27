@@ -1,0 +1,25 @@
+sqle item ekle
+inventoryhuda imgleri at resourceye yaz
+basicneeds yenebilir item ekle
+
+
+ESX.RegisterUsableItem('burrito', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	xPlayer.removeInventoryItem('burrito', 1)
+	TriggerClientEvent('esx_status:add', source, 'hunger', 500000)
+	TriggerClientEvent('esx_basicneeds:onEat', source, '')
+end)
+
+ESX.RegisterUsableItem('temales', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	xPlayer.removeInventoryItem('temales', 1)
+	TriggerClientEvent('esx_status:add', source, 'hunger', 500000)
+	TriggerClientEvent('esx_basicneeds:onEat', source, '')
+end)
+
+  "html/img/items/tacomeet.png",
+  "html/img/items/burrito.png",
+  "html/img/items/temales.png",
+  "html/img/items/limeandice.png",
+
+

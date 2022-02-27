@@ -1,0 +1,384 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    -moz-user-select: none;
+    -webkit-user-select: none;
+
+    font-family: 'Roboto', sans-serif;
+
+    list-style: none;
+}
+
+.ExitButton{
+    position: absolute;
+    right: 0;
+    top: 2%;
+    padding: 1vh;
+    font-weight: bold;
+    font-size: 2vh;
+    color: brown;
+}
+
+.Notify{
+    position: absolute;
+    top: 5%;
+    right: 0;
+
+    background: rgba(0, 0, 0, 0.707);
+    padding: 1vh;
+    min-width: 30vh;
+    color: white;
+
+    border-radius: 5px 0 0 5px;
+}
+
+.ReportBody{
+    background-color: #E4E4E4;
+
+    border-radius: 10px;
+
+    width: 80vh;
+    height: 70vh;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* padding: 2vh; */
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+.Report{
+    padding: 2vh;
+}
+
+.ReportTitleBox{
+    width: 100%;
+
+    text-align: center;
+}
+
+.ReportTitleImage{
+    width: 15%;
+}
+
+.ReportTitleText{
+    font-size: 4vh;
+    font-weight: bold;
+    color: #707070;
+}
+
+.ReportFormBox{
+    background-color: white;
+    border-radius: 10px;
+    padding: 2vh;
+
+    margin-top: 5vh;
+    width: 100%;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 0px 3px 6px 1px rgb(136, 136, 136);
+}
+
+.ReportFormCellBox{
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 1vh;
+}
+
+.ReportFormCheckBox{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    align-content: center;
+
+    margin-bottom: 1vh;
+}
+
+.ReportFormCheckBox label{
+    margin-left: 1vh;
+}
+
+.ReportFormCellBox label, .ReportFormCheckBox label{
+    font-size: 2vh;
+}
+
+.ReportFormCellBox input, .ReportFormCellBox textarea{
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid gray;
+
+    font-size: 2vh;
+
+    -moz-user-select: text;
+    -webkit-user-select: text;
+
+    padding: 0.4vh 1vh;
+}
+
+.ReportFormCellBox textarea{
+    width: 100%;
+    flex: 1;
+}
+
+.ReportTextAreaBox{
+    flex: 1;
+}
+
+.ReportFormButton{
+    min-width: 20%;
+    margin: auto;
+    margin-top: 1vh;
+    padding: 1vh;
+    background-color: #1c1c1c;
+    color: #E4E4E4;
+    text-align: center;
+
+    border-radius: 10px;
+}
+.ReportFormButton:hover{
+    background-color: #272727;
+}
+
+.AllReports{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.AllReportsTitleBox{
+    width: 25%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    /* background: gray; */
+}
+
+.AllReportsTitleImage{
+    width: 60%;
+}
+
+.AllReportsBox{
+    overflow: hidden;
+    flex: 1;
+
+    background-color: white;
+    border-radius: 20px 10px 10px 20px;
+    box-shadow: -3px 0px 6px 1px rgb(136, 136, 136);
+}
+
+.AllReportsTextBox{
+    padding: 2vh;
+}
+
+.AllReportsTextBox{
+    font-size: 2.4vh;
+    color: #676767;
+}
+
+.AllReportsListBox{
+    height: 90%;
+}
+
+.AllReportsList{
+    overflow: hidden;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.AllReportsList::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+.AllReportsList::-webkit-scrollbar {
+    width: 0.2vh;
+    background: rgba(80, 80, 80, 0.8);
+}
+.AllReportsList::-webkit-scrollbar-thumb {
+    background: rgba(90, 90, 90, 0.8);
+    border-radius: 20px;
+}
+
+.AllReportsListItemBox{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    padding: 1vh 2vh;
+    margin-bottom: 1vh;
+
+    background-color: #E4E4E4;
+    color: #676767;
+}
+
+.AllReportsListItemBox:hover{
+    background-color: #373737;
+    color: #E4E4E4;
+}
+
+.AllReportsListItemBox p{
+    font-size: 2.2vh;
+}
+
+.AllReportsListItemName{
+    width: 40%;
+}
+
+.AllReportsListItemNumber{
+    width: 29%;
+}
+
+.AllReportsListItemDate{
+    width: 29%;
+    text-align: right;
+}
+
+.AllReportsListItemDate{
+    font-weight: bold;
+}
+
+.AllReportsListItemClick{
+    position: absolute;
+    /* background-color: black; */
+    width: 100%;
+    height: 100%;
+}
+
+
+.Element{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.ElementTitleBox{
+    width: 25%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    /* background: gray; */
+}
+
+.ElementTitleImage{
+    width: 60%;
+}
+
+.ElementBox{
+    flex: 1;
+
+    background-color: white;
+    border-radius: 20px 10px 10px 20px;
+    box-shadow: -3px 0px 6px 1px rgb(136, 136, 136);
+}
+
+.ElementTextBox{
+    padding: 2vh;
+}
+
+.ElementTextBox{
+    font-size: 2.4vh;
+    color: #676767;
+}
+
+.ElementListItemBox{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    padding: 1vh 2vh;
+
+    background-color: #E4E4E4;
+    color: #676767;
+}
+
+.ElementListItemBox:hover{
+    background-color: #373737;
+    color: #E4E4E4;
+}
+
+.ElementListItemDate{
+    font-weight: bold;
+}
+
+.ElementListItemClick{
+    position: absolute;
+    /* background-color: black; */
+    width: 100%;
+    height: 100%;
+}
+
+.ElementTitleNameBox{
+    margin-top: 2vh;
+}
+
+.ElementTitleNameBox, .ElementTitleNumberBox, .ElementTitleDateBox{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 1.5vh;
+}
+
+.ElementTitleNameBox img, .ElementTitleNumberBox img, .ElementTitleDateBox img{
+    width: 20%;
+    
+}
+
+.ElementTitleNameBox p, .ElementTitleNumberBox p, .ElementTitleDateBox p{
+    font-size: 2vh;
+    font-weight: bold;
+    color: #676767;
+    margin-top: 0.5vh;
+}  
+
+.ElementDescription{
+    margin-top: 1vh;
+    
+}
+
+.ElementButton{
+    min-width: 20%;
+    margin: 0 auto;
+    margin-top: 1vh;
+    padding: 1vh;
+    background-color: #1c1c1c;
+    color: #E4E4E4;
+    text-align: center;
+
+    border-radius: 10px;
+}
+.ElementButton:hover{
+    background-color: #272727;
+}

@@ -1,0 +1,468 @@
+.console {
+    background-color: rgba(255, 86, 60, 0.3);
+    width: 500px;
+    min-height: 30px;
+    color: white;
+    position: absolute;
+    top: 5px;
+    left: 200px;
+}
+
+html {
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'pricedown';
+    src: url(pricedown.ttf);
+}
+
+#cursor {
+    position: absolute;
+    z-index: 99999999;
+    display: none;
+}
+
+.sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 120;
+    right: 40;
+    width: 300px;
+    height: 200px;
+}
+
+
+.backSiyahBg {
+    background-color: rgb(0, 0, 0);
+    width: 70%;
+    height: 700px;
+    opacity: 0.4;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    display: none;
+    font-family: 'Open Sans', sans-serif;;
+}
+
+#balance {
+    float: right;
+    font-family: pricedown;
+    font-weight: 400;
+    font-size: 2rem;
+    color: white;
+    padding: 4px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin: 0;
+    margin-right: 6px;
+    padding: 0;
+}
+
+#cash {
+    float: right;
+    font-family: pricedown;
+    font-weight: 400;
+    font-size: 2rem;
+    color: white;
+    padding: 4px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin: 0;
+    margin-right: 6px;
+    padding: 0;
+}
+
+#add-balance {
+    float: right;
+    font-family: pricedown;
+    font-weight: 400;
+    font-size: 29px;
+    color: white;
+    padding: 4px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin: 0;
+    margin-right: 6px;
+    margin-top: 6px;
+    padding: 0;
+}
+
+#icon {
+    height: 21px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.green {
+    color: rgb(0, 125, 0);
+    font-weight: 700;
+    margin-right: 6px;
+}
+
+.red {
+    color: rgb(255, 0, 0);
+}
+
+#pre {
+    font-size: 0.8rem;
+    margin-right: 5px;
+}
+
+.balance {
+    display: inline-block;
+    height: 30px;
+    width: 100%;
+}
+
+.cashtransaction {
+    display: inline-block;
+    height: 30px;
+    width: 100%;
+}
+
+.transaction {
+    display: inline-block;
+    height: 30px;
+    width: 100%;
+}
+
+.full-screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.bank-container {
+    width: 70%;
+    height: 700px;
+    background-color: #10111B;
+    border: 10px solid #1a1919;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    display: none;
+    z-index: 9999999;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#setmenu {
+    display: none;
+    background-color: #10111B;
+    width: 40%;
+    height: 40%;
+    top: 30%;
+    right: 30%;
+    position: fixed;
+    border: 6px solid #1a1919;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.45);
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: #17171b00;
+    border-bottom: 3px solid gray;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-shadow: 1px #232429;
+    text-align: center;
+}
+
+.header2 {
+    width: 20%;
+    height: 100px;
+    background-color: #222;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.header .logo {
+    max-height: 80%;
+    margin-top: 10px;
+    margin-left: 35%;
+    text-align: center;
+}
+
+.header .header-right {
+    color: #777;
+    margin-right: 25px;
+}
+
+.header-right h2 {
+    float: right;
+    position: relative;
+    top: 1vh;
+    right: 1vh;
+    color: #fff;
+}
+
+.header-righti {
+    color: #777;
+    margin-right: 25px;
+    position: absolute;
+    width: 2.5%;
+    border-radius: 90px;
+    border: 2px solid gray;
+    left: 65.5%;
+    cursor: pointer;
+}
+
+.header-righti2 {
+    color: #777;
+    margin-right: 25px;
+    position: absolute;
+    width: 2.5%;
+    right: 30%;
+}
+
+.body {
+    width: 100%;
+    height: 600px;
+    display: none;
+}
+
+.centered {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    width: 80%;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button {
+    flex-grow: 1;
+    align-items: center;
+    height: 40px;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 300px;
+    background:  #777;
+    background-image: url(gray);
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 1.5em;
+    padding: 20px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.button:hover {
+    background: rgb(107, 107, 107);
+    transition: 50ms;
+}
+
+.button:active {
+    background: rgb(75, 75, 75);
+}
+
+.button:focus,
+.submit {
+    outline: 0;
+}
+
+.number-display {
+    flex-grow: 1;
+    align-items: center;
+    height: 70px;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 100%;
+    background: gray;
+    background-image: linear-gradient(to bottom, #f4f5f5, #dfdddd);
+    border-radius: 5px;
+    color: #777;
+    font-size: 2em;
+    padding: 10px 20px;
+}
+
+.number-display p {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+}
+
+.sett {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-size: 35px;
+    text-align: center;
+}
+
+.line {
+    width: 29%;
+    background-color: whitesmoke;
+    height: 0.6%;
+    border-radius: 50px;
+    margin-top: 03px;
+    margin-bottom: 15px;
+}
+
+.header-rightset {
+    color: #777;
+    margin-right: 25px;
+    position: absolute;
+    width: 5%;
+    border-radius: 90px;
+    border: 2px solid gray;
+    left: 26%;
+    top: 03%;
+}
+
+.userset {
+    color: white;
+    position: relative;
+    margin-left: 11px;
+    margin-top: 22px;
+    margin-bottom: 9px;
+    text-align: left;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 25px 20px;
+    font-size: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 40px;
+    resize: vertical;
+}
+
+input[type=submit],
+.submit {
+    height: 70px;
+    text-align: center;
+    width: 100%;
+    background: gray;
+    background-image: ;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 1.5em;
+    padding: 20px 20px 20px 20px;
+    text-decoration: none;
+    border: none;
+}
+
+.form {
+    max-width: 74%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+.wrapper {
+    height: 60px;
+    width: 80vh;
+    background: #15161B;
+    line-height: 60px;
+}
+
+.bck {
+    height: 9%;
+    width: 100%;
+    background: #15161B;
+    line-height: 60px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+.wrapper nav {
+    position: relative;
+    display: flex;
+}
+
+.wrapper nav label {
+    flex: 1;
+    width: 100%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.wrapper nav label a {
+    position: relative;
+    z-index: -1;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.6s ease;
+}
+
+.wrapper nav #home:checked~label.home a,
+.wrapper nav #inbox:checked~label.inbox a,
+.wrapper nav #contact:checked~label.contact a,
+.wrapper nav #heart:checked~label.heart a,
+.wrapper nav #money:checked~label.money a,
+.wrapper nav #about:checked~label.about a {
+    color: #232429;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+}
+
+.wrapper nav label a i {
+    font-size: 25px;
+    margin: 0 7px;
+}
+
+
+/* .wrapper nav .tab {
+    position: absolute;
+    height: 60%;
+    width: 12vh;
+    left: 0;
+    bottom: 17%;
+    z-index: 0;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    background: rgba(119, 119, 119, 0);
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+} */
+
+.wrapper nav #inbox:checked~.tab {
+    left: 20%;
+}
+
+.wrapper nav #contact:checked~.tab {
+    left: 40%;
+}
+
+.wrapper nav #heart:checked~.tab {
+    left: 60%;
+}
+
+.wrapper nav #about:checked~.tab {
+    left: 80%;
+}
+
+.wrapper nav input {
+    display: none;
+}
+
+#withdraw {}

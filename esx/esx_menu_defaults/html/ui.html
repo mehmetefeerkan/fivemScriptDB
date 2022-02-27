@@ -1,0 +1,131 @@
+<html style="overflow-y: hidden;">
+		<head>
+			<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@800&display=swap" rel="stylesheet"> 
+		  <style media="screen">
+
+.menu {
+	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+	font-size: 19px;
+	min-width: 10px;
+	color: #fff;
+	position: absolute;
+	margin-left: 4px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+.menu.align-left {
+left: 40;
+top: 50%;
+transform: translate(0, -50%);
+}
+
+.menu.align-top-left {
+left: 10;
+top: 130;
+}
+
+.menu.align-top {
+left: 50%;
+top: 40;
+transform: translate(-50%, 0);
+}
+
+.menu.align-top-right {
+right: 40;
+top: 70;
+}
+
+.menu.align-right {
+right: 40;
+top: 50%;
+transform: translate(0, -50%);
+}
+
+.menu.align-bottom-right {
+right: 40;
+bottom: 40;
+}
+
+.menu.align-bottom {
+left: 50%;
+bottom: 40;
+transform: translate(-50%, 0);
+}
+
+.menu.align-bottom-left {
+left: 40;
+bottom: 40;
+}
+
+.menu.align-center {
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+}
+
+
+.menu .head {
+	font-size: 0;
+	/* font-weight: bold; */
+	/* padding: 2px; */
+	/* color: white;
+	margin-bottom: 8px;
+	text-align:center; */
+}
+
+.menu .menu-items {
+	max-height: 440px;
+	overflow-y: hidden;
+}
+
+.menu .menu-items .menu-item {
+	background: #232831;
+	color: white;
+
+	font-size: 15px;
+	font-weight: bold;
+	padding-left: 10px;
+	padding-right: 78px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-radius: 3.5px;
+	text-shadow: 0px 0px 10px #000000;
+	display: block;
+	transition-property: background-color, color;
+	transition-duration: 200ms;
+	text-transform: capitalize;
+	display: flex;
+	align-items: center;
+}
+
+.menu-item-value {
+	margin-left: auto;
+}
+
+.menu .menu-items .menu-item:not(:last-child) {
+	margin-bottom: 4px;
+}
+
+.menu .menu-items .menu-item.selected,
+.menu .menu-items .menu-item:hover {
+	background: #31465e;
+}
+		
+</style>
+	</head>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+	</head>
+
+	<body>
+		<div id="menus"></div>
+
+
+		<script src="nui://game/ui/jquery.js"></script>
+		<script src="nui://es_extended/html/js/wrapper.js"></script>
+		<script src="js/mustache.min.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>

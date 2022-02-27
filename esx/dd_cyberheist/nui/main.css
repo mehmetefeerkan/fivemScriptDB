@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css?family=Exo&display=swap');
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    	box-sizing: border-box;
+    	font-size: 1rem;
+	font-family: 'Sogoe UI', sans-serif;
+	font-weight: 400;
+	overflow: hidden;
+
+}
+#mainhack {
+	position: absolute;
+    left: 50%;
+    top: 50%;
+	transform: translate(-50%, -50%);
+	width: 889px;
+	height: 500px;
+}
+#main {
+	position: absolute;
+    left: 50%;
+    bottom: 0.5%;
+	transform: translate(-50%, -0);
+	width: 135px;
+	height: 45px;
+}
+#connecttt {
+	position: absolute;
+	right: 45px;
+	top: 0px;
+	width: 45px;
+	height: 45px;
+}
+#newsms {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 45px;
+	height: 45px;
+}
+#newtwt {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 45px;
+	height: 45px;
+}
+
+#myHackingUI {
+	width: 100%;
+	height: 100%;
+}
+#mySuccessUI {
+	width: 100%;
+	height: 100%;
+}
+#myFailedUI {
+	width: 100%;
+	height: 100%;
+}
+#myCopyUI {
+	width: 100%;
+	height: 100%;
+}
+#myLoadingUI {
+	width: 100%;
+	height: 100%;
+}
+#myActivateUI {
+	width: 100%;
+	height: 100%;
+}
+#info1 {
+	height: 400px;
+	width: 300px;
+	background-color: rgba(0, 0, 0, 0.212);
+	border-radius: 25px;
+	/* padding-left: 5px; */
+	/* padding-right: 5px; */
+	position: absolute;
+	justify-content: center;
+	right: 10px;
+	top: 50px;
+	overflow-y: scroll
+}
+#info2 {
+	height: 400px;
+	width: 300px;
+	background-color: rgba(0, 0, 0, 0.212);
+	border-radius: 25px;
+	/* padding-left: 5px; */
+	/* padding-right: 5px; */
+	position: absolute;
+	justify-content: center;
+	right: 10px;
+	top: 50px;
+	overflow-y: scroll
+}
+#info3 {
+	height: 400px;
+	width: 300px;
+	background-color: rgba(0, 0, 0, 0.212);
+	border-radius: 25px;
+	/* padding-left: 5px; */
+	/* padding-right: 5px; */
+	position: absolute;
+	justify-content: center;
+	right: 10px;
+	top: 50px;
+	overflow-y: scroll
+}
+#info4 {
+	height: 400px;
+	width: 300px;
+	background-color: rgba(0, 0, 0, 0.212);
+	border-radius: 25px;
+	/* padding-left: 5px; */
+	/* padding-right: 5px; */
+	position: absolute;
+	justify-content: center;
+	right: 10px;
+	top: 50px;
+	overflow-y: scroll
+}
+#info5 {
+	height: 400px;
+	width: 300px;
+	background-color: rgba(0, 0, 0, 0.212);
+	border-radius: 25px;
+	/* padding-left: 5px; */
+	/* padding-right: 5px; */
+	position: absolute;
+	justify-content: center;
+	right: 10px;
+	top: 50px;
+	overflow-y: scroll
+}
+#info6 {
+	height: 400px;
+	width: 300px;
+	background-color: rgba(0, 0, 0, 0.212);
+	border-radius: 25px;
+	/* padding-left: 5px; */
+	/* padding-right: 5px; */
+	position: absolute;
+	justify-content: center;
+	right: 10px;
+	top: 50px;
+	overflow-y: scroll
+}
+#info7 {
+	height: 400px;
+	width: 300px;
+	background-color: rgba(0, 0, 0, 0.212);
+	border-radius: 25px;
+	/* padding-left: 5px; */
+	/* padding-right: 5px; */
+	position: absolute;
+	justify-content: center;
+	right: 10px;
+	top: 50px;
+	overflow-y: scroll
+}
+#info8 {
+	height: 400px;
+	width: 300px;
+	background-color: rgba(0, 0, 0, 0.212);
+	border-radius: 25px;
+	/* padding-left: 5px; */
+	/* padding-right: 5px; */
+	position: absolute;
+	justify-content: center;
+	right: 10px;
+	top: 50px;
+	overflow-y: scroll
+}
+#info9 {
+	height: 400px;
+	width: 300px;
+	background-color: rgba(0, 0, 0, 0.212);
+	border-radius: 25px;
+	/* padding-left: 5px; */
+	/* padding-right: 5px; */
+	position: absolute;
+	justify-content: center;
+	right: 10px;
+	top: 50px;
+	overflow-y: scroll
+}
+#info10 {
+	height: 400px;
+	width: 300px;
+	background-color: rgba(0, 0, 0, 0.212);
+	border-radius: 25px;
+	/* padding-left: 5px; */
+	/* padding-right: 5px; */
+	position: absolute;
+	justify-content: center;
+	right: 10px;
+	top: 50px;
+	overflow-y: scroll
+}
+#info11 {
+	height: 400px;
+	width: 300px;
+	background-color: rgba(0, 0, 0, 0.212);
+	border-radius: 25px;
+	/* padding-left: 5px; */
+	/* padding-right: 5px; */
+	position: absolute;
+	justify-content: center;
+	right: 10px;
+	top: 50px;
+	overflow-y: scroll
+}
+#info12 {
+	height: 400px;
+	width: 300px;
+	background-color: rgba(0, 0, 0, 0.212);
+	border-radius: 25px;
+	/* padding-left: 5px; */
+	/* padding-right: 5px; */
+	position: absolute;
+	justify-content: center;
+	right: 10px;
+	top: 50px;
+	overflow-y: scroll
+}
+.dark .item {
+
+	background-color: rgba(255, 0, 0, 0)!important;
+	border-bottom: unset!important;
+	/*border-top: 2px solid #cc153d;
+	margin-top: 6px!important;*/
+}
+
+.dark .text {
+
+	color: #ffffff;
+}
+

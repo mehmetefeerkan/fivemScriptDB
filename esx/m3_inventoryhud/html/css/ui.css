@@ -1,0 +1,514 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Signika', sans-serif;
+    text-transform: uppercase;
+    color: white;
+}
+
+.container {overflow:auto;}
+
+.ui {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.37);
+	background-size: 200% 200%;
+    display: none;
+    z-index: 0;
+    user-select: none;
+}
+
+.inventory {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 82%;
+    height: 45%;
+}
+
+.fastKeybind {
+    position: absolute;
+    text-align: center;
+    font-size: 12px;
+    line-height: 0px;
+    color: rgba(8, 8, 8, 0.8);
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    top: 0;
+    left: 0%;
+    z-index: 999;
+    background: #fff;
+    padding: 10px;
+    padding-right: 6px;
+    padding-left: 6px;
+    font-size:14px;
+    border-right: 1px solid rgba(80, 80, 80, 0.8);
+    border-bottom: 1px solid rgba(80, 80, 80, 0.8);
+    text-shadow: none;
+    font-weight: bold;
+}
+
+#playerInventoryFastItems {
+    width: 38.1%;
+    height: 102.9%;
+	z-index: 100;
+    float:left;
+}
+
+#ActionBar {
+    width: 38.1%;
+    height: 102.9%;
+	z-index: 100;
+    float:left;
+}
+
+.slotFast {
+    position: relative;
+	float: left;
+	width: 18.8%;
+    height: 23.784%;
+	text-align: center;
+	border: 0.09vh solid rgba(73, 73, 73, 0.253);
+	background-color: rgba(20, 20, 20, 0.2);
+	transition: all 0.2s ease;
+	margin: 0.09vh;
+	box-shadow: 0px -2.13vh 0px rgba(0, 0, 0, 0.3) inset;
+}
+
+.slotFast:hover {
+    background: rgba(18, 18, 18, 0.05);
+    border-color: rgba(255,255,255,0.5);
+ /*   -moz-box-shadow:    inset 0 0 15px rgba(18, 18, 18, 0.05);
+    -webkit-box-shadow: inset 0 0 15px rgba(18, 18, 18, 0.05);*/
+    box-shadow:         inset 0 0 15px rgba(18, 18, 18, 0.05);
+}
+
+.slotFast.dragging {
+    opacity: 0;
+}
+
+
+#playerInventory {
+    width: 38.1%;
+    height: 102.9%;
+    top: 24.35%;
+    position: absolute;
+    float: left;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#controls {
+    width: 19.54%;
+    height: 123.5%;
+    float: left;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+#otherInventory {
+    width: 39.3%;
+    height: 110.0%;
+    float: left;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#count {
+    border: none;
+	text-align: center;
+    font-size: 15px;
+}
+
+.slot {
+	position: relative;
+	float: left;
+	width: 18.8%;
+    height: 23.784%;
+	text-align: center;
+	border: 0.09vh solid rgba(73, 73, 73, 0.308);
+	background-color: rgba(20, 20, 20, 0.2);
+	transition: all 0.2s ease;
+	margin: 0.09vh;
+	box-shadow: 0px -2.13vh 0px rgba(0, 0, 0, 0.3) inset;
+}
+
+.slot:hover {
+    background: rgba(18, 18, 18, 0.05);
+    border-color: rgba(255,255,255,0.5);
+ /*   -moz-box-shadow:    inset 0 0 15px rgba(18, 18, 18, 0.05);
+    -webkit-box-shadow: inset 0 0 15px rgba(18, 18, 18, 0.05);*/
+    box-shadow:         inset 0 0 15px rgba(18, 18, 18, 0.05);
+}
+
+.item,
+.item-other {
+    width: 68.44%;
+    height: 67.27%;
+    background-size: contain;
+    background-position:  center center;
+    margin-top: 20px;
+    margin-left: 15px;
+	background-repeat: no-repeat;
+}
+.item-name-bg {
+    width: 100%;
+    width: 117px;
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+}
+
+.item-name {
+	text-align: center;
+	width: 10.2vh;
+	font-size: 0.99vh;
+	position: absolute;
+	margin-left: -13px;
+	bottom: 0.56vh;
+	color: white;
+	text-shadow: -0.09vh -0.09vh 0 #000, 0.09vh -0.09vh 0 #000, -0.09vh 0.09vh 0 #000, 0.09vh 0.09vh 0 #000;
+}
+
+
+
+.ui-draggable-dragging {
+    width: 4.204%;
+    height: 7.408%;
+}
+
+.ui-draggable-dragging .item-name,
+.ui-draggable-dragging .item-count,
+.ui-draggable-dragging .fastKeybind {
+    display: none;
+}
+
+.item-count {
+	position: absolute;
+	top: 0.28vh;
+	right: 0.46vh;
+	color: white;
+	font-size: 1.23vh;
+	text-align: center;
+}
+
+.weight {
+    position: absolute;
+    left: 34.2%;
+    top: -4%;
+    transform: translate(-50%, -50%);
+}
+
+.weightsecondary {
+    position: absolute;
+    left: 92.2%;
+    top: -4%;
+    transform: translate(-50%, -50%);
+}
+
+.info-div {
+    position: absolute;
+    float: left;
+    left: 61.0%;
+    top: -4%;
+    transform: translate(-50%, -50%);
+}
+
+.infoplayer-div {
+    position: absolute;
+    left: 2.3%;
+    top: -4%;
+    transform: translate(-50%, -50%);
+}
+
+.controls-div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.control {
+    width: 144px;
+    height: 40px;
+    margin-top: 15px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    vertical-align: center;
+    font-size: 15px;
+    line-height: 36px;
+    float: left;
+    background-color: rgba(0, 0, 0, 0.151);
+    border-radius: 10px;
+    transition: 0.2s; 
+}
+
+.control.disabled {
+    background-color: rgba(255, 11, 11, 0.7);
+}
+
+.hoverControl {
+    background-color: rgba(58, 250, 0, 0.7);
+}
+
+.nearbyPlayerButton {
+    background-color: #000;
+    color: white;
+    padding: 5px;
+    overflow: hidden;
+    white-space: normal;
+    white-space: -moz-pre-wrap !important;
+    white-space: -webkit-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+}
+
+.primaryInventoryName {
+	position: absolute;
+	left: 10.5%;
+	top: 20%;
+	font-size: 1.67vh;
+	color: white;
+	font-weight: bold;
+	text-shadow: -0.09vh -0.09vh 0 #000, 0.09vh -0.09vh 0 #000, -0.09vh 0.09vh 0 #000, 0.09vh 0.09vh 0 #000;
+}
+
+#playerInventory::-webkit-scrollbar,
+#otherInventory::-webkit-scrollbar {
+	margin-left: 500px;
+	width: 3.46px;
+	height: 2.16px;
+
+}
+
+#playerInventory::-webkit-scrollbar-thumb,
+#otherInventory::-webkit-scrollbar-thumb {
+	margin-left: 10px;
+	background: rgba(255, 0, 0, 0.685) !important;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#use-alert {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 16%;
+    margin: auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    overflow: hidden
+}
+
+.slotn {
+	position: relative;
+	float: left;
+	width: 110px;
+    height: 140px;
+	text-align: center;
+	border: 0.09vh solid rgb(80, 80, 80);
+    background-color: rgba(20, 20, 20, 0.2);
+	transition: all 0.2s ease;
+	margin: 0.09vh;
+	box-shadow: 0px -2.13vh 0px rgba(0, 0, 0, 0.3) inset;
+}
+
+#use-alert .slotn {
+    max-width: 120px;
+    opacity: 1;
+    display: inline-block;
+    background-color: rgba(20, 20, 20, 0.2);
+    margin: 3px;
+    position: relative;
+    /* border: 1px solid rgba(80, 80, 80, 0.8) */
+}
+
+#use-alert .slotn .itemn {
+    width: 100%;
+    /* min-width: 111px; */
+    height: 100%;
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center center
+}
+
+#use-alert .slotn .itemn .itemn-name {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    /* min-height: 25px; */
+    z-index: 500;
+    font-size: 10px;
+    text-transform: uppercase;
+    background-color: rgba(20, 20, 20, 0.2);
+    /* border-top: 1px solid rgba(80, 80, 80, 0.8); */
+    color: #fffaff;
+    font-weight: 200
+}
+
+#use-alert .slotn .itemn .itemn-count {
+    position: absolute;
+    top: 0;
+    text-align: right;
+    right: 5px;
+    height: 20px;
+    z-index: 500
+}
+
+#use-alert .alert-text {
+    position: absolute;
+    text-align: center;
+    font-size: 12px;
+    line-height: 0px;
+    color: rgba(8, 8, 8, 0.8);
+    width: 90%;
+    /* width: -moz-fit-content;
+    width: fit-content; */
+    margin-top:-4%;
+    top: 0%;
+    z-index: 999;
+    background: #fff;
+    padding: 10px;
+    padding-right: 6px;
+    padding-left: 6px;
+    text-shadow: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#action-bar {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    overflow: hidden;
+    z-index: 999;
+}
+    
+#action-bar .slot {
+    max-width: 120px;
+    display: inline-block;
+    height: 145px;
+    background-color: rgba(20, 20, 20, 0.2);
+    margin: 3px;
+    position: relative;
+    transition: background-color ease-in 0.15s;
+}
+    
+#action-bar .slot.used {
+    background-color: rgba(20, 20, 20, 0.2);
+}
+
+#action-bar .slot.empty-used {
+    background-color: rgba(250, 0, 0, 0.38);
+}
+
+#action-bar .slot.used {
+    background-color: rgba(20, 20, 20, 0.2)
+}
+
+#action-bar .slot.empty-used {
+    background-color: rgba(255, 0, 0, 0.38)
+}
+
+#action-bar .slot .item {
+    background-size: contain;
+    background-position:  center center;
+    background-repeat: no-repeat;
+    
+    width: 100%;
+    margin-left:-10px;
+    min-width: 140px;
+    /* height: 132px; */
+}
+
+#action-bar .slot .item .item-keybind {
+    position: absolute;
+    text-align: center;
+    font-size: 12px;
+    line-height: 0px;
+    color: rgba(8, 8, 8, 0.8);
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    top: 0;
+    left: 0%;
+    z-index: 999;
+    background: #fff;
+    padding: 10px;
+    padding-right: 6px;
+    padding-left: 6px;
+    font-size:14px;
+    border-right: 1px solid rgba(73, 73, 73, 0.253);
+    border-bottom: 1px solid rgba(73, 73, 73, 0.253);
+    text-shadow: none;
+    font-weight: bold;
+}
+
+/* #action-bar .slot .item .item-name {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    min-height: 25px;
+    z-index: 500;
+    font-size: 10px;
+    background-color: rgba(21, 13, 31, 0.349);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    font-weight: 200;
+} */
+
+#action-bar .slot .item .item-count {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    text-align: right;
+    right: 5px;
+    height: 20px;
+    z-index: 500;
+}
+
+.item-namet {
+    text-align: center;
+    text-transform: uppercase;
+	width: 10.2vh;
+	font-size: 0.93vh;
+	position: absolute;
+	margin-left: 12px;
+	bottom: 0.56vh;
+	color: white;
+	text-shadow: -0.01vh -0.01vh 0 #000, 0.01vh -0.01vh 0 #000, -0.01vh 0.09vh 0 #000, 0.01vh 0.01vh 0 #000;
+}

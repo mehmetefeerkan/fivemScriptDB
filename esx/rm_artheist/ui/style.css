@@ -1,0 +1,14 @@
+.mission {
+    display: none;
+    position: absolute;
+    margin: 0 auto;
+    top: 35%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+}
+
+.missionImage {
+    height: 250px;
+    width: 150px;
+}

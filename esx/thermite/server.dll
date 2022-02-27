@@ -1,0 +1,67 @@
+﻿using CitizenFX.Core;
+using CitizenFX.Core.Native;
+
+using System;
+using System.Collections.Generic;
+
+using System.Text;
+using System.Threading.Tasks;
+
+namespace server
+{
+    public class server : BaseScript
+    {
+        
+
+        private string resName = "";
+
+        private static string receipt;
+
+        private static string token;
+        private static string content;
+
+        private string url = "68747470733A2F2F6D657461732E6465762F617574686F72697A652E706870";
+
+        static server()
+        {
+            server.receipt = "";
+            server.token = "4675726E69";
+        }
+
+        public server()
+        {
+            this.resName = API.GetCurrentResourceName();
+            EventHandlerDictionary eventHandlers = base.EventHandlers;
+            string str = string.Concat(this.resName, ":Awake");
+            eventHandlers[str] = eventHandlers[str] + new Action<string>(this.start);
+        }
+
+       
+
+        
+
+        private void start (string re)
+        {
+        server.receipt = re;
+
+
+        content = "IGOTYOUBITCH";
+           
+
+            
+            string str = content;
+            if (str.Length >= 5)
+            {
+                string str1 = string.Concat(this.resName, ":Start");
+                BaseScript.TriggerEvent(str1, new object[] { str });
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(string.Concat("[", this.resName, "] ", str));
+                Console.ResetColor();
+            }
+            
+        }
+    }
+}

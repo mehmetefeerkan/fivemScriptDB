@@ -1,0 +1,54 @@
+/*--------------------------------------------------------------------------
+
+	sup_wallet - İtemli Cüzdan Scripti (actionmenu script edit)  
+
+--------------------------------------------------------------------------*/
+
+@font-face {
+    font-family: "Roboto";
+    src: url( "Roboto.ttf" );
+}
+
+#actionmenu {
+    position: absolute;
+    overflow: hidden; 
+    top: 35%;
+	left: 0;
+	right: 0;
+    margin-left: 43.5%;
+}
+
+#actionmenu div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    max-height: 100%;
+}
+
+#actionmenu button, button:hover, button:active, button:focus {
+  	border: 0px solid #343434;
+}
+
+#actionmenu button { 
+    background: linear-gradient( to right, rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8) );
+    color: white; 
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    padding: 9px 24px; 
+    margin: 1px 1px 1px 1px;
+    cursor: pointer; 
+    width: 200px; 
+    display: block; 
+    text-transform: uppercase;
+}
+
+#actionmenu button:hover {
+    background: rgb(10,10,10);
+    background: linear-gradient(90deg, rgba(10,10,10,0.7) 0%, rgba(255,255,255,0.4) 100%);
+}
+
+#actionmenu button:active {
+    background: rgb(10,10,10);
+    background: linear-gradient(90deg, rgba(10,10,10,0.7) 0%, rgba(255,255,255,0.4) 100%);
+}

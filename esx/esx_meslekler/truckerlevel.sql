@@ -1,0 +1,1 @@
+alter table users ADD truckerLevel INT(12) DEFAULT 0

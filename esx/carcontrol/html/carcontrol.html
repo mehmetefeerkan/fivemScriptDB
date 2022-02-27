@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Car Control</title>
+    <meta charset="utf-8">
+    <style>
+      body {
+        background-color: transparent;
+        margin:0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        opacity: 0.0;
+      }
+      .info {
+        position: absolute;
+        left: 50%;
+        top: 30px;
+        text-align: center;
+        transform: translateX(-50%);
+        font-size: 20pt;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0px 0px 2px black;
+      }
+      .background {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(36, 36, 36);
+        background-image: url("https://www.elsetge.cat/myimg/f/29-298953_gta-san-andreas-iphone-5-wallpaper-grand-theft.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .off {
+        visibility: hidden !important;
+        opacity: 0 !important;
+        position: absolute !important;
+      }
+
+      
+      #debugcontent {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+      }
+
+      .container {
+        position: absolute;
+        left: 50%;
+        bottom: 40px;
+        transform: translateX(-50%);
+        width: 500px;
+        height: 250px;
+        border-radius: 20px;
+        background-color: #1e1e1eeb;
+        border: 2px solid #c4c4c4;
+        box-shadow: inset 0px -5px 10px black,inset 0px 5px 10px #ffffff70;
+      }
+
+      .content {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto;
+        grid-gap: 10px;
+        box-sizing: border-box;
+        padding: 20px;
+      }
+
+      .enabled {
+        pointer-events: all !important;
+        opacity: 1 !important;
+        transition: opacity 1s;
+      }
+
+      .toggleicon {
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: 70%;
+        background-repeat: no-repeat;
+        pointer-events: none;
+        opacity: 0.3;
+      }
+
+      .togglestate {
+        position: absolute;
+        left: 50%;
+        bottom: 5px;
+        transform: translateX(-50%);
+        background-color: #1f1f1f;
+        border-radius: 2px;
+        pointer-events: none;
+        width: 40%;
+        height: 3px;
+        -box-shadow: inset 0px 1px 2px rgb(0, 0, 0), 0px 1px 1px rgb(87, 87, 87);
+        transition: background-color 0.2s;
+      }
+
+      .togglebutton:hover .togglestate {
+        background-color: #005300;
+        -box-shadow: inset 0px 1px 2px rgba(0,0,0,0.5), 0px 1px 1px rgb(95, 139, 50);
+        transition: background-color 0.2s;
+      }
+
+      .ison .togglestate {        
+        background-color: #00c600 !important;
+        -box-shadow: inset 0px 1px 2px rgba(0,0,0,0.5), 0px 1px 1px rgb(174, 255, 92) !important;
+        transition: background-color 1s;
+      }
+
+      
+
+      .togglebutton:active {
+        transform: translateY(2px);
+        transition: transform 0.2s;
+      }
+
+      .togglebutton {
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+        background-color: #2f2f2f;
+        box-shadow: inset 0px 4px 7px rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        cursor: pointer;
+        opacity: 0.5;
+        position: relative;
+        transform: translateY(0px);
+        transition: transform 0.2s;
+        border: 2px solid #313131b0;
+      }
+
+      .togglebutton:hover {
+        background-color: #242424;
+      }
+
+      .overlay {
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;        
+        background-image: url("carbon.jpg");
+        background-size: 90px;
+        border-radius: 20px;
+        opacity: 0.25;
+        filter: contrast(25%);
+      }
+
+    </style>
+  </head>
+  <body id="body">
+    <div id="debugcontent" class="off">
+      <div class="background"></div>
+      <div class="info">info</div>
+    </div>
+    <div class="container">
+      <div class="content">
+        <div class="overlay"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+      </div>
+    </div>
+    <script>
+      //#region Main
+      var onChange
+      var options = {
+        0:{id:0,name:"seatFrontLeft",icon:"seatFrontLeft.png",enabled:true,checked:false,slotIndex:8},
+        1:{id:1,name:"seatFrontRight",icon:"seatFrontLeft.png",enabled:true,checked:false,slotIndex:9},
+        2:{id:2,name:"seatRearLeft",icon:"seatFrontLeft.png",enabled:true,checked:false,slotIndex:14},
+        3:{id:3,name:"seatRearRight",icon:"seatFrontLeft.png",enabled:true,checked:false,slotIndex:15},
+        4:{id:4,name:"doorFrontLeft",icon:"doorFrontLeft.png",enabled:true,checked:false,slotIndex:7},
+        5:{id:5,name:"doorFrontRight",icon:"doorFrontRight.png",enabled:true,checked:false,slotIndex:10},
+        6:{id:6,name:"doorRearLeft",icon:"doorRearLeft.png",enabled:true,checked:false,slotIndex:13},
+        7:{id:7,name:"doorRearRight",icon:"doorRearRight.png",enabled:true,checked:false,slotIndex:16},
+        8:{id:8,name:"windowFrontLeft",icon:"windowFrontLeft.png",enabled:true,checked:false,slotIndex:6},
+        9:{id:9,name:"windowFrontRight",icon:"windowFrontRight.png",enabled:true,checked:false,slotIndex:11},
+        10:{id:10,name:"windowRearLeft",icon:"windowRearLeft.png",enabled:true,checked:false,slotIndex:12},
+        11:{id:11,name:"windowRearRight",icon:"windowRearRight.png",enabled:true,checked:false,slotIndex:17},
+        12:{id:12,name:"frontHood",icon:"frontHood.png",enabled:true,checked:false,slotIndex:2},
+        13:{id:13,name:"rearHood",icon:"rearHood.png",enabled:true,checked:false,slotIndex:3},
+        14:{id:14,name:"rearHood2",icon:"rearHood2.png",enabled:true,checked:false,slotIndex:4},
+        15:{id:15,name:"ignition",icon:"ignition.png",enabled:true,checked:false,slotIndex:0},
+        16:{id:16,name:"interiorLight",icon:"interiorLight.png",hidden:false,enabled:true,checked:false,slotIndex:5},
+        seatFrontLeft:0,
+        seatFrontRight:1,
+        seatRearLeft:2,
+        seatRearRight:3,
+        doorFrontLeft:4,
+        doorFrontRight:5,
+        doorRearLeft:6,
+        doorRearRight:7,
+        windowFrontLeft:8,
+        windowFrontRight:9,
+        windowRearLeft:10,
+        windowRearRight:11,
+        frontHood:12,
+        rearHood:13,
+        rearHood2:14,
+        ignition:15,
+        interiorLight:16,
+        _length:17,
+      }
+      var content = document.getElementsByClassName("content")[0]
+      var slots = document.getElementsByClassName("slot")
+      function SetEnabledOptions(optionList) {
+        for( var i = 0; i < options._length; i++) {
+          var o = options[i]
+          o.enabled = false
+        }
+        for (var i in optionList) {          
+          var o = options[i]
+          o.enabled = (optionList[i] && true || false)
+        }
+        Refresh()
+      }
+      function SetCheckedOptions(optionList) {
+        for( var i = 0; i < options._length; i++) {
+          var o = options[i]
+          o.checked = false
+        }
+        for (var i in optionList) {    
+          var o = options[i]
+          o.checked = (optionList[i] && true || false)
+        }
+        Refresh()
+      }
+      function Refresh() {
+        for( var i = 0; i < options._length; i++) {
+          var o = options[i]
+          if( o.element == null ) {
+            o.element = CreateButton(o)
+          } 
+          o.element.classList.toggle("enabled",o.enabled)
+          o.element.classList.toggle("ison",o.checked)
+        }
+      }
+      function CreateButton(o) {
+        var item = document.createElement("DIV")
+        item.classList = "togglebutton"
+        var icon = document.createElement("DIV")
+        icon.classList = "toggleicon"
+        icon.style.cssText = "background-image:url("+o.icon+");"
+        var state = document.createElement("DIV")
+        state.classList = "togglestate"
+
+        item.setAttribute("id",o.id)
+        item.addEventListener("click",function(e) {
+          e.target.classList.toggle("ison")
+          var option = options[parseInt(e.target.getAttribute("id"))]
+          option.checked = e.target.classList.toString().includes("ison")
+          OnChange(option)
+        })
+      
+        item.appendChild(icon)
+        item.appendChild(state)
+        slots[o.slotIndex].appendChild(item)
+        return item
+      }
+      function OnChange(o) {
+        Post(onChange,o)
+      }
+      //#endregion
+      //#region Utils
+      function SetAlpha(arguments) {
+        var body = document.getElementById("body")
+        if( body != null ) {
+          var v = arguments[0]
+          if (v == null) {
+            v = 1;
+          }
+          body.style.opacity = v
+        }
+      }
+      //#endregion
+      //#region Audio
+      var audioPlayer
+      function PlaySound(path,volume) {
+        volume = volume || 1
+        if( debug) {
+          var a = new Audio(path);
+          a.volume = volume;   
+          a.play();
+        } else {
+          if (audioPlayer != null) {
+            audioPlayer.pause();
+          }
+
+          audioPlayer = new Howl({src: [path]});
+          audioPlayer.volume(1);
+          audioPlayer.play();
+        }
+      }
+      //#endregion
+      //#region Interface
+      window.addEventListener('message', function(event) {
+
+        if( event.data.func != null && typeof(event.data.func) == "string" && event.data.func.length >= 0 ) {
+          //call func
+          var ret = window[event.data.func](event.data.args)
+          if( event.data.ret != null && typeof(event.data.ret) == "string" && event.data.ret.length >= 0 ) {
+            Post(event.data.ret,ret)
+          }
+        } else if( event.data.var != null && typeof(event.data.var) == "string" && event.data.var.length >= 0 ) {
+          if( event.data.ret != null && typeof(event.data.ret) == "string" && event.data.ret.length >= 0 ) {
+            //get var
+            Post(event.data.ret,window[event.data.var])
+          } else {
+            //set var
+            window[event.data.var] = event.data.value
+          }
+        }
+      })
+      function GetVars() {
+        var ret = []
+        for(var i in window) {
+          if((typeof window[i]).toString()!="function") {
+            ret.push(window[i].name)
+          }
+        }
+        return ret
+      }
+      function GetFunctions() {
+        var ret = []
+        for(var i in window) {
+          if((typeof window[i]).toString()=="function") {
+            ret.push(window[i].name)
+          }
+        }
+        return ret
+      }
+      function Post(o,v) {
+        if( debug ) { return }
+        if( o == null || typeof(o) != "string" || o.length <= 0 ) { return }
+        if( v == null ) { v = {} }
+        $.post(o,JSON.stringify(v))
+      }
+
+      document.onkeyup = function (data) {
+        if (data.which == 8) { // backspace key
+          $.post('http://carcontrol/close', JSON.stringify({}));
+        }
+      };
+
+      window.oncontextmenu = function ()
+      {
+        $.post('http://carcontrol/close', JSON.stringify({}));          
+        return false;     // cancel default menu
+      }
+
+      //#endregion
+      //#region Debug
+      var debug
+      function DebugInit() {
+        debug = window.location.href.includes("debug")
+        if( !debug ) { return }
+        var debugcontent = document.getElementById("debugcontent")
+        if( debugcontent != null ) { debugcontent.classList.toggle("off",false) }
+        /////////////////////////////////////
+        /*fire it in debug mode here*/
+        Refresh()
+      } 
+      DebugInit()
+      //#endregion
+    </script>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js" type="text/javascript"></script>
+  </body>
+</html>

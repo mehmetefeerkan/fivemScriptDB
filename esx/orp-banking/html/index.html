@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruling Bank</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container" id="bankui">
+        <button class="close">X</button>
+        <div class="row">
+            <div class="column left">
+                <div class="logo-area">
+                    <img src="img/logo.png" class="logo">
+                </div>
+                <div class="account-info">
+                    <div class="welcome">Hoşgeldiniz,</div>
+                    <div class="info-label"><i class="fas fa-dollar-sign"></i>
+                        <div class="balance"></div>
+                    </div>
+
+                </div>
+                <div class="quick-actions">
+                    <div class="quick-msg">Hızlı İşlemler</div>
+                    <button class="btn-quick" id="withdraw-100">Hızlı Çek $100</button>
+                    <button class="btn-quick" id="withdraw-250">Hızlı Çek $250</button>
+                    <button class="btn-quick" id="withdraw-500">Hızlı Çek $500</button>
+                </div>
+            </div>
+            <div class="column right">
+                <div class="row-2nd">
+                    <div class="column-2nd b-right">
+                        <div class="account-services">
+                            <div class="label m-top">Hesap Hizmetleri</div>
+                            <div class="deposit m-top-med">
+                                <div class="label-sm">Para Yatır</div>
+                                <input type="number" placeholder="Miktar..." id="depositval" class="inputs">
+                                <button class="btn" id="deposit">Hesaba Yatır</button>
+                            </div>
+                            <div class="withdraw m-top-big">
+                                <div class="label-sm">Para Çekme</div>
+                                <input type="number" placeholder="Miktar..." id="withdrawval" class="inputs">
+                                <button class="btn" id="withdraw">Hesaptan Çek</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column-2nd">
+                        <div class="transfer-money">
+                            <div class="label m-top">Para Gönder</div>
+                            <div class="input-section">
+                                <div class="label-sm m-top-med">Alıcının (ID)</div>
+                                <input type="number" placeholder="0" id="idval" class="inputs">
+                            </div>
+                            <div class="input-section">
+                                <div class="label-sm m-top">Transfer Edilecek Tutar</div>
+                                <input type="number" placeholder="0" id="transferval" class="inputs">
+                            </div>
+                            <button class="btn" id="transfer">Transfer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/b6ec58ae28.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

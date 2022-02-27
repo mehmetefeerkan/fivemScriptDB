@@ -1,0 +1,521 @@
+@font-face {
+    font-family: 'pdown';
+    src: url('../fonts/pdown.ttf');
+}
+
+body {
+    overflow: hidden;
+    height: 100%;
+    width:100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.smalltext {
+    font-size:10px;
+    margin-left:10px;
+    margin-right: 20px;
+
+}
+
+.siyah-bar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 9999;
+}
+
+.siyah-bar-ic {
+    height: 100px;
+    background: #000;
+    width: 100%;
+}
+
+.money-container {
+    position: absolute;
+    right: 5vw;
+    top: 7vh;
+}
+
+#cash {
+    color: white;
+}
+
+.mini-dot:last-child {
+    margin-right: 0;
+}
+
+.munnie {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: right;
+    color: #277418;
+}
+
+.money-cash,.money-bank {
+    display: none;
+    float:right;
+    font-family: 'pdown';
+    font-weight: 400;
+    font-size: 29px;
+    color: white;
+    padding: 4px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin: 0;
+    margin-right: 6px;
+    margin-top: 6px;
+    padding: 0;
+}
+
+.money-cash {
+    color: rgb(210, 210, 210);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: right;
+}
+
+.money-bank {
+    color: rgb(167, 167, 167);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: right;
+    top: 55px;
+}
+
+/* Ana Hud -------------------- */
+.hud {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+/* Sol alt sağ düğmesi */
+.sol-hud {
+    display: flex;
+    flex-direction: row;
+    margin-left: 2.8vh;
+    margin-bottom: 1vh;
+    align-items: flex-end;
+    width: 25vh;
+}
+
+/* Sol Alt Taraf */
+.can, .zirh, .yemek, .su, .stamina, .stres {
+    /* box-shadow: 0px 1px 1px 0px rgba(50, 50, 50, 0.75); */
+    background: rgba(17, 17, 17, 0.5);
+    height: 25px; 
+    margin-left: 3px;
+    border: 2px solid #E6E6E5;
+    position: relative;
+    border-radius: 1px;
+}
+
+.can {
+    margin: 0;
+}
+
+.can, .zirh  {
+    display: flex;
+    flex-grow: 3;
+    align-items: center;
+}
+
+.yemek, .su, .stamina, .stres {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    max-width: 25px;
+}
+
+.zirh i, .can i {
+    margin-left: 4px;
+    font-size: 15px;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.yemek i, .su i, .stamina i, .stres i {
+    font-size: 15px;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+#can-ic, #zirh-ic, #yemek-ic, #su-ic, #stamina-ic, #stres-ic {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#can-ic {
+    height: 100%;
+    background: #3BB273;
+}
+
+#zirh-ic {
+    height: 100%;
+    background: #418aff;
+}
+
+#yemek-ic {
+    width: 100%;
+    background: #D1993C;
+}
+
+#su-ic {
+    width: 100%;
+    background: #5e83a6;
+}
+
+#stamina-ic {
+    width: 100%;
+    background: #495A74;
+}
+
+#stres-ic {
+    width: 100%;
+    background: #984447;
+}
+
+.fa-lungs {
+    font-size: 12px !important;
+}
+
+/* Orta Alt Taraf */
+.orta-hud {
+    width: 15px;
+    margin-bottom: 1vh;
+    display: flex;
+    align-items: flex-end;
+}
+
+.orta-hud-collum {
+    display: flex;
+    flex-direction: column;
+    height: 25px;
+    margin-left: 4px;
+}
+
+.orta-hud-dot {
+    background: #fff;
+    width: 5px;
+    height: 100vh;
+    margin-bottom: 3px;
+    border-radius: 1px;
+}
+
+.orta-hud-dot:last-child {
+    margin: 0;
+}
+
+#dot-0 {
+    box-shadow: 0px 1px 1px 0px rgba(50, 50, 50, 0.75);
+    opacity: 1;
+}
+
+#dot-1 {
+    box-shadow: 0px 1px 1px 0px rgba(50, 50, 50, 0.75);
+    opacity: 1;
+}
+
+#dot-2 {
+    box-shadow: 0px 1px 1px 0px rgba(50, 50, 50, 0.75);
+    opacity: 0;
+}
+
+/* Sağ Alt Taraf */
+.sag-hud {
+    display: flex;
+    margin-left: 3vh;
+    margin-bottom: 1vh;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.7px;
+    font-size:16px;
+    font-weight: 600;
+    font-variant: small-caps;
+    text-shadow: 1px 1px 1px rgba(1,1,1,1);
+}
+
+.sag-hud-collum {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.vehicle-tip1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.vehicle-text {
+    display: flex;
+    flex-direction: row;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.street-tip1 {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.vehicle-tip1-collum {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.street-txt-tip1 {
+    display: none;
+    padding-left: 2vh;
+}
+
+.belt {
+    color: red;
+}
+
+.saat {
+    display: flex;
+}
+
+.saat-car {
+    position: absolute;
+    bottom: 28px;
+    left: 85px;
+}
+
+.direction {
+    color: #111111;
+    background-color: rgba(226, 226, 226, 0);
+    width: 100px;
+    height: 26px;
+    overflow: hidden;
+    float: left;
+    margin-top: 10px;
+}
+
+.direction>.image {
+    height: 100%;
+    background-position: center center;
+    background-size: 400px;
+    background-repeat: repeat;
+    width: 800%;
+    z-index: 1;
+    background-image: url('../img/compass.png');
+}
+
+/* Tepe Hudu Alt Taraf */
+.tepe-hud {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 50px;
+    display: none;
+    justify-content: center;
+
+    flex-direction: row;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.7px;
+    font-size:16px;
+    font-weight: 600;
+    font-variant: small-caps;
+    text-shadow: 1px 1px 1px rgba(1,1,1,1);
+}
+
+.street-sol {
+    padding-right: 15px;
+    position: absolute;
+    right: 53%;
+}
+
+.street-sag {
+    padding-left: 15px;
+    position: absolute;
+    left: 53%;
+}
+
+.direction-tip2 {
+    width: 100px;
+    height: 26px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.direction-tip2>.image-2 {
+    height: 100%;
+    background-position: center center;
+    background-size: 400px;
+    background-repeat: repeat;
+    width: 800%;
+    z-index: 1;
+    background-image: url('../img/compass-top.png');
+}
+
+.tirnak {
+    content: "";
+    background-image: url('../img/tirnak.png');
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-repeat: no-repeat;
+    left: 50%;
+    top: 0;
+}
+
+/* Ayar Hudu Alt Taraf */
+.ayar-menu-ana {
+    position: relative;
+    display: none;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.ayar-menu {
+    background: #1d273d;
+    width: 50vh;
+    padding: 15px;
+    border-radius: 3px;
+    color: #fff;
+    position: relative;
+}
+
+.baslik {
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 3px;
+    margin-bottom: 15px;
+}
+
+.baslik-alt {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0;
+}
+
+.satir-baslik {
+    font-weight: 500;
+    width: 20vh;
+}
+
+.satir-ayar {
+
+}
+
+.close-ayar-menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #800;
+    color: #fff;
+    font-weight: bolder;
+    padding: 9px 5px;
+    line-height: 19px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input {display:none;}
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 30px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 30px;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+.red {
+    color:red;
+    font-weight: bold; 
+    letter-spacing: 1px; 
+    line-height: 1; 
+}
+
+.green {
+    color:green;
+    font-weight: bold; 
+    letter-spacing: 1px; 
+    line-height: 1; 
+}
+.blue {
+    color:rgb(102, 143, 255);
+    font-weight: bold; 
+    letter-spacing: 1px; 
+    line-height: 1; 
+    text-shadow: 1px 1px black;
+}
+.yellow {
+    color:yellow;
+    font-weight: bold; 
+    letter-spacing: 1px; 
+    line-height: 1; 
+    text-shadow: 1px 1px black;
+}
+
+.orta-hud-sag {
+    width: 2px;
+    background: #fff;
+    height: 25px;
+    margin-left: 4px;
+    display: none;
+    box-shadow: 0px 1px 1px 0px rgba(50, 50, 50, 0.75);
+}

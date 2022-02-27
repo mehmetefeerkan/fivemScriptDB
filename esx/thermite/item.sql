@@ -1,0 +1,1 @@
+INSERT INTO `items` (`name`, `label`, `limit`, `rare`, `can_remove`) VALUES ('thermite', 'Thermite', '100', '0', '1');

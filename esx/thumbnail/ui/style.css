@@ -1,0 +1,38 @@
+﻿/*-------------- ALT TARAFTAN PRİNTLENİCEK PX YERLERİNİ AYARLAYABİLİRSİNİZ (MYRO) -------------- */
+
+#logo .contenair{
+	position:absolute;
+	z-index: 2;    
+	width: 150px;									
+	height:110px;									
+	left:94%;										
+	top:100%;										
+	margin:-150px 0 0 -115px;    					
+	opacity: 2.00; 
+	background: url('img/logo.png');				
+	padding: none; 									
+    
+}
+	
+#logo .spacer{
+	z-index: 2;
+	width: 20%;
+	height: 20px;
+	margin: 0;  
+	text-align: left;
+  background: transparent;	
+}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+

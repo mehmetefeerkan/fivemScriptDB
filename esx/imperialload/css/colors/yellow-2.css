@@ -1,0 +1,116 @@
+@charset "utf-8";
+/* CSS Document */
+
+a {
+color: #e40909;
+}
+
+p a {
+color: #e40909;
+}
+
+#main-menu {
+background: #e40909;
+}
+
+.color-me {
+color: #e40909;
+}
+
+.awesome {
+color: #e40909;
+}
+
+@-webkit-keyframes glow {
+    0% {
+		border-color: #ffffff;
+		/* box-shadow: 0 0 5px rgba(0,0,0, .2), inset 0 0 5px rgba(0,0,0, .1); */
+    }	
+    100% {
+		border-color: #e40909;
+		/* box-shadow: 0 0 20px rgba(0,0,0, .6), inset 0 0 10px rgba(0,0,0, .4); */
+    }
+}
+@-moz-keyframes glow {
+    0% {
+		border-color: #e40909;
+		/* box-shadow: 0 0 5px rgba(0,0,0, .2), inset 0 0 5px rgba(0,0,0, .1); */
+    }	
+    100% {
+		border-color: #e40909;
+		/* box-shadow: 0 0 20px rgba(0,0,0, .6), inset 0 0 10px rgba(0,0,0, .4); */
+    }
+}
+@-o-keyframes glow {
+    0% {
+		border-color: #e40909;
+		/* box-shadow: 0 0 5px rgba(0,0,0, .2), inset 0 0 5px rgba(0,0,0, .1); */
+    }	
+    100% {
+		border-color: #e40909;
+		/* box-shadow: 0 0 20px rgba(0,0,0, .6), inset 0 0 10px rgba(0,0,0, .4); */
+    }
+}
+@-ms-keyframes glow {
+    0% {
+		border-color: #e40909;
+		/* box-shadow: 0 0 5px rgba(0,0,0, .2), inset 0 0 5px rgba(0,0,0, .1); */
+    }	
+    100% {
+		border-color: #e40909;
+		/* box-shadow: 0 0 20px rgba(0,0,0, .6), inset 0 0 10px rgba(0,0,0, .4); */
+    }
+}
+@keyframes glow {
+    0% {
+		border-color: #e40909;
+		/* box-shadow: 0 0 5px rgba(0,0,0, .2), inset 0 0 5px rgba(0,0,0, .1); */
+    }	
+    100% {
+		border-color: #e40909;
+		/* box-shadow: 0 0 20px rgba(0,0,0, .6), inset 0 0 10px rgba(0,0,0, .4); */
+    }
+}
+
+.submit-button {
+color: #fff;
+background: #fff;
+}
+
+.submit-button::before {
+color: #fff;
+background: #e40909;
+}
+
+.submit-button:hover {
+color: #000;
+background: #fff;
+}
+
+.submit-button-2 {
+color: #fff;
+background: #fff;
+}
+
+.submit-button-2::before {
+color: #fff;
+background: #e40909;
+}
+
+.submit-button-2:hover {
+color: #000;
+background: #fff;
+}
+
+.owl-page.active span {    
+background: #e40909;
+}
+
+.expand { 
+background: #e40909;
+}
+
+/* Styleswitch [DEMO only] */
+.options-head {
+background: #e40909;
+}

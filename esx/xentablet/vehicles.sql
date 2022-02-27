@@ -1,0 +1,1 @@
+ALTER TABLE `vehicles` ADD COLUMN `imglink` text DEFAULT NULL;

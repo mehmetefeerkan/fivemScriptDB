@@ -1,0 +1,735 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+
+.main-screen {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    z-index: 100;
+}
+
+.characters-block {
+    display: none;
+    position: absolute;
+    width: 800px;
+    height: 550px;
+    background-color: rgba(0, 0, 0, 0.9);
+    top: -80%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    border-bottom: 2px solid #000000;
+    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.25);
+    box-shadow: inset 0px 0px 150px 0px rgba(255, 255, 255, 0.1);
+    overflow: visible !important;
+}
+
+
+.characters-block-header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #000000;
+    border-bottom: 2px solid #fff;
+    font-family: 'Kaushan+Script' monospace;
+    box-shadow: inset 0px 0px 150px 0px rgba(255, 255, 255, 0.1);
+}
+
+.disconnect-server-btn {
+    position: absolute;
+    width: 80px;
+    height: 60%;
+    background-color: rgba(32, 32, 32, 0.822);
+    left: 10px;
+    bottom: 8px;
+    border: 1px solid rgb(236, 236, 236);
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+#close-reg {
+    position: absolute;
+    right: 8px;
+    bottom: 6px;
+    color: rgba(0, 0, 0, 1.0);
+    background: rgb(214, 50, 50);
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+#close-log {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    color: rgb(214, 50, 50);
+    background: rgb(226, 226, 226);
+    border-radius: 50%;
+}
+
+#close-del {
+    position: absolute;
+    right: 8px;
+    bottom: 6px;
+    color: rgba(0, 0, 0, 1.0);
+    background: rgb(214, 50, 50);
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+.disconnect-server-btn:hover {
+    background-color: rgba(51, 51, 51, 0.89);
+    border-radius: 4px;
+}
+
+.disconnect-server-btn > p {
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    padding-top: 5%;
+    padding-left: 6px;
+}
+
+.characters-block-header > p {
+    text-align: center;
+    color: white;
+    line-height: 24px;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.characters-list {
+    display: none;
+    position: absolute;
+    width: 22%;
+    height: auto;
+    left: 60.5%;
+    top: 0%;
+    overflow: visible !important;
+    /* background-color: rgba(0, 0, 0, 0.15); */
+    padding: 30px;
+}
+
+
+.character-list-header {
+    position: absolute;
+    top: -20px;
+    width: 100%;
+    height: 8%;
+    right: 0;
+}
+
+.character-list-header > p {
+    text-align: center;
+    line-height: 37px;
+    font-family: 'Kaushan Script', cursive;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: white;
+}
+
+.character {
+    position: relative;
+    width: 100%;
+    height: 75px;
+    margin-top: 15px;
+    background-color: transparent;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.character > span {
+    color: rgb(255, 255, 255);
+    font-family: 'Kaushan Script', cursive !important;
+}
+
+#cid {
+    position: relative;
+    float: right;
+    font-size: 12px;
+    right: 35px;
+    line-height: 75px;
+}
+
+.char-selected {
+    border-bottom: 4px solid #ffffff;
+}
+
+.disabled {
+    background-color: transparent;
+}
+
+#slot-name {
+    position: relative;
+    color: rgb(230, 230, 230);
+    font-size: 17px;
+    line-height: 75px;
+    left: 20px;
+    font-family: font-family: 'Kaushan Script', cursive;
+}
+
+.character-btn {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    top: 65%;
+    transition: 0.2s;
+    float: left;
+    margin-top: 10px;
+}
+
+.character-btn > p {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 60px;
+}
+
+#play {
+    display: none;
+    background: linear-gradient(to right, transparent, transparent); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+#play:hover {
+    background: linear-gradient(to right, transparent, transparent); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 8px;
+}
+
+#play {
+    width: 17%;
+    height: 36px;
+    background-color: green;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.342);
+}
+
+
+#play > p {
+    text-align: center;
+    line-height: 34px;
+    color: white;
+    font-family: 'Kaushan Script', cursive;
+}
+
+
+#delete:hover {
+    background-color: transparent;
+    border-radius: 8px;
+}
+
+#delete {
+    width: 22%;
+    height: 36px;
+    background-color: red;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.342);
+}
+
+
+#delete > p {
+    text-align: center;
+    line-height: 34px;
+    color: white;
+    font-family: 'Kaushan Script', cursive;
+}
+
+
+#char-info-icon {
+    position: relative;
+    font-size: 28px;
+    color: white;
+    right: 20px;
+    overflow: visible !important;
+}
+
+#char-info-titel {
+    position: absolute;
+    font-size: 17px;
+    color: white;
+    top: 7px;
+    left: 14px;
+    overflow: visible !important;
+}
+
+#no-char {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    top: 30%;
+    text-align: center;
+}
+
+.char-info-titel {
+    position: relative;
+    left: 28%;
+    top: 3%;
+    overflow: visible !important;
+}
+
+.character-info-valid {
+    position: relative;
+    top: 10%;
+    overflow: visible !important;
+}
+
+.character-info-box {
+    position: relative;
+    color: white;
+    font-size: 12px;
+    width: 100%;
+    height: 20px;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 12px;
+}
+
+.char-info-js {
+    position: absolute;
+    left: 40%;
+}
+
+#info-label {
+    margin-left: 10px;
+}
+
+.character-delete {
+    display: none;
+    position: absolute;
+    width: 20%;
+    height: 250px;
+    bottom: 19.85%;
+    right: -0.5%;
+    margin-left: auto; 
+    margin-right: auto; 
+    border-bottom: #FFFFFF1C;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.1);
+    text-align: center;
+    color: white;
+    font-family: 'Kaushan Script', cursive;
+    overflow: visible !important;
+}
+
+.characters-delete-block-header {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.05);
+    width: 100%;
+    height: 11%;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 11px;
+    line-height: 29px;
+    font-family: 'Kaushan Script', cursive;
+    border-bottom: #FFFFFF1C;
+    overflow: visible !important;
+}
+
+.characters-delete-block-header > p {
+    font-family: 'Kaushan Script', cursive;
+    overflow: visible !important;
+}
+
+.character-delete > p {
+    padding-top: 50px;
+    font-size: 16px;
+    overflow: visible !important;
+}
+
+#yeet {
+    font-size: 12px;
+    overflow: visible !important;
+}
+
+.character-acceptdel-btn {
+    position: absolute;
+    width: 43%;
+    height: 13%;
+    bottom: 0;
+    left: 5%;
+    margin-bottom: 15px;
+    background-color: #78ca2c;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.342);
+    transition: 0.2s;
+    overflow: visible !important;
+}
+
+.character-acceptdel-btn:hover {
+    background-color: #FFFFFF1C;
+}
+
+.character-canceldel-btn {
+    position: absolute;
+    width: 43%;
+    height: 13%;
+    bottom: 0;
+    right: 5%;
+    margin-bottom: 15px;
+    background-color: red;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.342);
+    transition: 0.2s;
+    overflow: visible !important;
+}
+
+.character-canceldel-btn:hover {
+    background-color: #FFFFFF1C;
+}
+
+.character-acceptdel-btn > p {
+    color: white;
+    text-align: center;
+    padding-top: 7px;
+    font-family: 'Kaushan Script', cursive;
+    overflow: visible !important;
+}
+
+.character-canceldel-btn > p {
+    color: white;
+    text-align: center;
+    padding-top: 7px;
+    font-family: 'Kaushan Script', cursive;
+    overflow: visible !important;
+}
+
+
+
+.character-register {
+    display: none;
+    position: relative;
+    width: 25%;
+    height: 25%;
+    top: 125%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0.0%;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 19px 1px rgba(0,0,0,0.54);
+    font-family: 'Kaushan Script', cursive;
+    border-bottom: 4px solid #000000;
+}
+
+.characters-register-block-header {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 11%;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 11px;
+    line-height: 29px;
+    font-family: 'Kaushan Script', cursive;
+    border-bottom: 2px solid #000000;
+}
+
+.char-register-inputs {
+    position: absolute;
+    top: 15%;
+    left: 12%;
+    overflow: visible !important;
+}
+
+.char-reg-input {
+    position: relative;
+    float: left;
+    margin-left: 35px;
+    margin-top: 13px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.808);
+    outline: none;
+    width: 120px;
+    height: 30px;
+    color: white;
+    max-width: 100%;
+    padding: 4px;
+    border-radius: 2px 2px 4px 4px;
+    box-shadow: inset 0px 0px 10px 0px rgba(255, 255, 255, 0.1);
+    border: 1px solid #FFFFFF1C;
+    font-family: 'Kaushan Script', cursive;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.char-reg-input:hover {
+    background-color: rgba(34, 34, 34, 0.808);
+}
+
+.char-reg-input:focus {
+    background-color: rgba(34, 34, 34, 0.808);
+    border: 1px solid #FFFFFF1C;
+}
+
+select {
+    position: absolute;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.808);
+    outline: none;
+    width: 295px;
+    height: 30px;
+    top: 120px;
+    left: 35px;
+    color: white;
+    max-width: 100%;
+    padding: 4px;
+    border-radius: 2px 2px 4px 4px;
+    box-shadow: inset 0px 0px 10px 0px rgba(255, 255, 255, 0.1);
+    border: 1px solid #FFFFFF1C;
+    font-family: 'Kaushan Script', cursive;
+    text-align-last: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    transition: all 0.2s ease-in-out;
+}
+
+select:hover {
+    background-color: rgba(34, 34, 34, 0.808);
+}
+
+select:focus {
+    background-color: rgba(34, 34, 34, 0.808);
+    border: 1px solid #FFFFFF00;
+}
+
+#gender option[value=man] {
+    background-color: #43a7d6;
+    border: none;
+    outline: blue;
+}
+
+#gender option[value=vrouw] {
+    background-color: pink;
+    border: none;
+    outline: pink;
+}
+
+select::placeholder {
+    text-align: center;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.char-reg-input::placeholder {
+    color: rgba(255, 255, 255, 0.52);
+}
+
+input[type="date"] {
+    color: white;
+    font-family: 'Kaushan Script', cursive;
+    text-align: center;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator{
+    display: none;
+}
+
+input[type=date]::-webkit-inner-spin-button, 
+input[type=date]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type="date"]::-webkit-input-placeholder{ 
+    visibility: hidden !important;
+}
+
+input[type="date"]::-webkit-clear-button {
+    display: none;
+}
+
+#birthdate {
+    color: #FFFFFF40;
+    text-align: center;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.character-reg-btn {
+    position: absolute;
+    width: auto;
+    max-width: 50%;
+    height: 33px;
+    background-color: rgb(72, 33, 243);
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.342);
+    bottom: 5%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.character-reg-btn:hover {
+	background-color: #FFFFFF1A
+}
+
+.character-reg-btn > p {
+    text-align: center;
+    line-height: 34px;
+    color: white;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 13px;
+}
+
+.bars div{
+    animation-name: an-height;
+    animation-duration: .6s;
+    z-index: 101;
+}
+@keyframes an-height {
+    from{ height: 0px; }
+}
+
+
+.server-log {
+    position: relative;
+    width: 30%;
+    height: 28%;
+    top: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 19px 1px rgba(0,0,0,0.54);
+    font-family: 'Kaushan Script', cursive;
+    border-bottom: 4px solid #000000;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.server-log-header {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 10%;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 11px;
+    line-height: 30px;
+    font-family: 'Kaushan Script', cursive;
+    border-bottom: 2px solid #000000;
+}
+
+.log {
+    position: relative;
+    top: 50px;
+    color: rgb(255, 255, 255);
+	overflow: scroll;
+    font-family: 'Kaushan Script', cursive;
+    margin-top: 20px;
+}
+
+#log-date {
+    color: 6px solid transparent;
+    font-size: 12px;
+    padding-left: 10px;
+    text-shadow: 0px 0px 4px rgba(0,0,0,0.35);
+    font-family: 'Kaushan Script', cursive;
+}
+
+
+#log-changes {
+    position: relative;
+    top: 20px;
+    left: 40px;
+    font-size: 10px;
+    text-shadow: 0px 0px 4px rgba(0,0,0,0.35);
+    font-family: 'Kaushan Script', cursive;
+}
+
+.welcomescreen {
+    position: relative;
+    display: block;
+    top: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    height: 28%;
+    width: 30%;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+	overflow: visible !important;
+}
+
+.welcomescreen > p {
+    position: relative;
+    color: #ffffff;
+    text-align: center;
+	overflow: visible !important;
+}
+
+#welcome-titel {
+    position: relative;
+    top: 45px;
+    left: 19px;
+    font-size: 27px;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: bolder;
+}
+
+#cash-logo {
+    position: absolute;
+    width: 70px;
+    top: 10;
+    left: 5%;
+}
+
+.start-btn {
+    position: relative;
+    margin-left: 30px;
+    float: left;
+    top: 45%;
+    left: 25.5%;
+}
+
+.continue-btn {
+    width: 17%;
+    height: 36px;
+    background-color: green;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.342);
+}
+.continue-btn:hover {
+	background-color: #FFFFFF1C;
+	border-radius: 4px
+}
+
+.continue-btn > p {
+    text-align: center;
+    line-height: 34px;
+    color: white;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.disconnect-btn {
+    width: 22%;
+    height: 36px;
+    background-color: red;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.342);
+}
+
+.disconnect-btn:hover{
+	background-color: #FFFFFF1C
+}
+
+.disconnect-btn > p {
+    text-align: center;
+    line-height: 34px;
+    color: white;
+    font-family: 'Kaushan Script', cursive;
+}
+
+::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 3px;
+	background-color: #FF69B4;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #FF69B4;
+}

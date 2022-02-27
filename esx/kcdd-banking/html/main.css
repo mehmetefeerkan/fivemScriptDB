@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main {
+    width: 76%;
+    height: 76%;
+    background-color: #1D273D;
+    border-radius: 1vh;
+    overflow-y: hidden;
+}
+
+#main-contanier {
+    display: none;
+}
+
+.accounts {
+    background-color: #25476E;
+    /* width: 70%; */
+    padding: 3%;
+    max-width: 75%;
+    /* height: 21%; */
+    margin: 4%;
+    margin-left: 6%;
+    border-radius: 0.35vh;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.selected {
+    background-color: #083C68;
+    border: 1px solid white;
+}
+
+.sidenav {
+    height: 100%;
+    width: 35%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.deposit,
+.deposit-menu {
+    background-color: #8aeb66;
+    padding: 3%;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+    /* height: 30px; */
+}
+
+.deposit:hover,
+.deposit-menu:hover {
+    background-color: #6be63f;
+}
+
+.cancel-deposit,
+.cancel-withdraw,
+.cancel-transfer,
+.withdraw-deposit {
+    background-color: #c95d69;
+    padding: 3%;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+    /* height: 30px; */
+}
+
+.cancel-deposit:hover,
+.cancel-withdraw:hover,
+.cancel-transfer:hover {
+    background-color: #d64d5d;
+}
+
+.withdraw,
+.withdraw-menu {
+    background-color: #F3AC6D;
+    padding: 3%;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+    /* height: 30px; */
+}
+
+.transfer,
+.transfer-menu {
+    background-color: #D9DBD8;
+    padding: 3%;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+    /* height: 30px; */
+}
+
+.transfer:hover,
+.transfer-menu:hover {
+    background-color: #b4b6b8;
+}
+
+.withdraw:hover,
+.withdraw-menu:hover {
+    background-color: #f38232;
+    cursor: pointer;
+}
+
+.bottom-0 {
+    margin-top: 0%;
+}
+
+.details {
+    font-size: 18px;
+    margin-left: 0.1vh;
+    margin-right: 0.1vh;
+    font-family: Arial, sans-serif;
+}
+
+.history {
+    background-color: #25476E;
+    width: 90%;
+    /* height: 25%; */
+    border-radius: 0.25vh;
+    margin-top: 2%;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.history-side {
+    margin-left: 30%;
+    /* Same as the width of the sidebar */
+    padding-top: 2px;
+    top: 0;
+    left: 0;
+}
+
+.menu-cek-yatir-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.466);
+    z-index: 2;
+    display: none;
+}
+
+.cek-yatir {
+    background-color: #555D80;
+    width: 35%;
+    /* height: 35%; */
+    border-radius: 5px;
+}
+
+#hh {
+    display: flex;
+    flex-direction: column-reverse;
+}

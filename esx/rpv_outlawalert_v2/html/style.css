@@ -1,0 +1,225 @@
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('/fonts/SegoeUI.ttf');
+  }
+
+* {
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.alerts-wrapper {
+    display: none;
+    float: right;
+}
+
+.content {
+    padding: 3% 2% 0% 3%;
+    
+}
+
+@keyframes slidey {
+    0% {left: 0px;}
+    33.333% {left: 1400px;}
+    66.666%{left: 150px;}
+    99.999% {left: 1600px;}
+    100% {left: -0px;} 
+}
+
+.fas {
+    padding-right:8px;
+}
+
+@keyframes mymove {
+    from {right: 0px;}
+    to {right: 500px;}
+}
+
+#code {
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding:2px;
+    margin-top: -16.5px;
+    background: rgb(196, 30, 30); 
+    float: left;
+    margin-left: -8px;
+}
+
+#marker {
+    float: right;
+    padding-right: -30px;
+    padding-bottom: 40px;
+    margin-top: -16.5px;
+    font-size: xx-large;
+}
+
+#alert-name {
+    letter-spacing: 0.2px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-left:1.5%;
+    margin-top: -16.5px;
+    float: left;
+}
+
+#alert-info {
+    font-size: 0.9rem;
+    font-weight: 550;
+    margin-top: 12px;
+    margin-bottom: -12px;
+    margin-left: -8px;
+}
+
+#alert-info-detailed {
+    font-size: 0.85rem;
+    font-weight: 550;
+    margin-top: 12px;
+    margin-bottom: -12px;
+    margin-left: -8px;
+
+    /* float: left; */
+    /* margin-right:24px */
+}
+
+#alert-info-detailedrecklessdriver {
+    font-size: 0.85rem;
+    font-weight: 550;
+    margin-top: 12px;
+    margin-bottom: -12.5px;
+    margin-left: -8px;
+
+    /* float: left; */
+    /* margin-right:24px */
+}
+
+
+#alert-info-detailedrecklessdriver-plate {
+    font-size: 0.85rem;
+    font-weight: 550;
+    margin-top: -18px;
+    margin-bottom: -12.5px;
+    margin-left: 70px;
+
+    /* float: left; */
+    /* margin-right:24px */
+}
+
+.alerts {
+    width: 375px;
+    height: 75px;
+    color: white;
+}
+
+.alerts.ems {
+    box-shadow: -5px 0px 0px 0px red inset;
+    background: rgba(160, 17, 48, 0.75);
+}
+
+.alerts.police {
+    box-shadow: -5px 0px 0px 0px rgb(0, 183, 255) inset;
+    background: rgba(17, 84, 160, 0.75);
+}
+
+.alerts.admin {
+    box-shadow: -3px 0px 0px 0px red inset;
+}
+
+.alerts.warning {
+    box-shadow: -3px 0px 0px 0px red inset;
+}
+
+.alerts.info {
+    box-shadow: -3px 0px 0px 0px red inset;
+}
+
+.alerts.error {
+    box-shadow: -3px 0px 0px 0px red inset;
+}
+
+.alerts.thefuckisthiscalledfor {
+    box-shadow: -3px 0px 0px 0px red inset;
+}
+
+
+
+
+
+.template, .notification {
+    display: none;
+}
+
+.notif-container {
+    width: 20%; /* was 15% */
+    position: absolute;
+    right: 5%; /* was 15% */
+}
+
+.notification {
+    width: 375px;
+    height: 65px;
+    padding: 10px;
+    margin: 5px;
+    font: caption;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.notificationDetailed {
+    width: 375px;
+    height: 80px;
+    padding: 10px;
+    margin: 5px;
+    font: caption;
+    font-size: 12px;
+    font-weight: bold; 
+}
+
+.notificationDetailedrecklessdriver {
+    width: 375px;
+    height: 120px;
+    padding: 10px;
+    margin: 5px;
+    font: caption;
+    font-size: 12px;
+    font-weight: bold; 
+}
+
+.move {
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.error {
+    box-shadow: -5px 0px 0px 0px red inset;
+    background: rgba(160, 17, 48, 0.75);
+    color: #fff;
+}
+
+.ems {
+    box-shadow: -5px 0px 0px 0px red inset;
+    background: rgba(160, 17, 48, 0.75);
+    color: #fff;
+}
+
+.police {
+    background: rgba(15, 68, 128);
+}
+
+.officer-down {
+    animation: myfirst 5s linear 0s infinite alternate;
+}
+
+@keyframes myfirst {
+    0%   {background-color:red; left:0px; top:0px;}
+    15%  {background-color:blue; left:200px; top:200px;}
+    30% {background-color:red; left:0px; top:0px;}
+    45%  {background-color:blue; left:200px; top:200px;}
+    60% {background-color:red; left:0px; top:0px;}
+    75%  {background-color:blue; left:200px; top:200px;}
+    90% {background-color:red; left:0px; top:0px;}
+    100%  {background-color:blue; left:200px; top:200px;}
+  }

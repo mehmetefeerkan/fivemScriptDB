@@ -1,0 +1,916 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    color: #cdd5e7;
+    font-family: "Roboto";
+    background: 0;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+
+.police-cad-main-wrapper {
+    /*display: block;*/
+    width: 70%;
+    /* display: none; */
+    border-radius: 20px;
+    border: 15px solid #2b292b;
+    position: absolute;
+    left: 1%;
+    bottom: 1%;
+}
+
+.police-cad-inner-main {
+    display: flex;
+    flex-direction: row;
+    height: 85vh;
+}
+
+.police-cad-close {
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+    transition: .4s ease all;
+}
+
+.police-cad-close:hover {
+    color: #8d0e0e;
+}
+
+.police-cad-header {
+    background: #506090;
+    color: #cdd5e7;
+    width: 100%;
+    padding: 15px;
+    z-index: 99;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.police-cad-left-sidebar {
+    display: none;
+    width: 24%;
+    background: #2477ba;
+    color: #cdd5e7;
+    padding: 10px 0 0 7px;
+}
+
+.police-cad-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.police-cad-menu li {
+    transition: .3s ease all;
+    cursor: pointer;
+    line-height: 35px;
+    padding-left: 30px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    position: relative;
+}
+
+.police-cad-menu li .material-icons {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+.police-cad-menu li:hover .material-icons {
+    left: 8px;
+}
+
+.active, .police-cad-menu li:hover {
+    background: #1f659e;
+}
+
+.police-cad-listings {
+    width: 80%;
+    margin: auto;
+    height: 50px;
+    padding: 10px;
+    border: 0;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.police-cad-listings tr,
+.police-cad-listings td {
+    border: 0;
+    height: 50px;
+    padding: 10px;
+    width: 33%;
+}
+
+.igrenc-yontem {
+    border-bottom: 1px solid #101113;
+    box-shadow: 0px 2px 3px -2px rgba(0,0,0,0.75);
+    height: 50px;
+    width: 100%;
+    display: block;
+    position: absolute;
+}
+
+.ceza-top-bar {
+    border-bottom: 1px solid #101113;
+    box-shadow: 0px 2px 3px -2px rgba(0,0,0,0.75);
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+}
+
+.ceza-ic {
+    padding-top: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+.ceza-top-bar-ic {
+    width: 80%;
+    margin: auto;
+}
+
+.police-cad-listings tbody tr td:first-child {
+    width: 80px;
+}
+
+.police-cad-listings tbody tr td:last-child {
+    width: 80px;
+}
+
+.police-cad-listings tbody tr td {
+    padding: 25px 5px;
+    transition: .3s ease all;
+    border-bottom: 1px solid #101113;
+}
+
+.police-cad-listings tbody tr:hover td {
+    z-index: 999;
+}
+
+.police-cad-buy {
+    padding: 2px 18px;
+    background: #7289da;
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+.police-cad-buy:hover {
+    background: #4a64bc;
+}
+
+.plate-input-box {
+    width: 100%;
+    display: flex;
+    padding-top: 15px;
+}
+
+.plate-input-box input {
+    padding: 5px 15px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.bolos-buton {
+    border: 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color: #fff;
+    background-color: #3a3f44;
+    padding: 8px 20px;
+    margin-top: 5%;
+    outline: 0;
+}
+
+.bolos-buton:hover, .bolos-buton:active {
+    background-color: #2f3338;
+    outline: 0;
+    cursor: pointer;
+}
+
+.input {
+    width: 100%;
+    border-radius: 2px;
+    border: 0;
+}
+
+.plate-input {
+    padding: 10px;
+}
+
+.top-bar {
+    width: 100%;
+    margin: auto;
+}
+
+.ic {
+    width: 35%;
+    left: 25%;
+    position: fixed;
+    bottom: 5%;
+    z-index: 2;
+}
+
+.search-button{
+    width: 20%;
+    color: #ffffff;
+    background: #3a3f44;
+    height: 50px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    bottom: 15px;
+    cursor: pointer;
+    border: 0;
+}
+
+.page-wrapper{
+    width: 100%;
+    background: #272b30;
+}
+.page{
+    height: 100%;
+    position: relative;
+}
+
+/*Search Civilian Start*/
+.all-found-users {
+    width: 80%;
+    margin: auto;
+    border: 0;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 150px;
+}
+
+.all-found-users tr,
+.all-found-users td {
+    border: 0;
+    height: 50px;
+    padding: 10px;
+}
+
+.all-found-users tbody tr td:first-child {
+    width: 80px;
+}
+
+.all-found-users tbody tr td:last-child {
+    width: 80px;
+}
+
+.all-found-users tbody tr td {
+    padding: 25px 10px;
+    border-bottom: 1px solid #101113;
+    transition: .3s ease all;
+}
+
+.all-found-users thead tr {
+    padding: 10px;
+}
+
+.all-found-users tbody tr:hover td {
+    background: #3a3f44;
+    z-index: 999;
+}
+
+#search-civilian,
+.civilian-details,
+#bolos,
+#ceza {
+    display: none;
+}
+
+.civilian-details {
+    padding: 15px;
+    position: relative;
+}
+
+.modal-add-record ,.modal-add-note, .modal-add-bolos{
+    display: none;
+    border-radius: 3px;
+    border-top-left-radius: 0;
+    background: #3a3f44;
+    padding: 5px 10px;
+}
+
+.modal-add-bolos-button {
+    padding: 10px 0;
+}
+
+.modal-add-bolos-button button {
+    background: #2477ba;
+    border: 0;
+    color: #fff;
+    padding: 8px 0;
+    border-radius: 2px;
+    outline: 0;
+}
+
+.modal-add-bolos-button button:hover, .modal-add-bolos-button button:active {
+    background: #1f659e;
+    cursor: pointer;
+    outline: 0;
+}
+
+.modal-add-bolos input {
+    padding: 5px;
+    display: block;
+    margin-top: 8px;
+}
+
+.modal-add-record{
+    position: absolute;
+    top: -210;
+    left:108.5%;
+    right:0%;
+    width: 75%;
+    bottom:0;
+    overflow: hidden;
+}
+
+.modal-add-record input {
+    margin-top: 2.5%;
+    padding: 5.0;
+}
+
+.modal-add-record button {
+    margin-top: 2.5%;
+}
+
+.modal-add-note {
+    position: absolute;
+    top: -310;
+    left:2.9%;
+    right:0%;
+    width: 75%;
+    bottom:0;
+    overflow: hidden;
+}
+
+.modal-add-note input {
+    margin-top: 2.5%;
+}
+
+.modal-add-note button {
+    margin-top: 2.5%;
+}
+
+.criminal-records {
+    width: 100%;
+    height: 50px;
+    border: 0;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-left: -2%;
+}
+
+.criminal-records tr,
+.criminal-records td {
+    border: 0;
+    padding: 10px;
+}
+
+.criminal-records tbody tr td:first-child {
+    width: 80px;
+}
+
+.criminal-records tbody tr td:last-child {
+    width: 80px;
+}
+
+.criminal-records tbody tr td {
+    padding: 10px 5px;
+    background: #2a2c31;
+    transition: .3s ease all;
+}
+
+.criminal-records thead tr {
+    background: #25272b;
+}
+
+.criminal-records tbody tr:hover td {
+    background: #3d4147;
+    z-index: 999;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
+}
+
+.criminal-records{
+    margin-top:20px;
+}
+
+.police-cad-bolos{
+    max-height: 200px;
+    background: #272b30;
+}
+
+/*Search Civilian End*/
+.police-cad-bolos-dis {
+    width: 100%;
+    background: #272b30;
+    margin: auto;
+}
+
+.plate-input-box-ic {
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.police-cad-bolos {
+    width: 80%;
+    margin: auto;
+}
+
+.police-cad-bolos td{
+    padding: 15px 0;
+    border-bottom: 1px solid #101113;
+}
+
+.police-cad-bolos thead td{
+    font-size: 16px;
+    padding: 15px 5px;
+}
+
+.police-cad-bolos tbody td:last-child{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.back {
+    margin-top: -1%;
+}
+
+.addinfo {
+    margin-left: 2.9%;
+}
+
+.col-md-12 {
+    margin-top: 5%;
+}
+
+.col-md-12 button {
+    width: 179px;
+}
+
+::-webkit-scrollbar {
+    width: 0px; 
+    background: transparent;
+}
+
+.col-md-2 label {
+    margin-top: 5%;
+}
+
+.ceza-tablo {
+    display: flex;
+}
+
+.cezabaslikicerik {
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.ceza-adi-baslik, .caza-fiyati-baslik, .caza-ayi-baslik, .caza-kamu-baslik, .cezabaslikicerik {
+    flex-direction: row;
+    background: #3a3f44;
+    border-right: 2px solid #14192b;
+    border-bottom: 2px solid #101113;
+    width: 100%;
+    padding: 10px;
+    
+}
+.ceza-adi-basli, .caza-fiyati-basli, .caza-ayi-basli, .caza-kamu-basli, .cezabaslikicerik {
+    flex-direction: row;
+    background: #3a3f44;
+    border-right: 2px solid #14192b;
+    border-bottom: 2px solid #101113;
+    width: 100%;
+    padding: 8px;
+}
+.cezabaslikicerik {
+    border-right: 0;
+}
+
+.caza-fiyati-baslik, .caza-ayi-baslik {
+    width: 20%;
+    text-align: center;
+}
+.caza-fiyati-basli, .caza-ayi-basli,.caza-kamu-basli{
+    width: 41%;
+    text-align: center;
+}
+.caza-kamu-baslik {
+    width: 20%;
+    text-align: center;
+}
+
+.cezabaslikicerik:after {
+    font-family: "Material Icons";
+    content: '\e146'; /* Unicode character for "plus" sign (+) */
+    font-size: 24px;
+    color: white;
+    float: right;
+    margin-top: -5px;
+    margin-right: 5px;
+  }
+  
+.cezabaslikicerik-aktif:after {
+    font-family: "Material Icons";
+    content: "\e909"; /* Unicode character for "minus" sign (-) */
+}
+
+.ceza-adi, .caza-fiyati, .caza-ayi, .caza-kamu, .cezaaciklama, .cezaaciklama2 {
+    background: #2f3338;
+    width: 100%;
+    padding: 5px;
+    border-bottom: 1px solid #101113;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+}
+
+.ceza-adi-2, .caza-fiyati-2, .caza-ayi-2, .caza-kamu-2, .cezaaciklama-2, .cezaaciklama2-2 {
+    background: #2f3338;
+    width: 100%;
+    padding: 5px;
+    border-bottom: 1px solid #101113;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+}
+
+.ceza-adi, .ceza-adi-2 {
+    border-right: 2px solid #14192b;
+}
+.cezaaciklama, .cezaaciklama-2 {
+	width: 40%;
+}
+
+.cezaaciklama2 {
+	background: #3a3f44;
+	padding: 3px;
+	width:40%;
+	text-align:center;
+    border-bottom: 2px solid #101113;
+}
+
+.caza-fiyati {
+    background: #12979b;
+    border-right: 2px solid #14192b;
+    width: 20%;
+    text-align: center;
+}
+
+.caza-fiyati-2 {
+    border-right: 2px solid #14192b;
+    width: 20%;
+    text-align: center;
+}
+
+.caza-ayi {
+    background: #ff4f50;
+    border-right: 2px solid #14192b;
+    width: 20%;
+    text-align: center;
+}
+
+.caza-ayi-2 {
+    border-right: 2px solid #14192b;
+    width: 20%;
+    text-align: center;
+}
+
+.caza-kamu {
+    background: #3474c2;
+	border-right: 2px solid #14192b;
+    width: 20%;
+    text-align: center;
+}
+
+.caza-kamu-2 {
+	border-right: 2px solid #14192b;
+    width: 20%;
+    text-align: center;
+}
+
+  
+/* Style the collapsible content. Note: hidden by default */
+.cezaicerik {
+    display: none;
+    overflow: hidden;
+}
+
+
+.karakter-ilk-bilgi {
+    border-radius: 3px;
+    background: #3a3f44;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    padding: 15px;
+    width: 50%;
+    position: relative;
+    color: #eaeeff;
+}
+
+.karakter-isim-cinsiyet {
+    display: flex;
+    flex-direction: column;
+}
+
+.karakter-ilk-bilgi .karakter-isim-cinsiyet .isimsoyisim {
+   font-size: 22px;
+   font-weight: 600;
+}
+
+.karakter-ilk-bilgi .karakter-isim-cinsiyet .cinsiyet {
+    font-size: 14px;
+ }
+
+.karakter-ilk-bilgi-icon {
+    position: absolute;
+    right: 5%;
+}
+
+.karakter-ilk-bilgi .resim img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+/* Karakter Asil Bilgiler */
+
+.karakter-ikinci-bilgi {
+    border-radius: 3px;
+    background: #3a3f44;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 0 25px 25px 25px;
+    width: 100%;
+    margin-top: 15px;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.karakter-ikinci-bilgi .bilgi {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
+    margin-left: 8%;
+    text-align: left;
+    padding-top: 20px;
+}
+
+.karakter-ikinci-bilgi .bilgi .bilgi-baslik, .karakter-ikinci-bilgi .bilgi .bilgi-icerik {
+    display: flex;
+    align-self: baseline;
+    font-size: 11pt;
+    font-weight: 800;
+}
+
+.karakter-ikinci-bilgi .bilgi .bilgi-baslik {
+    color: #fff;
+    font-size: 9pt;
+}
+
+/* Sabika Kaydi ve Not */
+
+.not-sabika-kaydi {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+
+.not-sabika-kaydi .sabika {
+    border-radius: 3px;
+    background: #3a3f44;
+    padding: 20px;
+    width: 49%;
+    position: relative;
+}
+
+.not-sabika-kaydi .sabika .sabika-icerik {
+    display: flex;
+    flex-wrap: wrap;
+    background: #222428;
+    margin-top: 20px;
+    padding: 5px;
+    font-size: 10pt;
+    text-transform: uppercase;
+}
+
+.not-sabika-kaydi .sabika .sabika-icerik-cezalar-js {
+    background: #272b30;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    font-size: 10pt;
+}
+
+.not-sabika-kaydi .sabika .sabika-icerik .sabika-icerik-kutu,
+.not-sabika-kaydi .sabika .sabika-icerik-cezalar-js .sabika-icerik-kutu {
+    display: flex;
+    flex-basis: 79%;
+}
+
+.not-sabika-kaydi .sabika .sabika-icerik .sabika-icerik-kutuceza, 
+.not-sabika-kaydi .sabika .sabika-icerik-cezalar-js .sabika-icerik-kutuceza {
+    display: flex;
+    flex-basis: 18%;
+}
+
+.not-sabika-kaydi .sabika .sabika-icerik .sabika-icerik-kutux, 
+.not-sabika-kaydi .sabika .sabika-icerik-cezalar-js .sabika-icerik-kutux  {
+    display: flex;
+    flex-basis: 2%;
+    text-align: right;
+}
+
+
+.not-sabika-kaydi .sabika .sabika-baslik, .not-sabika-kaydi .not .not-baslik {
+    position: absolute;
+    right: 5%;
+    top: 10px;
+    font-weight: 800;
+}
+
+.not-sabika-kaydi .not {
+    position: relative;
+    border-radius: 3px;
+    background: #3a3f44;
+    padding: 15px;
+    width: 49%;
+}
+
+.not-sabika-kaydi .not .not-icerik {
+    display: flex;
+    flex-wrap: wrap;
+    background: #222428;
+    margin-top: 25px;
+    padding: 5px;
+    font-size: 10pt;
+    text-transform: uppercase;
+}
+
+.not-sabika-kaydi .not .not-icerik-cezalar-js {
+    background: #272b30;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    font-size: 10pt;
+}
+
+.not-sabika-kaydi .not .not-icerik .not-icerik-kutu,
+.not-sabika-kaydi .not .not-icerik-cezalar-js .not-icerik-kutu {
+    display: flex;
+    flex-basis: 97%;
+}
+
+.not-sabika-kaydi .not .not-icerik .not-icerik-kutux, 
+.not-sabika-kaydi .not .not-icerik-cezalar-js .not-icerik-kutux  {
+    display: flex;
+    flex-basis: 2%;
+    text-align: right;
+}
+
+/* Lisanslar */
+.sabikaekle-notekle-lisanslar {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.sabikaekle-notekle-lisanslar .sabika-kaydi-ekle, 
+.sabikaekle-notekle-lisanslar .not-kaydi-ekle, 
+.sabikaekle-notekle-lisanslar .lisanslar {
+    position: relative;
+    display: flex;
+    background: #3a3f44;
+    border-radius: 3px;
+    padding: 15px;
+    flex-basis: 32%;
+}
+
+.sabikaekle-notekle-lisanslar .lisanslar-kutu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}
+
+.sabikaekle-notekle-lisanslar .sabika-kaydi-ekle .sabika-ekle-baslik, 
+.sabikaekle-notekle-lisanslar .not-kaydi-ekle .not-ekle-baslik, 
+.sabikaekle-notekle-lisanslar .lisanslar .lisanslar-baslik {
+    position: absolute;
+    right: 5%;
+    top: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.sabikaekle-notekle-lisanslar .sabika-kaydi-ekle .sabika-ekle-icerik,
+.sabikaekle-notekle-lisanslar .not-kaydi-ekle .not-ekle-icerik {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+}
+
+.sabikaekle-notekle-lisanslar .sabika-kaydi-ekle .sabika-ekle-kutu,
+.sabikaekle-notekle-lisanslar .not-kaydi-ekle .not-ekle-kutu  {
+    background: #222428;
+    padding: 5px;
+    border: 0;
+    outline: 0;
+    color: #eaeeff;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.karakter-geri-git {
+    position: absolute;
+    right: 15px;
+    background: #3a3f44;
+    border-radius: 3px;
+    padding: 20px;
+    outline: 0;
+    border: 0;
+    color: #eaeeff;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.sabika-kaydet, .not-kaydet {
+    background: #3a3f44;
+    border: 0;
+    outline: 0;
+    border-radius: 3px;
+    color: #eaeeff;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+#openbtn {
+    display: block;
+}
+
+.sol-menu-ac-kapa {
+    transition: .3s ease all;
+    background: 0;
+    border: 0;
+    font-size: 35px;
+    color: #fff;
+    outline: 0; 
+}
+
+.sol-menu-ac-kapa_kapa {
+    position: absolute;
+    z-index: 5;
+    top: -4px;
+}
+
+.sol-menu-ac-kapa:active, .sol-menu-ac-kapa:hover {
+    outline: 0;
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+.sabika-button {
+    display: flex;
+    flex-direction: row;
+}

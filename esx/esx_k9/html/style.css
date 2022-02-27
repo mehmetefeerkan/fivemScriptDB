@@ -1,0 +1,67 @@
+body {
+    font-family: 'Signika', sans-serif;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+    -o-user-select:none;
+}
+
+#k9_menu_base {
+    position: relative;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 325px;
+    background-color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#dog_icon_left {
+    width: 40px;
+	padding-right: 3px;
+	padding-top: 5px;
+
+}
+
+#dog_icon_right {
+    width: 40px;
+	padding-left: 3px;
+	padding-top: 5px;
+}
+
+#k9_menu_header {
+    position: relative;
+    color: white;
+  background-image: url("https://i.hizliresim.com/f40fDo.png");
+  background-repeat: no-repeat;
+  background-size: 322px 86px;
+  padding: 40px;
+}
+
+#k9_menu_body {
+    position: relative;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#k9_name_header {
+    font-size: 25px;
+}
+
+#k9_model_header {
+    font-size: 25px;
+}
+
+#model_header_text {
+    text-align: center;
+    font-size: 25px;
+}
+
+#footer_credits {
+text-align: center;
+}

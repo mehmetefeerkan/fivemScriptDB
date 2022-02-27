@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+    <title>SkinCreator by RipCode</title>
+</head>
+<body>
+    <div id="app">
+        <div class="charCreator">
+            <div class="charCreatorHead">
+                <div class="title">
+                    <span>Parameters</span><label>Genetics</label>
+                </div>
+                <div class="gender_isset isnotset changeGender" data-value="1">
+                    <img src="./assets/female.png">
+                </div>
+                <div class="gender_isset changeGender" data-value="0">
+                    <img src="./assets/male.png">
+                </div> 
+            </div>
+            <div class="bloque">
+                <div class="divisor">
+                    <div class="label">Face of the father</div>
+                    <div class="input">
+                        <div class="type-img">
+                            <label v-for="padre in Padres" :for="padre">
+                                <input type="radio" name="papi" :value="padre - 1" :id="padre">
+                                <div class="img"><img :src="'assets/faces/' + (padre - 1) +'.jpg'"></div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="label">Face of the mother</div>
+                    <div class="input">
+                        <div class="type-img">
+                            <label v-for="madre in Madres" :for="madre">
+                                <input type="radio" name="mami" :value="madre - 1" :id="madre">
+                                <div class="img"><img :src="'assets/faces/' + (madre - 1) +'.jpg'"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="divisor">
+                    <div v-for="item in Genetica" class="input">
+                        <div class="label">{{item.label}}</div>
+                        <div class="type-range">
+                            <a href="#" class="arrow arrow-left">&nbsp;</a>
+                            <input :value="item.default" type="range" :class="item.id" :min="item.min" :max="item.max">
+                            <a href="#" class="arrow arrow-right">&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="divisor">
+                    <div v-for="item in Añadidos" class="input">
+                        <div class="label">{{item.label}}</div>
+                        <div class="type-range">
+                            <a href="#" class="arrow arrow-left">&nbsp;</a>
+                            <input :value="item.default" type="range" :class="item.id" :min="item.min" :max="item.max">
+                            <a href="#" class="arrow arrow-right">&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="divisor">
+                    <div v-for="item in Mandibula" class="input">
+                        <div class="label">{{item.label}}</div>
+                        <div class="type-range">
+                            <a href="#" class="arrow arrow-left">&nbsp;</a>
+                            <input :value="item.default" type="range" :class="item.id" :min="item.min" :max="item.max">
+                            <a href="#" class="arrow arrow-right">&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="divisor">
+                    <div v-for="item in Barbilla" class="input">
+                        <div class="label">{{item.label}}</div>
+                        <div class="type-range">
+                            <a href="#" class="arrow arrow-left">&nbsp;</a>
+                            <input :value="item.default" type="range" :class="item.id" :min="item.min" :max="item.max">
+                            <a href="#" class="arrow arrow-right">&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="divisor">
+                    <div class="input">
+                        <div class="type-radio">
+                            <div class="label">Eye color</div>
+                            <label for="eye1">
+                                <input type="radio" name="eyecolor" class="eyecolor" value="0" id="eye1" checked>
+                                <span class="color" data-color="#525e37"></span>
+                            </label>
+                            <label v-for="item in OjosColor" :for="item.id">
+                                <input type="radio" name="eyecolor" :value="item.value" :id="item.id">
+                                <span class="color" :data-color="item.color"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div v-for="item in Ojos" class="input">
+                        <div class="label">{{item.label}}</div>
+                        <div class="type-range">
+                            <a href="#" class="arrow arrow-left">&nbsp;</a>
+                            <input :value="item.default" type="range" :class="item.id" :min="item.min" :max="item.max">
+                            <a href="#" class="arrow arrow-right">&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="divisor">
+                    <div v-for="item in Nariz" class="input">
+                        <div class="label">{{item.label}}</div>
+                        <div class="type-range">
+                            <a href="#" class="arrow arrow-left">&nbsp;</a>
+                            <input :value="item.default" type="range" :class="item.id" :min="item.min" :max="item.max">
+                            <a href="#" class="arrow arrow-right">&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="divisor">
+                    <div v-for="item in Pomulos" class="input">
+                        <div class="label">{{item.label}}</div>
+                        <div class="type-range">
+                            <a href="#" class="arrow arrow-left">&nbsp;</a>
+                            <input :value="item.default" type="range" :class="item.id" :min="item.min" :max="item.max">
+                            <a href="#" class="arrow arrow-right">&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="divisor">
+                    <div v-for="item in Piel" class="input">
+                        <div class="label">{{item.label}}</div>
+                        <div class="type-range">
+                            <a href="#" class="arrow arrow-left">&nbsp;</a>
+                            <input :value="item.default" type="range" :class="item.id" :min="item.min" :max="item.max">
+                            <a href="#" class="arrow arrow-right">&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="styleCreator">
+            <div class="styleCreatorHead">
+				<div class="title">
+					<span>Stylization</span><label>Character</label>
+				</div>
+                <div class="gender_isset changeStyle" data-value="style">
+                    <img src="./assets/style.png">
+                </div>
+
+                <!-- <div class="gender_isset isnotset changeStyle" data-value="clothes">
+                    <img src="./assets/clothes.png">
+                </div>  -->
+			</div>
+            <div id="style" class="bloque show">
+                <div class="divisor">
+                    <div v-for="item in Pelo" class="input">
+                        <div class="label">{{item.label}}</div>
+                        <div class="type-range">
+                            <a href="#" class="arrow arrow-left">&nbsp;</a>
+                            <input :value="item.default" type="range" :class="item.id" :min="item.min" :max="item.max">
+                            <a href="#" class="arrow arrow-right">&nbsp;</a>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="type-radio">
+                            <div class="label">Hair color</div>
+                            <label for="p1">
+                                <input type="radio" name="haircolor" value="0" id="p1" checked>
+                                <span class="color" data-color="#1D1D1A"></span>
+                            </label>
+                            <label v-for="item in PelosColor" :for="item.id">
+                                <input type="radio" name="haircolor" :value="item.value" :id="item.id">
+                                <span class="color" :data-color="item.color"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="type-radio">
+                            <div class="label">Highlight color</div>
+                            <label for="pm1">
+                                <input type="radio" name="haircolor2" value="0" id="pm1" checked>
+                                <span class="color" data-color="#1D1D1A"></span>
+                            </label>
+                            <label v-for="item in MechasColor" :for="item.id">
+                                <input type="radio" name="haircolor2" :value="item.value" :id="item.id">
+                                <span class="color" :data-color="item.color"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="divisor">
+                    <div v-for="item in Cejas" class="input">
+                        <div class="label">{{item.label}}</div>
+                        <div class="type-range">
+                            <a href="#" class="arrow arrow-left">&nbsp;</a>
+                            <input :value="item.default" type="range" :class="item.id" :min="item.min" :max="item.max">
+                            <a href="#" class="arrow arrow-right">&nbsp;</a>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="type-radio">
+                            <div class="label">Eyebrow Color</div>
+                            <label for="ccm1">
+                                <input type="radio" name="cejascolor" value="0" id="ccm1" checked>
+                                <span class="color" data-color="#000000"></span>
+                            </label>
+                            <label v-for="item in CejasColor" :for="item.id">
+                                <input type="radio" name="cejascolor" :value="item.value" :id="item.id">
+                                <span class="color" :data-color="item.color"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div id="maquillajes" class="divisor hide">
+                    <div v-for="item in Maquillaje" class="input">
+                        <div class="label">{{item.label}}</div>
+                        <div class="type-range">
+                            <a href="#" class="arrow arrow-left">&nbsp;</a>
+                            <input :value="item.default" type="range" :class="item.id" :min="item.min" :max="item.max">
+                            <a href="#" class="arrow arrow-right">&nbsp;</a>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="type-radio">
+                            <div class="label">Makeup color</div>
+                            <label for="mc1">
+                                <input type="radio" name="makeupcolor1" value="0" id="mc1" checked>
+                                <span class="color" data-color="#820000"></span>
+                            </label>
+                            <label v-for="item in MaquillajeColor" :for="item.id">
+                                <input type="radio" name="makeupcolor1" :value="item.value" :id="item.id">
+                                <span class="color" :data-color="item.color"></span>
+                            </label>
+                        </div>
+                        <div class="type-radio">
+                            <div class="label">Secondary makeup color</div>
+                            <label for="mcc1">
+                                <input type="radio" name="makeupcolor2" value="0" id="mcc1" checked>
+                                <span class="color" data-color="#820000"></span>
+                            </label>
+                            <label v-for="item in MaquillajeColor" :for="item.id2">
+                                <input type="radio" name="makeupcolor2" :value="item.value" :id="item.id2">
+                                <span class="color" :data-color="item.color"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div id="pintalabios" class="divisor hide">
+                    <div v-for="item in Pintalabios" class="input">
+                        <div class="label">{{item.label}}</div>
+                        <div class="type-range">
+                            <a href="#" class="arrow arrow-left">&nbsp;</a>
+                            <input :value="item.default" type="range" :class="item.id" :min="item.min" :max="item.max">
+                            <a href="#" class="arrow arrow-right">&nbsp;</a>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="type-radio">
+                            <div class="label">Lipstick color</div>
+                            <label for="lc1">
+                                <input type="radio" name="lipstickcolor1" value="32" id="lc1" checked>
+                                <span class="color" data-color="#69476b"></span>
+                            </label>
+                            <label v-for="item in PintalabiosColor" :for="item.id">
+                                <input type="radio" name="lipstickcolor1" :value="item.value" :id="item.id">
+                                <span class="color" :data-color="item.color"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div id="coloretes" class="divisor hide">
+                    <div v-for="item in Colorete" class="input">
+                        <div class="label">{{item.label}}</div>
+                        <div class="type-range">
+                            <a href="#" class="arrow arrow-left">&nbsp;</a>
+                            <input :value="item.default" type="range" :class="item.id" :min="item.min" :max="item.max">
+                            <a href="#" class="arrow arrow-right">&nbsp;</a>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="type-radio">
+                            <div class="label">Blush color</div>
+                            <label for="bc1">
+                                <input type="radio" name="blushcolor" value="2" id="bc1" checked>
+                                <span class="color" data-color="#f545e9"></span>
+                            </label>
+                            <label v-for="item in ColoreteColor" :for="item.id">
+                                <input type="radio" name="blushcolor" :value="item.value" :id="item.id">
+                                <span class="color" :data-color="item.color"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div id="barbas" class="divisor show">
+                    <div v-for="item in Barba" class="input">
+                        <div class="label">{{item.label}}</div>
+                        <div class="type-range">
+                            <a href="#" class="arrow arrow-left">&nbsp;</a>
+                            <input :value="item.default" type="range" :class="item.id" :min="item.min" :max="item.max">
+                            <a href="#" class="arrow arrow-right">&nbsp;</a>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="type-radio">
+                            <div class="label">Beard color</div>
+                            <label for="bb1">
+                                <input type="radio" name="colorbarba" value="61" id="bb1" checked>
+                                <span class="color" data-color="#1D1D1A"></span>
+                            </label>
+                            <label v-for="item in BarbaColor" :for="item.id">
+                                <input type="radio" name="colorbarba" :value="item.value" :id="item.id">
+                                <span class="color" :data-color="item.color"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div id="clothes" class="bloque hide">
+                <div class="divisor">
+                    <div v-for="item in Ropa" class="inputclothes">
+                        <div class="label">{{item.label}}</div>
+                        <div class="label-value" :data-maxvalue="item.max"></div>
+                        <div class="type-range">
+                            <a href="#" class="arrow arrow-left-clothing">&nbsp;</a>
+                            <input :value="item.default" type="range" :class="item.id" :min="item.min" :max="item.max">
+                            <a href="#" class="arrow arrow-right-clothing">&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <button class="submit">Submit</button>
+    </div>
+
+    <div class="selector">
+        <div class="distrito Airport" id="distrito1">
+            <img src="assets/airport.png">
+            <div class="titlebox">
+                <span>Spawn</span><label>Airport</label>
+            </div>
+        </div>
+
+        <div class="distrito Train" id="distrito2">
+            <img src="assets/metro.png">
+            <div class="titlebox">
+                <span>Spawn</span><label>Metro</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="rotation">
+        <div class="button">A</div>
+        <p>Rotate character</p>
+        <div class="button">D</div>
+    </div>
+
+    <div class="popup confirmation">
+        <p>Are you sure you want to save the appearance?</p>
+        <div class="buttons">
+            <div class="button yes">Yes</div>
+            <div class="button no">No</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="js/vuescript.js"></script>
+</body>
+
+</html>

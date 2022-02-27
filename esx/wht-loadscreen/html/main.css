@@ -1,0 +1,31 @@
+.bg {
+    background-color: #000000;
+}
+
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loadscreenbar {
+    width: 100%;
+    background-color: rgb(61, 61, 61);
+    height: 20px;
+
+    overflow: hidden;
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: block;
+}
+
+.progress {
+    width: 0%;
+    background-color: #ffffff;
+    height: 20px;
+    position: absolute;
+    left: 0%;
+}

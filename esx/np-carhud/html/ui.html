@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="scripts.js" type="text/javascript"></script>
+    <script src="debounce.min.js" type="text/javascript"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="app.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+
+<body>
+<div class="full-screen">
+    <div class="wrap">
+        <div class="time">12:00</div>
+        <div class="vehicle"> 
+            <div class="fuelamount left"> 100 </div>  <div class="smalltext left"> YAKIT </div>
+            <div class="speedamount left"> 100 </div> <div class="smalltext left"> KMH </div> 
+            <div class="atlamount left"> 0 </div> <div class="atlamounttxt smalltext left"> FT </div>
+            <div class="belt left">  </div> <div class="smalltext left">  </div>
+            <div class="ENGINE left"> <img src='engine.png' width='15px' height='15px'> </div> 
+        
+        </div>
+        <div class="street">
+            <div class="direction"><div class="image"></div></div>
+            <div class="street-txt">Los Santos | Wicket St | Hawick</div>
+        </div>
+    </div>
+</div>
+</body>
+
+<head>
+	<!-- Need to include jQuery! -->
+	<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+	<script>
+		var audioPlayer = null;
+		// Listen for NUI Messages.
+		window.addEventListener('message', function(event) {
+			// Check for playSound transaction
+			if (event.data.transactionType == "playSound") {
+			
+			  if (audioPlayer != null) {
+				audioPlayer.pause();
+			  }
+
+			  audioPlayer = new Audio("./sounds/" + event.data.transactionFile + ".ogg");
+			  audioPlayer.volume = event.data.transactionVolume;
+			  audioPlayer.play();
+
+			}
+		});
+	</script>
+</head>
+
+</html>

@@ -1,0 +1,96 @@
+Locales["tr"] = {
+    ["prod_start"] = "Üretim başladı.",
+    ["no_item"] = "Yeteri kadar malzemen yok.",
+    ["production_start"] = "Üretim başladı, alanı terk etmeyin.",
+    ["production_stopped"] = "Üretim durdu.",
+    ["left_zone"] = "Üretim durdu, alanı terk ettin.",
+    ["epi_marker"] = "Üretime başlamak için [E] tuşuna basınız",
+    ["epi_start"] = "Epinefrin üretimi başladı.",
+    ["prod"] = "Üretim: ",
+    ["use_number"] = "Sayı tuşları ile seçim yapınız.",
+    ["prod_comp"] = "Üretim tamamlandı.",
+    ["sel1"] = "1. seçeneği seçtin.",
+    ["sel2"] = "2. seçeneği seçtin.",
+    ["sel3"] = "3. seçeneği seçtin.",
+
+-- EVENTS --
+
+-- EVENT 1
+    ["event1"] = "Damıtma unitesinde sorun var, ne yapacaksın?",
+    ["e1_o1"] = "1. Telefonun internetinden yardım al.",
+    ["e1_o2"] = "2. Hiçbir şey yapma.",
+    ["e1_o3"] = "3. Yedek parça tak.",
+    ["e1_a1_1"] = "İşe yaramışa benziyor, sorun çözüldü.",
+    ["e1_a1_2"] = "İnternetteki bilgi işe yaramadı, sıçtın...",
+    ["e1_a1_3"] = "Yanında telefon yok.",
+    ["e1_a2"] = "Damıtma unitesi patladı, sıçtın...",
+    ["e1_a3_1"] = "Yedek parça taktın.",
+    ["e1_a3_2"] = "Yanında yedek parça yok.",
+-- EVENT 2
+    ["event2"] = "Yere aseton şişesi düşürdün ve kırıldı, ne yapacaksın?",
+    ["e2_o1"] = "1. Kokuyu florlu çubukla savurmaya çalış.",
+    ["e2_o2"] = "2. Hiçbir şey yapma.",
+    ["e2_o3"] = "3. Gaz maskesi tak.",
+    ["e2_a1_1"] = "Kokuyu florlu çubukla dağıttın.",
+    ["e2_a1_2"] = "Florlu çubuğun yok.",
+    ["e2_a2"] = "Çok fazla aseton soluyorsun.",
+    ["e2_a3_1"] = "Gaz maskesi taktın.",
+    ["e2_a3_2"] = "Gaz masken yok.",
+-- EVENT 3
+    ["event3"] = "Haşhaş çok hızlı katılaşıyor, ne yapacaksın?",
+    ["e3_o1"] = "1. Basıncı arttır.",
+    ["e3_o2"] = "2. Sıcaklığı arttır.",
+    ["e3_o3"] = "3. Basıncı azalt.",
+    ["e3_a1"] = "Basıncı arttırdın ve haşhaşlar garip bir hal aldı, tekrar basıncı azalttın, şimdilik sorun yok.",
+    ["e3_a2"] = "Sıcaklığı yükseltmek işe yaradı gibi...",
+    ["e3_a3"] = "Basıncı düşürmek haşhaşları daha beter hale soktu.",
+-- EVENT 4
+    ["event4"] = "Yanlışlıkla çok fazla aseton kullandın, ne yapacaksın?",
+    ["e4_o1"] = "1. Hiçbir şey yapma.",
+    ["e4_o2"] = "2. Şırınga ile birazcık çekmeye çalış.",
+    ["e4_o3"] = "3. Daha fazla lityum ekleyerek dengelemeye çalış.",
+    ["e4_a1"] = "Karışım çok fazla aseton kokmaya başladı.",
+    ["e4_a2_1"] = "İşe yaradı gibi ama hala aseton normalden fazla.",
+    ["e4_a2_2"] = "Yanında şırınga yok.",
+    ["e4_a3_1"] = "Her iki kimyasalı da dengelemeyi başardın.",
+    ["e4_a3_2"] = "Yeteri kadar lityumun yok.",
+-- EVENT 5
+    ["event5"] = "Biraz su renklendirici buldun, ne yapacaksın?",
+    ["e5_o1"] = "1. Karışıma ekle.",
+    ["e5_o2"] = "2. Kenara koy.",
+    ["e5_o3"] = "3. İç?",
+    ["e5_a1"] = "Karışım renklendi.",
+    ["e5_a2"] = "Mantıklı, karışımı bozabilir.",
+    ["e5_a3"] = "Biraz garip hissediyorsun ama sorun yok.",
+-- EVENT 6
+    ["event6"] = "Filtre tıkandı, ne yapacaksın?",
+    ["e6_o1"] = "1. Sıkıştırılmış hava ile filtreyi temizle.",
+    ["e6_o2"] = "2. Yedek parçaları kullan.",
+    ["e6_o3"] = "3. Elinle temizlemeye çalış.",
+    ["e6_a1_1"] = "Sıkıştırılmış hava her yere karışımdan saçtı.",
+    ["e6_a1_2"] = "Sıkıştırılmış hava işe yaramış gibi duruyor.",
+    ["e6_a1_3"] = "Hava pompan yok.",
+    ["e6_a2_1"] = "Yenisini takmak en iyi seçenek gibi duruyor...",
+    ["e6_a2_2"] = "Yanında yedek parça yok.",
+    ["e6_a3_1"] = "Filtre tekrar açıldı ancak durumu kötü.",
+    ["e6_a3_2"] = "Temizleyemedin, filtresiz ünitenin içinde gaz birikiyor...",
+    ["e6_a3_3"] = "Filtreden bozulma sesleri geliyor.",
+-- EVENT 7
+    ["event7"] = "Damıtma unitesinde yine sorun var, ne yapacaksın?",
+    -- Uses the same answers as the EVENT 1
+-- EVENT 8
+    ["event8"] = "Filtre yeniden tıkandı, ne yapacaksın?",
+    -- Uses the same answers as the EVENT 6
+-- EVENT 9
+    ["event9"] = "Yanlışlıkla çok fazla lityum kullandın, ne yapacaksın?",
+    ["e9_o3"] = "3. Daha fazla aseton ekleyerek dengelemeye çalış.",
+    ["e9_a3"] = "Yeteri kadar lityumun yok.",
+    -- Rest is the same as the EVENT 4
+-- EVENT 10
+    ["event10"] = "Daha fazla epinefrin elde etmek için karışıma su eklemek ister misin?",
+    ["e10_o1"] = "1. EVET!",
+    ["e10_o2"] = "2. Hayır.",
+    ["e10_a1_1"] = "Biraz daha fazla epinefrinin oldu.",
+    ["e10_a1_2"] = "Yanında yeteri kadar su yok.",
+    ["e10_a2"] = "Kaliteden asla ödün vermiyorsun.",
+}

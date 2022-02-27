@@ -1,0 +1,16 @@
+Locales['en'] = {
+  ['shop_robbery'] = 'Market Soygunu',
+  ['press_to_rob'] = 'Marketi Soymak İçin ~INPUT_CONTEXT~ basın',
+  ['robbery_timer'] = 'Mağaza Soygunu: ~r~%s~s~ Saniye Kaldı',
+  ['recently_robbed'] = 'Bu market soyulmuştur lütfen tekrar soygun yapmadan önce ~y~%s~s~ saniye boyunca bekleyin',
+  ['rob_in_prog'] = '~r~Soygun Devam Ediyor ~b~%s~s~',
+  ['started_to_rob'] = 'Marketi Soymaya Başladın ~y~%s~s~',
+  ['alarm_triggered'] = 'Alarm Tetiklendi',
+  ['robbery_complete'] = '~r~Soygun Başarılı Oldu~s~,~g~$%s~s~ Çaldın',
+  ['robbery_complete_at'] = '~r~Soygun Başarılı oldu ~y~%s~s~',
+  ['robbery_cancelled'] = 'Soygun İptal Edildi!',
+  ['robbery_cancelled_at'] = '~b~%s~s~ Soygun İptal Edildi',
+  ['min_police'] = 'Soygun yapmak için şehirde en az ~b~%s~s~ polis bulunmalı',
+  ['robbery_already'] = '~r~Soygun Devam Ediyor.',
+  ['no_threat'] = 'Mağaza Sorumlusu İçin Tehdit oluşturamazsınız.',
+}

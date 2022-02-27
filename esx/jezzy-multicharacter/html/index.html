@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="reset.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="includes/jquery-1.4.2.min.js"></script>
+    <title>Multicharacter</title>
+</head>
+    <body>
+        <div class="container">
+            <div class="bars">
+                <div class="topbar">
+                    <!-- <p><span id="welcome-titel">QBUS ROLEPLAY</span></p> -->
+                    PANTHERA
+                </div>
+<!-- 
+                <div class="bottombar">
+                </div> -->
+            </div>   
+
+           
+                                     
+            <div class="main-screen">
+                <div class="welcomescreen">
+                    <div class="loading-rondje">
+                        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>                        
+                        <p id="loading-text">Bilgiler Yükleniyor</p>
+                    </div>
+                </div>
+
+               <div class="my-characters-list">
+                    <div class="characters-top-menu">
+                        <div class="characters-info">
+                            <div class="top-menu-name" id="name">Mehmet AdıGüzel</div>
+        
+                            <div class="top-menu-mid">
+                                <div class="top-menu-mid-row">
+                                    <div class="top-menu-mid-row-left-right"><i class="fas fa-calendar-alt"></i><span id="dob">08/28/1999</span></div>
+                                    <div class="top-menu-mid-row-left-right"><span id="gender">Erkek</span><i class="fas fa-venus-mars"></i></div>
+                                </div>
+        
+                                <div class="top-menu-mid-row">
+                                    <div class="top-menu-mid-row-left-right"><i class="fas fa-id-card"></i><span id="job">Polis</span></div>
+                                    <div class="top-menu-mid-row-left-right"><span id="nationality">Türk</span><i class="fas fa-globe-europe"></i></div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="top-menu-bottom">
+                            <div id="play">OYNA</div>
+                            <div id="delete">KARAKTERİ SİL</div>
+                        </div>
+                    </div>
+
+                    <div class="new-characters-list">
+                        <div class="box" id="char-1" data-cid="">
+                            <div class="create-char">+</div>
+                        </div>
+                        <div class="box" id="char-2" data-cid="">
+                            <div class="create-char">+</div>
+                        </div>
+                        <div class="box" id="char-3" data-cid="">
+                            <div class="create-char">+</div>
+                           
+                        </div>
+                        <div class="box" id="char-4" data-cid="">
+                            <div class="create-char">+</div>
+                        </div>
+                        <div class="box" id="char-5" data-cid="">
+                            <div class="create-char">+</div>
+                        </div>
+                    </div>
+               </div>
+                
+                <div class="character-register">
+                    <div class="register-top">
+                        <p>Karakter Yarat</p>
+                        <i class="material-icons" id="close-reg">close</i>
+                    </div>
+
+                    <div class="register-mid">
+                      
+                            <div class="char-register-inputs-left-right">
+                                <input type="text" id="first_name" placeholder="İsim" class="char-reg-input">
+                                <input type="text" id="last_name" placeholder="Soy İsim" class="char-reg-input">
+                            </div>
+                            <div class="char-register-inputs-left-right">
+                                <input type="text" id="nationality" placeholder="Uyruk" class="char-reg-input">
+                                <input type="date" id="birthdate" placeholder="Doğum Tarihi" min="1900-01-01" max="2999-12-31" class="char-reg-input">
+                            </div>
+                            <select id="gender" name="gender">
+                                <option value="erkek" selected>Erkek</option>
+                                <option value="kadin">Kadın</option>
+                            </select>
+                        
+                      
+                    </div>
+                            
+                    <div class="register-bottom">
+                        <div class="character-reg-btn" id="create"><p id="create-text">Karakteri Oluştur</p></div>
+                    </div>
+                </div>
+
+                <div class="character-delete">
+                        <div class="characters-delete-block-header">
+                            <p>Karakteri Sil</p>
+                            <i class="material-icons" id="close-del">close</i>
+                        </div>
+
+                        <p>Karakteri Silmek İstediğine Eminmisin</p>
+                        <br>
+                        <p id="yeet">Karakterinin Bütün Bilgileri Sonsuza Dek Silinecek</p>
+
+                        <div class="character-acceptdel-btn" id="accept-delete"><p id="accept-text">Onayla</p></div>
+                        <div class="character-canceldel-btn" id="cancel-delete"><p id="cancel-text">İptal Et</p></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</html>

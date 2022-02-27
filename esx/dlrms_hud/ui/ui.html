@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Title -->
+    <title>Delarmuss HUD v1.2:https://github.com/Delarmuss</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="hud-container">
+      <div class="hud-menu">
+        <button id="close">
+          <img src="img/uncheck.svg" class="uncheck-icon" />
+        </button>
+        <div class="hud-menu-header">hud menu</div>
+        <div class="hud-menu-main">
+          <table>
+            <tr>
+              <td class="hud-menu-info">health</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label">
+                  <input type="checkbox" checked name="" id="healthchk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" />
+                  </div>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="hud-menu-info">armor</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label">
+                  <input type="checkbox" checked name="" id="armorchk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" />
+                  </div>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="hud-menu-info">hunger</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label">
+                  <input type="checkbox" checked name="" id="hungerchk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" />
+                  </div>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="hud-menu-info">thirst</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label">
+                  <input type="checkbox" checked name="" id="thirstchk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" />
+                  </div>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="hud-menu-info">stamina</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label">
+                  <input type="checkbox" checked name="" id="staminachk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" />
+                  </div>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="hud-menu-info">hunger in car</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label">
+                  <input type="checkbox" checked name="" id="hungerinchk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" />
+                  </div>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="hud-menu-info">thirst in car</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label">
+                  <input type="checkbox" checked name="" id="thirstinchk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" />
+                  </div>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="hud-menu-info">job</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label">
+                  <input type="checkbox" checked name="" id="jobchk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" />
+                  </div>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="hud-menu-info">ID</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label">
+                  <input type="checkbox" checked name="" id="idchk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" />
+                  </div>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="hud-menu-info">bank money</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label">
+                  <input type="checkbox" checked name="" id="bankchk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" />
+                  </div>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="hud-menu-info">money</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label">
+                  <input type="checkbox" checked name="" id="walletchk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" />
+                  </div>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="hud-menu-info">society money</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label">
+                  <input type="checkbox" checked name="" id="societychk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" />
+                  </div>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="hud-menu-info">black money</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label">
+                  <input type="checkbox" checked name="" id="blackchk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" />
+                  </div>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="hud-menu-info">clock</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label">
+                  <input type="checkbox" checked name="" id="clockchk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" />
+                  </div>
+                </label>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="hud-details">
+        <div class="hud-job">
+          <svg viewBox="0 0 512 512"><path d="M128 480h256V80c0-26.5-21.5-48-48-48H176c-26.5 0-48 21.5-48 48v400zm64-384h128v32H192V96zm320 80v256c0 26.5-21.5 48-48 48h-48V128h48c26.5 0 48 21.5 48 48zM96 480H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48h48v352z"></path></svg>
+          <span></span>
+        </div>
+        <div class="hud-playerID">
+          <svg viewBox="0 0 448 512"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg>
+          <span></span>
+        </div>
+        <!-- <div class="hud-bank">
+          <svg viewBox="0 0 512 512"><path d="M496 128v16a8 8 0 0 1-8 8h-24v12c0 6.627-5.373 12-12 12H60c-6.627 0-12-5.373-12-12v-12H24a8 8 0 0 1-8-8v-16a8 8 0 0 1 4.941-7.392l232-88a7.996 7.996 0 0 1 6.118 0l232 88A8 8 0 0 1 496 128zm-24 304H40c-13.255 0-24 10.745-24 24v16a8 8 0 0 0 8 8h464a8 8 0 0 0 8-8v-16c0-13.255-10.745-24-24-24zM96 192v192H60c-6.627 0-12 5.373-12 12v20h416v-20c0-6.627-5.373-12-12-12h-36V192h-64v192h-64V192h-64v192h-64V192H96z"></path></svg>
+          <span></span>
+        </div>
+        <div class="hud-cash">
+          <svg viewBox="0 0 512 512"><path d="M461.2 128H80c-8.84 0-16-7.16-16-16s7.16-16 16-16h384c8.84 0 16-7.16 16-16 0-26.51-21.49-48-48-48H64C28.65 32 0 60.65 0 96v320c0 35.35 28.65 64 64 64h397.2c28.02 0 50.8-21.53 50.8-48V176c0-26.47-22.78-48-50.8-48zM416 336c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"></path></svg>
+          <span></span>
+        </div>
+        <div class="hud-society">
+          <svg viewBox="0 0 640 512"><path d="M256 336h-.02c0-16.18 1.34-8.73-85.05-181.51-17.65-35.29-68.19-35.36-85.87 0C-2.06 328.75.02 320.33.02 336H0c0 44.18 57.31 80 128 80s128-35.82 128-80zM128 176l72 144H56l72-144zm511.98 160c0-16.18 1.34-8.73-85.05-181.51-17.65-35.29-68.19-35.36-85.87 0-87.12 174.26-85.04 165.84-85.04 181.51H384c0 44.18 57.31 80 128 80s128-35.82 128-80h-.02zM440 320l72-144 72 144H440zm88 128H352V153.25c23.51-10.29 41.16-31.48 46.39-57.25H528c8.84 0 16-7.16 16-16V48c0-8.84-7.16-16-16-16H383.64C369.04 12.68 346.09 0 320 0s-49.04 12.68-63.64 32H112c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h129.61c5.23 25.76 22.87 46.96 46.39 57.25V448H112c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h416c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16z"></path></svg>
+          <span></span>
+        </div>
+        <div class="hud-black">
+          <svg viewBox="0 0 448 512"><path d="M383.9 308.3l23.9-62.6c4-10.5-3.7-21.7-15-21.7h-58.5c11-18.9 17.8-40.6 17.8-64v-.3c39.2-7.8 64-19.1 64-31.7 0-13.3-27.3-25.1-70.1-33-9.2-32.8-27-65.8-40.6-82.8-9.5-11.9-25.9-15.6-39.5-8.8l-27.6 13.8c-9 4.5-19.6 4.5-28.6 0L182.1 3.4c-13.6-6.8-30-3.1-39.5 8.8-13.5 17-31.4 50-40.6 82.8-42.7 7.9-70 19.7-70 33 0 12.6 24.8 23.9 64 31.7v.3c0 23.4 6.8 45.1 17.8 64H56.3c-11.5 0-19.2 11.7-14.7 22.3l25.8 60.2C27.3 329.8 0 372.7 0 422.4v44.8C0 491.9 20.1 512 44.8 512h358.4c24.7 0 44.8-20.1 44.8-44.8v-44.8c0-48.4-25.8-90.4-64.1-114.1zM176 480l-41.6-192 49.6 32 24 40-32 120zm96 0l-32-120 24-40 49.6-32L272 480zm41.7-298.5c-3.9 11.9-7 24.6-16.5 33.4-10.1 9.3-48 22.4-64-25-2.8-8.4-15.4-8.4-18.3 0-17 50.2-56 32.4-64 25-9.5-8.8-12.7-21.5-16.5-33.4-.8-2.5-6.3-5.7-6.3-5.8v-10.8c28.3 3.6 61 5.8 96 5.8s67.7-2.1 96-5.8v10.8c-.1.1-5.6 3.2-6.4 5.8z"></path></svg>
+          <span></span>
+        </div>
+        <div class="hud-clock">
+          <svg viewBox="0 0 512 512"><path d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"></path></svg>
+          <span></span>
+        </div> -->
+      </div>
+      <div class="hud-wrapper">
+        <div id="hud-top">
+          <div class="hunger-top-bg" id="hunger-top">
+            <div class="hunger-top"></div>
+            <div class="hud-alert hunger-alert"></div>
+          </div>
+          <div class="thirst-top-bg" id="thirst-top">
+            <div class="thirst-top"></div>
+            <div class="hud-alert thirst-alert"></div>
+          </div>
+        </div>
+        <div id="hud-bottom">
+          <div class="hud-bar" id="health">
+            <img class="hud-icon" src="img/health.svg" />
+            <div class="hud-value health"></div>
+            <div class="hud-alert health-alert"></div>
+          </div>
+          <div class="hud-bar" id="armor">
+            <img class="hud-icon" src="img/armor.svg" />
+            <div class="hud-value armor"></div>
+            <div class="hud-alert armor-alert"></div>
+          </div>
+          <div id="hts">
+            <div class="hud-bar" id="hunger">
+              <img class="hud-icon" src="img/hunger.svg" />
+              <div class="hud-value hunger"></div>
+              <div class="hud-alert hunger-alert"></div>
+            </div>
+            <div class="hud-bar" id="thirst">
+              <img class="hud-icon" src="img/thirst.svg" />
+              <div class="hud-value thirst"></div>
+              <div class="hud-alert thirst-alert"></div>
+            </div>
+            <div class="hud-bar" id="stamina">
+              <img class="hud-icon stamina-icon" src="img/stamina.svg" />
+              <div class="hud-value stamina"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Javascript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

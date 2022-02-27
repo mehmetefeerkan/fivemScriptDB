@@ -1,0 +1,93 @@
+/* This applies to all elements (bad practice) */
+* {
+	color: #353535;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* This css centers at the middle of the screen */
+#container {
+	padding: 10px;
+    position: absolute;
+    top: 30%;
+    left: 20%;
+	transform: translate(-50%,-50%);
+}
+
+#recentArrestHeader {
+	position: absolute;
+	top: 71%;
+	left: 13%;
+	font-size: 24px;
+	font-weight: 900;
+}
+
+#recentArrest1 {
+	position: absolute;
+	top: 75%;
+	left: 13%;
+	font-size: 17px;
+	font-weight: 600;
+}
+#recentArrest2 {
+	position: absolute;
+	top: 77%;
+	left: 13%;
+	font-size: 17px;
+	font-weight: 600;
+}
+#recentArrest3 {
+	position: absolute;
+	top: 79%;
+	left: 13%;
+	font-size: 17px;
+	font-weight: 600;
+}
+
+#Headline1 {
+	position: absolute;
+	width: 250px;
+	top: 37%;
+	left: 15%;
+	font-size: 22px;
+	word-wrap: break-word;
+}
+#Headline2 {
+	position: absolute;
+	width: 250px;
+	top: 37%;
+	left: 55%;
+	font-size: 22px;
+	word-wrap: break-word;
+}
+
+#HeadlineTitle1 {
+	position: absolute;
+	top: 32%;
+	left: 15%;
+	font-size: 32px;
+	font-weight: 800;
+}
+#HeadlineTitle2 {
+	position: absolute;
+	top: 32%;
+	left: 55%;
+	font-size: 32px;
+	font-weight: 800;
+}
+
+#hr1 {
+	position: absolute;
+	width: 200px;
+	height: 1px;
+	top: 35%;
+	left: 15%;
+	background-color: #353535
+}
+#hr2 {
+	position: absolute;
+	width: 200px;
+	height: 1px;
+	top: 35%;
+	left: 55%;
+	background-color: #353535
+}

@@ -1,0 +1,1 @@
+TriggerEvent('notification', 'Oda kilitlendi', 2)

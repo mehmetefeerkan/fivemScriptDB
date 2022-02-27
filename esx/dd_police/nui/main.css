@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=Exo&display=swap');
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+	box-sizing: border-box;
+	font-size: 1rem;
+	font-family: 'Sogoe UI', sans-serif;
+	font-weight: 400;
+	overflow: hidden;
+
+}
+#LSPDxn {
+	transform: perspective(600px) rotate3d(0.5, 1, 0, -20deg);
+	position: absolute;
+    right: 5px;
+    bottom: 150px;
+	width: 180px;
+	height: 400px;
+}
+#myXNUi1 {
+	width: 100%;
+}
+.heading {
+	position: absolute;
+	right: 0px;
+	top: 10px;
+	background-image: url(lspd.png);
+	padding-top: 5px;
+	border-radius: 5px;
+	width: 180px;
+	height: 80px;
+}
+.ci {
+	position: absolute;
+	right: 0px;
+	top: 100px;
+	background-color: rgba(46,49,146, 0.87);
+	color: rgb(255, 238, 0);
+	padding-top: 5px;
+	border-radius: 5px;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 16px;
+	width: 160px;
+	height: 20px;
+}
+.ci:hover {
+	transition: all 0.5s;
+    background-color: rgb(46,49,146);
+}
+.vi {
+	position: absolute;
+	right: 0px;
+	top: 130px;
+	background-color: rgba(0,174,239, 0.87);
+	color: white;
+	padding-top: 5px;
+	border-radius: 5px;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 12px;
+	width: 150px;
+	height: 20px;
+}
+.vi:hover {
+	transition: all 0.5s;
+    background-color: rgb(8, 99, 202);
+}
+.fm {
+	position: absolute;
+	right: 0px;
+	top: 160px;
+	background-color: rgba(0,174,239, 0.87);
+	color: white;
+	padding-top: 5px;
+	border-radius: 5px;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 12px;
+	width: 150px;
+	height: 20px;
+}
+.fm:hover {
+	transition: all 0.5s;
+	background-color: rgb(8, 99, 202);
+}
+.dr {
+	position: absolute;
+	right: 0px;
+	top: 220px;
+	background-color: rgba(0,174,239, 0.87);
+	color: white;
+	padding-top: 5px;
+	border-radius: 5px;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 12px;
+	width: 150px;
+	height: 20px;
+}
+.dr:hover {
+	transition: all 0.5s;
+    background-color: rgb(8, 99, 202);
+}
+.piv {
+	position: absolute;
+	right: 0px;
+	top: 190px;
+	background-color: rgba(0,174,239, 0.87);
+	color: white;
+	padding-top: 5px;
+	border-radius: 5px;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 12px;
+	width: 150px;
+	height: 20px;
+}
+.piv:hover {
+	transition: all 0.5s;
+    background-color: rgb(8, 99, 202);
+}
+.pov {
+	position: absolute;
+	right: 0px;
+	top: 250px;
+	background-color: rgba(0,174,239, 0.87);
+	color: white;
+	padding-top: 5px;
+	border-radius: 5px;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 12px;
+	width: 150px;
+	height: 20px;
+}
+.pov:hover {
+	transition: all 0.5s;
+	background-color: rgb(8, 99, 202);
+}
+.dark .item {
+
+	background-color: rgba(255, 0, 0, 0)!important;
+	border-bottom: unset!important;
+	/*border-top: 2px solid #cc153d;
+	margin-top: 6px!important;*/
+}
+.dark .text {
+	color: #ffffff;
+}
+
+.text {text-shadow: 2px 2px 2px rgba(0,0,0,1.0);border-radius: 3px;margin-top: 0px!important;padding: 5px!important;min-width: 10px;min-height: 5px;text-transform: capitalize;text-align: center;}
+#badgeMain {position: absolute;right: 111px;top: 337px;width: 500px;height: 276px;background: url("badge.png");}
+.mir-head {position: absolute;font-size: 0.85vw;font-weight: bolder;color: black;right: 30px;top: 30px;width: 110px;min-height: 10px;text-align: center;}
+.mir-body {position: absolute;font-size: 0.8vw;font-weight: bold;color: white;right: 30px;top: 65px;width: 110px;min-height: 10px;background-color: rgba(0, 0, 0, 1);text-align: center;}
+.mir-to {position: absolute;font-size: 1.25vw;font-weight: bolder;color: black;right: 30px;top: 100px;width: 110px;min-height: 10px;text-align: center;}

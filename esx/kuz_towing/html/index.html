@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+</head>
+<body>
+    <div class="towing-container">
+        <div class="cars-container">
+            <div id="car1" class="car-front car-icon">
+                <span></span>
+            </div>
+            <div id="car2" class="car-rear car-icon">
+                <span></span>
+            </div>
+            <div id="rope"></div>
+        </div>
+        <div class="buttons-container">
+            <div id="detach-button" class="button"><span id="button-text"></span></div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    $(document).ready(function(){
+        let attachedOne = false;
+        let attachedTwo = false;
+
+        let press_to_attach = 'Press to attach';
+        let press_to_detach = 'Detach all ropes';
+
+        $('.towing-container').prepend('<span style="position: absolute; font-family: Quicksand, sans-serif; color: rgba(200,200,200,0.12); top: 2px; left: 5px; font-size: 0.99vh">KuzQuality.com</span>')
+
+        reset();
+        function reset() {
+            $('#car1 span').html(press_to_attach);
+            $('#car2 span').html(press_to_attach);
+            $('#button-text').html(press_to_detach);
+            $('#rope').hide();
+            attachedOne = false;
+            attachedTwo = false;
+        }
+
+        $(document).on('click', '#car1', function() {
+            fetch(`https://kuz_towing/ConnectFront`, {
+                method: 'POST',
+            }).then(resp => resp.json())
+                .then(resp => {
+                    if (!resp) {
+                        $('#car1 span').html(press_to_attach);
+                        $('#rope').hide();
+                        attachedOne = false;
+                    } else {
+                        $('#car1 span').html(resp);
+                        attachedOne = true;
+                        checkIfAttached();
+                    }
+                });
+        });
+
+        $(document).on('click', '#car2', function() {
+            fetch(`https://kuz_towing/ConnectRear`, {
+                method: 'POST',
+            }).then(resp => resp.json())
+                .then(resp => {
+                    if (!resp) {
+                        $('#car2 span').html(press_to_attach);
+                        $('#rope').hide();
+                        attachedTwo = false;
+                    } else {
+                        $('#car2 span').html(resp);
+                        attachedTwo = true;
+                        checkIfAttached();
+                    }
+                });
+        });
+
+        function checkIfAttached() {
+            if (attachedOne && attachedTwo) {
+                $('#rope').show();
+            }
+        }
+
+        $(document).on('click', '#detach-button', function() {
+            fetch(`https://kuz_towing/DetachRope`, {
+                method: 'POST',
+            });
+            reset();
+        });
+
+        window.addEventListener('message', (event) => {
+            if (event.data.event === 'show') {
+                if (event.data.state) {
+                    $('body').show();
+                } else {
+                    $('body').hide();
+                }
+            }
+            if (event.data.event === 'reset') {
+                reset();
+            }
+            if (event.data.event === 'locale') {
+                press_to_attach = event.data.press_to_attach;
+                press_to_detach = event.data.press_to_detach;
+                reset();
+            }
+        });
+
+        document.addEventListener('keyup', logKey);
+        function logKey(e) {
+            if (e.key === 'Escape' || e.key === 'Backspace' || e.key === 'e' || e.key === ' ') {
+                fetch(`https://kuz_towing/CloseTowingMenu`, {
+                    method: 'POST',
+                })
+            }
+        }
+
+        fetch(`https://kuz_towing/FetchLocale`, {
+            method: 'POST',
+        });
+    });
+</script>
+
+<style>
+    @font-face {
+        font-family: Quicksand;
+        src: url('fonts/quicksand.ttf') format('truetype');
+    }
+
+    body {
+        font-family: Quicksand, sans-serif !important;
+        font-weight: bold;
+        user-select: none;
+        display: none;
+    }
+    .towing-container {
+        background-color: rgba(31, 31, 31, 0.9);
+        border-radius: 0.3vh;
+        border: 1px solid rgba(0, 0, 0, 0.9);
+        width: 42vh;
+        height: 22vh;
+        position: absolute;
+        left: calc(50% - (42vh / 2));
+        top: calc(50% - (22vh / 2));
+        box-shadow: 0 0 2vh rgba(0,0,0,0.2) inset;
+    }
+    .cars-container {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        justify-content: space-around;
+        background-color: rgba(119, 119, 119, 0.2);
+        box-shadow: 0 0 2vh black inset;
+        position: relative;
+        width: 38vh;
+        height: 12vh;
+        margin: 2vh 2vh 0 2vh;
+    }
+    .car-icon {
+        background-image: url("img/car.png");
+        background-size: contain;
+        width: 16vh;
+        height: 12vh;
+        opacity: 0.5;
+        cursor: pointer;
+        transition-duration: 0.1s;
+    }
+    .car-icon:hover {
+        opacity: 0.9;
+    }
+    .car-icon span {
+        position: absolute;
+        color: white;
+        bottom: 10%;
+        text-align: center;
+        font-size: 1.4vh;
+        width: 16vh;
+        pointer-events: none;
+        vertical-align: top;
+    }
+    .buttons-container {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .button {
+        width: calc(100% - 4vh);
+        margin: 2vh;
+        height: 4vh;
+        background-color: rgb(233, 233, 233);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition-duration: 0.1s;
+    }
+    .button:hover {
+        filter: invert(1);
+    }
+    .button span {
+        text-align: center;
+        width: 100%;
+        margin: auto;
+        justify-self: center;
+        font-size: 1.7vh;
+    }
+    #rope {
+        position: fixed;
+        width: 4.4vh;
+        height: 0.3vh;
+        background-color: rgb(150,150,150);
+    }
+</style>

@@ -1,0 +1,96 @@
+Locales["en"] = {
+    ["prod_start"] = "Production started.",
+    ["no_item"] = "You don't have enough items.",
+    ["production_start"] = "Production started, don't left the zone.",
+    ["production_stopped"] = "Production stopped.",
+    ["left_zone"] = "You left the zone, production stopped.",
+    ["epi_marker"] = "Press [E] to start epinephrine production",
+    ["epi_start"] = "~g~Epinephrine prodcution started.",
+    ["prod"] = "~r~Progress: ~g~~h~",
+    ["use_number"] = "~c~Use number keys to choose.",
+    ["prod_comp"] = "~g~~h~Prodcution completed.",
+    ["sel1"] = "~g~You choose option 1.",
+    ["sel2"] = "~g~You choose option 2.",
+    ["sel3"] = "~g~You choose option 3.",
+
+-- EVENTS --
+
+-- EVENT 1
+    ["event1"] = "~o~There's a problem with the distillation unit, what are you going to do?",
+    ["e1_o1"] = "~o~1. Get help on your phone's internet.",
+    ["e1_o2"] = "~o~2. Don't do anything.",
+    ["e1_o3"] = "~o~3. Use spare parts.",
+    ["e1_a1_1"] = "~r~It seems to work, the problem is solved.",
+    ["e1_a1_2"] = "~r~The information on the Internet didn't work, you fucked...",
+    ["e1_a1_3"] = "~r~You don't have a phone.",
+    ["e1_a2"] = "~r~Distillation unit exploded, you fucked...",
+    ["e1_a3_1"] = "~r~You replaced broken parts with the new ones.",
+    ["e1_a3_2"] = "~r~You don't have spare parts.",
+-- EVENT 2
+    ["event2"] = "~o~An acetone flask has dropped and broke, what are you going to do?",
+    ["e2_o1"] = "~o~1. Try to blow the scent with a fluorinated stick.",
+    ["e2_o2"] = "~o~2. Don't do anything.",
+    ["e2_o3"] = "~o~3. Put on gas mask.",
+    ["e2_a1_1"] = "~r~You have blown the scent with the fluorinated stick.",
+    ["e2_a1_2"] = "~r~You don't have a fluorinated stick.",
+    ["e2_a2"] = "~r~You are breathing too much acetone.",
+    ["e2_a3_1"] = "~r~You have put on the gas mask.",
+    ["e2_a3_2"] = "~r~You don't have a gas mask.",
+-- EVENT 3
+    ["event3"] = "~o~Opium solidifies very fast, what are you going to do?",
+    ["e3_o1"] = "~o~1. Increase the pressure.",
+    ["e3_o2"] = "~o~2. Increase the temperature.",
+    ["e3_o3"] = "~o~3. Decrease the pressure.",
+    ["e3_a1"] = "~r~You've increased the pressure and the opium have become weird, you've decreased the pressure again.",
+    ["e3_a2"] = "~r~Raising the temperature seemed to work...",
+    ["e3_a3"] = "~r~Lowering the pressure made the poppies worse.",
+-- EVENT 4
+    ["event4"] = "~o~You accidentally used too much acetone, what are you going to do?",
+    ["e4_o1"] = "~o~1. Don't do anything.",
+    ["e4_o2"] = "~o~2. Try to pull with the syringe.",
+    ["e4_o3"] = "~o~3. Try to balance the mixture by adding more lithium.",
+    ["e4_a1"] = "~r~The mixture began to smell too much acetone.",
+    ["e4_a2_1"] = "~r~It seemed to work but still, acetone is more than usual.",
+    ["e4_a2_2"] = "~r~You don't have a syringe.",
+    ["e4_a3_1"] = "~r~You managed to balance both chemicals.",
+    ["e4_a3_2"] = "~r~You don't have enough lithium.",
+-- EVENT 5
+    ["event5"] = "~o~You found some water colourer, what are you going to do?",
+    ["e5_o1"] = "~o~1. Add to the mixture.",
+    ["e5_o2"] = "~o~2. Put aside.",
+    ["e5_o3"] = "~o~3. Drink it?",
+    ["e5_a1"] = "~r~The mixture looks colorful.",
+    ["e5_a2"] = "~r~Reasonable, it can spoil the mixture.",
+    ["e5_a3"] = "~r~You feel a little weird, but it's okay.",
+-- EVENT 6
+    ["event6"] = "~o~Filter blocked, what are you going to do?",
+    ["e6_o1"] = "~o~1. Clean the filter with compressed air.",
+    ["e6_o2"] = "~o~2. Use spare parts.",
+    ["e6_o3"] = "~o~3. Try to clean by hand.",
+    ["e6_a1_1"] = "~r~The mixture spilled everywhere.",
+    ["e6_a1_2"] = "~r~Compressed air seems to have worked.",
+    ["e6_a1_3"] = "~r~You don't have gas pump.",
+    ["e6_a2_1"] = "~r~Installing a new one seems like the best option ...",
+    ["e6_a2_2"] = "~r~ You don't have spare parts.",
+    ["e6_a3_1"] = "~r~Filter started working but the condition is poor.",
+    ["e6_a3_2"] = "~r~You couldn't clean it, gas accumulates inside the unfiltered unit...",
+    ["e6_a3_3"] = "~r~Distortion sounds from the filter.",
+-- EVENT 7
+    ["event7"] = "~o~There's again a problem with the distillation unit, what are you going to do?",
+    -- Uses the same answers as the EVENT 1
+-- EVENT 8
+    ["event8"] = "~o~Filter blocked again, what are you going to do?",
+    -- Uses the same answers as the EVENT 6
+-- EVENT 9
+    ["event9"] = "~o~You accidentally used too much lithium, what are you going to do?",
+    ["e9_o3"] = "~o~3. Try to balance the mixture by adding more acetone.",
+    ["e9_a3"] = "~r~You don't have enough acetone.",
+    -- Rest is the same as the EVENT 4
+-- EVENT 10
+    ["event10"] = "~o~Would you like to add water to the mixture to get more epinephrine?",
+    ["e10_o1"] = "~o~1. YES!",
+    ["e10_o2"] = "~o~2. No.",
+    ["e10_a1_1"] = "~r~You have a little bit more epinephrine.",
+    ["e10_a1_2"] = "~r~You don't have enough water.",
+    ["e10_a2"] = "~r~You never compromise on quality.",
+}

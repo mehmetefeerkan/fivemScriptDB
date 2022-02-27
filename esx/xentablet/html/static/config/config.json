@@ -1,0 +1,184 @@
+{
+  "reseau": "Xenknight",
+  "themeColor": "#78909C",
+  "colors": [
+    "#EF5350",
+    "#EC407A",
+    "#AB47BC",
+    "#7E57C2",
+    "#5C6BC0",
+    "#42A5F5",
+    "#29B6F6",
+    "#26C6DA",
+    "#26A69A",
+    "#66BB6A",
+    "#9CCC65",
+    "#D4E157",
+    "#FFCA28",
+    "#FFA726",
+    "#FF7043",
+    "#8D6E63",
+    "#78909C"
+  ],
+  "License": "w3dtFtBr6uWaRVFcMBdW2cAP",
+  "//": "REQUIRE https://github.com/citizenfx/screenshot-basic or set false",
+  "enableTakePhoto": true,
+  "fileUploadService_Url": "https://pomf.tdude.co/upload.php",
+  "fileUploadService_Field": "files[]",
+  "background": {
+	  "GKS WORLD": "gksworld.png",
+    "Custom URL": "URL"
+  },
+  "background_default": {
+    "label": "GKS WORLD",
+    "value": "gksworld.png"
+  },
+
+
+  "coque": {
+    "Coque": "coque.png"
+  },
+  "coque_default": {
+    "label": "Coque",
+    "value": "coque.png"
+  },
+
+  "apps": [{
+      "name": "Settings",
+      "fr_FR__name": "Paramètres",
+      "en_US__name": "System",
+      "cs_CZ__name": "Nastavení",
+      "de_DE__name": "Einstellungen",
+      "pl_PL__name": "Ustawienia",
+      "es_ES__name": "Ajustes",
+      "icons": "/html/static/img/icons_app/settings.png",
+      "routeName": "parametre",
+      "inHomePage": true
+    },
+    {
+      "name": "Newspaper",
+      "fr_FR__name": "Newspaper",
+      "en_US__name": "Newspaper",
+      "cs_CZ__name": "Newspaper",
+      "de_DE__name": "Newspaper",
+      "pl_PL__name": "Newspaper",
+      "es_ES__name": "Newspaper",
+      "icons": "/html/static/img/icons_app/newspaper.png",
+      "routeName": "haber",
+      "inHomePage": true
+    },
+    {
+      "name": "Police ",
+      "fr_FR__name": "Police",
+      "en_US__name": "Police",
+      "cs_CZ__name": "Police",
+      "de_DE__name": "Police",
+      "pl_PL__name": "Police",
+      "es_ES__name": "Police",
+      "icons": "/html/static/img/icons_app/police.png",
+      "routeName": "policeacc",
+      "inHomePage": true
+    },
+    {
+      "name": "Government",
+      "fr_FR__name": "Government",
+      "en_US__name": "Government",
+      "cs_CZ__name": "Government",
+      "de_DE__name": "Government",
+      "pl_PL__name": "Government",
+      "es_ES__name": "Government",
+      "icons": "/html/static/img/icons_app/gover.png",
+      "routeName": "govershow",
+      "inHomePage": true
+    },
+    {
+      "name": "Vehicles",
+      "fr_FR__name": "Vehicles",
+      "en_US__name": "Vehicles",
+      "cs_CZ__name": "Vehicles",
+      "de_DE__name": "Vehicles",
+      "pl_PL__name": "Vehicles",
+      "es_ES__name": "Vehicles",
+      "icons": "/html/static/img/icons_app/vehbuy.png",
+      "routeName": "veh",
+      "inHomePage": true
+    }
+  ],
+  "defaultLanguage": "en_US",
+  "language": {
+    "en_US": {
+      "NAME": "English",
+      "CONFIRM": "Accept",
+      "CANCEL": "abort",
+      "APP_CONFIG_TITLE": "parameter",
+      "APP_CONFIG_WALLPAPER": "wallpaper",
+      "APP_CONFIG_CASE": "tablet cover",
+      "APP_CONFIG_LANGUAGE": "Language",
+      "APP_USERNAME": "username",
+      "APP_PASSWORD": "password",
+      "APP_NEWS_NOTIF_ACCOUNT_CREATE_SUCCESS": "Your Reporter account has been created.",
+      "APP_NEWS_NOTIF_ACCOUNT_CREATE_ERROR": "Your Reporter account could not be created (username already used?)",
+      "APP_NEWS_NOTIF_LOGIN_SUCCESS": "You are connected to Reporter.",
+      "APP_NEWS_NOTIF_LOGIN_ERROR": "Invalid account / passwords",
+      "APP_NEWS_NOTIF_AVATAR_SUCCESS": "Your avatar has been changed!",
+      "APP_NEWS_NOTIF_NEW_PASSWORD_SUCCESS": "Your password has been changed.",
+      "APP_NEWS_NOTIF_NEW_PASSWORD_ERROR": "Oops.... Your password could not be changed.",
+      "APP_NEWS_NOTIF_NEW_PASSWORD_MISS_MATCH": "Passwords do not match",
+      "APP_NEWS_NOTIF_NEW_PASSWORD_LENGTH_ERROR": "Password too short",
+      "APP_NEWSPAPER": "News",
+      "APP_NEWSLOGIN": "Reporter Login",
+      "APP_WRITERR": "Writer",
+      "APP_README": "Read Me",
+      "APP_HABERTITLE": "New News Released",
+      "APP_WRITENEWS": "Write News",
+      "APP_TITLE": "Title",
+      "APP_PHOTOLINK": "Photo Link",
+      "APP_SPOTTEXT": "Spot Text",
+      "APP_MAINTEXT": "Main Text",
+      "APP_NEWSBUTTON": "Publish",
+      "APP_ACCOUNT_LOGOUT": "Disconnect",
+      "APP_POLICE": "Police",
+      "APP_POLICELOGIN": "Police Login",
+      "APP_POLICECITIZEN": "Citizen and Vehicle Information System",
+      "APP_POLICEPLATE": "License Plate Inquiry",
+      "APP_POLICECITI": "Citizen Inquiry",
+      "APP_POLICEHOME": "Police Home Page",
+      "APP_POLICEOWNERIN": "Car Owner information",
+      "APP_POLICEOWNERPLATE": "Licence Plate",
+      "APP_POLICEOWNERNAME": "Name",
+      "APP_POLICEOWNERSUR": "Surname",
+      "APP_POLICEDETAIL": "Detail",
+      "APP_POLICEOWNERPHON": "Phone Number",
+      "APP_POLICEOWNERNAMESUR": "Name and Surname",
+      "APP_POLICEOWNERBIRTH": "Date of birth",
+      "APP_POLICEOWNERJOB": "Job",
+      "APP_POLICEPLATENOTES": "Notes",
+      "APP_POLICEPLATENOTESDEL": "Delete Note",
+      "APP_POLICEPLATEPLAYERCITI": "Citizen Information",
+      "APP_GOVERNMENT": "Government",
+      "APP_VEHCATE": "Category",
+      "APP_VEHPRICE": "Price",
+      "APP_VEHICLES": "Vehicles",
+      "APP_VEHCITI": "Citizen's license plate information",
+      "APP_POLICEBIL": "Billings",
+      "APP_POLICEPHONE": "Phone Number Inquiry",
+      "APP_AVATARCHANGE": "Change Image",
+      "APP_NEWS_ACCOUNT_PARAM": "My account",
+      "APP_NEWS_ACCOUNT_AVATAR": "Change Profile Photo",
+      "APP_TEXT_İN" : "identification number",
+
+
+      
+      "TIMEAGO": [
+        "just now",
+        ["%s second ago", "%s seconds ago"],
+        ["%s minute ago", "%s minutes ago"],
+        ["%s hour ago", "%s hours ago"],
+        ["%s day ago", "%s days ago"],
+        ["%s week ago", "%s weeks ago"],
+        ["%s month ago", "%s months ago"],
+        ["%s year ago", "%s years ago"]
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<html lang="tr">
+  <head>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Signika" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="window" id="store" style="display:none;">
+      <div class="window-header">Market</div>
+      <div class="window-body">
+        <div class="items" id="store-container"></div>
+        <div class="items" id="cart-container" style="display: none;"></div>
+      </div>
+      <div class="window-footer">
+        <button class="button" id="button-exit">Çıkış</button>
+        <button class="button" id="button-boss" style="display: none;">Mekanın Sahibi</button>
+        <button class="button" id="button-back" style="display:none;">Geri Dön</button>
+        <button class="button" id="button-purchase" style="display:none;">Sepete Git (<span>0</span>)</button>
+        <button class="button" id="button-buy" style="display:none;">Satın Al (<span>0</span>)</button>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="script.js" type="text/javascript"></script>
+  </body>
+</html>
